@@ -1,0 +1,209 @@
+
+import React from 'react';
+import { X, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+
+interface SidebarProps {
+  activeSection: string;
+  onSectionChange: (section: string) => void;
+  isOpen: boolean;
+  onClose: () => void;
+  courseId: string;
+}
+
+const courseData: Record<string, any> = {
+  'web-development': [
+    {
+      title: 'Getting Started',
+      sections: [
+        { id: 'introduction', title: 'Introduction' },
+        { id: 'setup', title: 'Environment Setup' },
+        { id: 'basics', title: 'HTML Basics' },
+      ]
+    },
+    {
+      title: 'HTML Fundamentals',
+      sections: [
+        { id: 'html-elements', title: 'HTML Elements' },
+        { id: 'html-attributes', title: 'HTML Attributes' },
+        { id: 'html-forms', title: 'HTML Forms' },
+      ]
+    },
+    {
+      title: 'CSS Styling',
+      sections: [
+        { id: 'css-basics', title: 'CSS Basics' },
+        { id: 'css-selectors', title: 'CSS Selectors' },
+        { id: 'css-layout', title: 'CSS Layout' },
+      ]
+    },
+    {
+      title: 'JavaScript',
+      sections: [
+        { id: 'js-basics', title: 'JavaScript Basics' },
+        { id: 'js-dom', title: 'DOM Manipulation' },
+        { id: 'js-events', title: 'Event Handling' },
+      ]
+    },
+    {
+      title: 'Advanced Topics',
+      sections: [
+        { id: 'responsive', title: 'Responsive Design' },
+        { id: 'frameworks', title: 'CSS Frameworks' },
+        { id: 'deployment', title: 'Deployment' },
+      ]
+    }
+  ],
+  'generative-ai': [
+    {
+      title: 'AI Fundamentals',
+      sections: [
+        { id: 'ai-intro', title: 'What is AI?' },
+        { id: 'machine-learning', title: 'Machine Learning Basics' },
+        { id: 'neural-networks', title: 'Neural Networks' },
+      ]
+    },
+    {
+      title: 'Generative Models',
+      sections: [
+        { id: 'gpt-models', title: 'GPT & Language Models' },
+        { id: 'image-generation', title: 'Image Generation' },
+        { id: 'multimodal-ai', title: 'Multimodal AI' },
+      ]
+    },
+    {
+      title: 'Practical Applications',
+      sections: [
+        { id: 'prompt-engineering', title: 'Prompt Engineering' },
+        { id: 'ai-apis', title: 'Working with AI APIs' },
+        { id: 'building-apps', title: 'Building AI Apps' },
+      ]
+    }
+  ],
+  'data-structures': [
+    {
+      title: 'Basic Concepts',
+      sections: [
+        { id: 'ds-intro', title: 'Introduction to Data Structures' },
+        { id: 'complexity', title: 'Time & Space Complexity' },
+        { id: 'arrays', title: 'Arrays & Lists' },
+      ]
+    },
+    {
+      title: 'Linear Structures',
+      sections: [
+        { id: 'stacks', title: 'Stacks' },
+        { id: 'queues', title: 'Queues' },
+        { id: 'linked-lists', title: 'Linked Lists' },
+      ]
+    },
+    {
+      title: 'Non-Linear Structures',
+      sections: [
+        { id: 'trees', title: 'Trees' },
+        { id: 'graphs', title: 'Graphs' },
+        { id: 'hash-tables', title: 'Hash Tables' },
+      ]
+    },
+    {
+      title: 'Algorithms',
+      sections: [
+        { id: 'sorting', title: 'Sorting Algorithms' },
+        { id: 'searching', title: 'Searching Algorithms' },
+        { id: 'dynamic-programming', title: 'Dynamic Programming' },
+      ]
+    }
+  ],
+  'blockchain': [
+    {
+      title: 'Blockchain Basics',
+      sections: [
+        { id: 'blockchain-intro', title: 'What is Blockchain?' },
+        { id: 'cryptocurrency', title: 'Cryptocurrency Fundamentals' },
+        { id: 'consensus', title: 'Consensus Mechanisms' },
+      ]
+    },
+    {
+      title: 'Smart Contracts',
+      sections: [
+        { id: 'solidity', title: 'Solidity Programming' },
+        { id: 'ethereum', title: 'Ethereum Development' },
+        { id: 'dapps', title: 'Decentralized Apps' },
+      ]
+    },
+    {
+      title: 'Advanced Topics',
+      sections: [
+        { id: 'defi', title: 'DeFi Protocols' },
+        { id: 'nfts', title: 'NFTs & Digital Assets' },
+        { id: 'web3', title: 'Web3 Integration' },
+      ]
+    }
+  ]
+};
+
+export const Sidebar = ({ activeSection, onSectionChange, isOpen, onClose, courseId }: SidebarProps) => {
+  const currentCourseData = courseData[courseId] || courseData['web-development'];
+
+  return (
+    <>
+      {/* Mobile overlay */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+          onClick={onClose}
+        />
+      )}
+      
+      {/* Sidebar */}
+      <aside className={cn(
+        "fixed top-16 left-0 z-40 w-64 h-[calc(100vh-4rem)] bg-white border-r border-gray-200 transform transition-transform duration-300 ease-in-out lg:translate-x-0",
+        isOpen ? "translate-x-0" : "-translate-x-full"
+      )}>
+        <div className="flex flex-col h-full">
+          {/* Close button for mobile */}
+          <div className="flex items-center justify-between p-4 border-b lg:hidden">
+            <h2 className="font-semibold text-gray-900">Course Content</h2>
+            <Button variant="ghost" size="sm" onClick={onClose}>
+              <X className="h-4 w-4" />
+            </Button>
+          </div>
+
+          {/* Course content */}
+          <div className="flex-1 overflow-y-auto">
+            <div className="p-2">
+              {currentCourseData.map((module: any, moduleIndex: number) => (
+                <div key={moduleIndex} className="mb-4">
+                  <h3 className="px-3 py-2 text-sm font-semibold text-gray-900 bg-gray-100 rounded-md mb-2">
+                    {module.title}
+                  </h3>
+                  <div className="space-y-1">
+                    {module.sections.map((section: any) => (
+                      <button
+                        key={section.id}
+                        onClick={() => {
+                          onSectionChange(section.id);
+                          onClose();
+                        }}
+                        className={cn(
+                          "w-full flex items-center space-x-3 px-3 py-2 text-sm rounded-md transition-colors text-left",
+                          activeSection === section.id
+                            ? "bg-green-100 text-green-800 border-r-2 border-green-600"
+                            : "text-gray-700 hover:bg-gray-100"
+                        )}
+                      >
+                        <span className="flex-1">{section.title}</span>
+                        <ChevronRight className="h-3 w-3 text-gray-400" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </aside>
+    </>
+  );
+};
