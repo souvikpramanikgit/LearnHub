@@ -1,8 +1,13 @@
-
 import React from 'react';
 import { X, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import {
+  webDevelopmentStructure,
+  generativeAIStructure,
+  dataStructuresStructure,
+  blockchainStructure
+} from '@/data';
 
 interface SidebarProps {
   activeSection: string;
@@ -12,139 +17,15 @@ interface SidebarProps {
   courseId: string;
 }
 
-const courseData: Record<string, any> = {
-  'web-development': [
-    {
-      title: 'Getting Started',
-      sections: [
-        { id: 'introduction', title: 'Introduction' },
-        { id: 'setup', title: 'Environment Setup' },
-        { id: 'basics', title: 'HTML Basics' },
-      ]
-    },
-    {
-      title: 'HTML Fundamentals',
-      sections: [
-        { id: 'html-elements', title: 'HTML Elements' },
-        { id: 'html-attributes', title: 'HTML Attributes' },
-        { id: 'html-forms', title: 'HTML Forms' },
-      ]
-    },
-    {
-      title: 'CSS Styling',
-      sections: [
-        { id: 'css-basics', title: 'CSS Basics' },
-        { id: 'css-selectors', title: 'CSS Selectors' },
-        { id: 'css-layout', title: 'CSS Layout' },
-      ]
-    },
-    {
-      title: 'JavaScript',
-      sections: [
-        { id: 'js-basics', title: 'JavaScript Basics' },
-        { id: 'js-dom', title: 'DOM Manipulation' },
-        { id: 'js-events', title: 'Event Handling' },
-      ]
-    },
-    {
-      title: 'Advanced Topics',
-      sections: [
-        { id: 'responsive', title: 'Responsive Design' },
-        { id: 'frameworks', title: 'CSS Frameworks' },
-        { id: 'deployment', title: 'Deployment' },
-      ]
-    }
-  ],
-  'generative-ai': [
-    {
-      title: 'AI Fundamentals',
-      sections: [
-        { id: 'ai-intro', title: 'What is AI?' },
-        { id: 'machine-learning', title: 'Machine Learning Basics' },
-        { id: 'neural-networks', title: 'Neural Networks' },
-      ]
-    },
-    {
-      title: 'Generative Models',
-      sections: [
-        { id: 'gpt-models', title: 'GPT & Language Models' },
-        { id: 'image-generation', title: 'Image Generation' },
-        { id: 'multimodal-ai', title: 'Multimodal AI' },
-      ]
-    },
-    {
-      title: 'Practical Applications',
-      sections: [
-        { id: 'prompt-engineering', title: 'Prompt Engineering' },
-        { id: 'ai-apis', title: 'Working with AI APIs' },
-        { id: 'building-apps', title: 'Building AI Apps' },
-      ]
-    }
-  ],
-  'data-structures': [
-    {
-      title: 'Basic Concepts',
-      sections: [
-        { id: 'ds-intro', title: 'Introduction to Data Structures' },
-        { id: 'complexity', title: 'Time & Space Complexity' },
-        { id: 'arrays', title: 'Arrays & Lists' },
-      ]
-    },
-    {
-      title: 'Linear Structures',
-      sections: [
-        { id: 'stacks', title: 'Stacks' },
-        { id: 'queues', title: 'Queues' },
-        { id: 'linked-lists', title: 'Linked Lists' },
-      ]
-    },
-    {
-      title: 'Non-Linear Structures',
-      sections: [
-        { id: 'trees', title: 'Trees' },
-        { id: 'graphs', title: 'Graphs' },
-        { id: 'hash-tables', title: 'Hash Tables' },
-      ]
-    },
-    {
-      title: 'Algorithms',
-      sections: [
-        { id: 'sorting', title: 'Sorting Algorithms' },
-        { id: 'searching', title: 'Searching Algorithms' },
-        { id: 'dynamic-programming', title: 'Dynamic Programming' },
-      ]
-    }
-  ],
-  'blockchain': [
-    {
-      title: 'Blockchain Basics',
-      sections: [
-        { id: 'blockchain-intro', title: 'What is Blockchain?' },
-        { id: 'cryptocurrency', title: 'Cryptocurrency Fundamentals' },
-        { id: 'consensus', title: 'Consensus Mechanisms' },
-      ]
-    },
-    {
-      title: 'Smart Contracts',
-      sections: [
-        { id: 'solidity', title: 'Solidity Programming' },
-        { id: 'ethereum', title: 'Ethereum Development' },
-        { id: 'dapps', title: 'Decentralized Apps' },
-      ]
-    },
-    {
-      title: 'Advanced Topics',
-      sections: [
-        { id: 'defi', title: 'DeFi Protocols' },
-        { id: 'nfts', title: 'NFTs & Digital Assets' },
-        { id: 'web3', title: 'Web3 Integration' },
-      ]
-    }
-  ]
+const courseStructureData: Record<string, any> = {
+  'web-development': webDevelopmentStructure,
+  'generative-ai': generativeAIStructure,
+  'data-structures': dataStructuresStructure,
+  'blockchain': blockchainStructure,
 };
 
 export const Sidebar = ({ activeSection, onSectionChange, isOpen, onClose, courseId }: SidebarProps) => {
-  const currentCourseData = courseData[courseId] || courseData['web-development'];
+  const currentCourseData = courseStructureData[courseId] || courseStructureData['web-development'];
 
   return (
     <>
