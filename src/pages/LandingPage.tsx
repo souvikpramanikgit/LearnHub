@@ -281,7 +281,7 @@ export const LandingPage = () => {
               </div>
             </div>
             <div className="text-center md:text-right">
-              <p className="text-gray-400 mb-2">&copy; 2024 LearnHub. All rights reserved.</p>
+              <p className="text-gray-400 mb-2">&copy; 2025 LearnHub. All rights reserved.</p>
               <p className="text-gray-500 text-sm">Building the future, one developer at a time.</p>
             </div>
           </div>
