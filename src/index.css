@@ -99,3 +99,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+.prose h1 {
+  margin-bottom: 0.5em;
+}
+
+.prose h2 {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+.prose h3 {
+  margin-bottom: 0.2em;
+}

@@ -3,7 +3,6 @@ import { BookOpen, Code, ArrowRight, ArrowLeft, Copy, CheckCircle } from 'lucide
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
 import {
   webDevelopmentContent, webDevelopmentStructure,
@@ -11,6 +10,7 @@ import {
   dataStructuresContent, dataStructuresStructure,
   blockchainContent, blockchainStructure
 } from '@/data';
+import ReactMarkdown from 'react-markdown';
 
 interface CourseContentProps {
   activeSection: string;
@@ -72,7 +72,7 @@ export const CourseContent = ({ activeSection, courseId, onSectionChange }: Cour
   };
 
   return (
-    <div className="p-6 max-w-4xl mx-auto">
+    <div className="p-6 pt-6 max-w-4xl mx-auto">
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center space-x-2 mb-4">
@@ -87,80 +87,40 @@ export const CourseContent = ({ activeSection, courseId, onSectionChange }: Cour
 
       {/* Main Content */}
       <div className="space-y-8">
-        <Tabs defaultValue="learn" className="w-full">
-          <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="learn">Learn</TabsTrigger>
-            <TabsTrigger value="examples">Code Examples</TabsTrigger>
-          </TabsList>
-          
-          <TabsContent value="learn" className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <BookOpen className="h-5 w-5 text-green-600" />
-                  <span>Overview</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="prose prose-gray max-w-none">
-                  {content.content.overview.split('\n\n').map((paragraph: string, index: number) => (
-                    <p key={index} className="text-gray-700 leading-relaxed mb-4">
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            {content.content.objectives && (
-              <Card>
-                <CardHeader>
-                  <CardTitle>Learning Objectives</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {content.content.objectives.map((objective: string, index: number) => (
-                      <li key={index} className="flex items-start space-x-3">
-                        <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">{objective}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            )}
-          </TabsContent>
-
-          <TabsContent value="examples" className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center space-x-2">
-                  <Code className="h-5 w-5 text-green-600" />
-                  <span>Code Example</span>
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="bg-gray-900 rounded-lg p-4 relative">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-400 text-sm">Example Code</span>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      onClick={copyCode}
-                      className="text-gray-400 hover:text-white"
-                    >
-                      {copiedCode ? <CheckCircle className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                    </Button>
-                  </div>
-                  <pre className="text-green-400 text-sm overflow-x-auto">
-                    <code>{content.codeExample}</code>
-                  </pre>
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
-        </Tabs>
-
+        <Card>
+          <CardContent>
+            {content.markdown ? (
+              <div className="prose prose-gray max-w-none pt-6">
+                <ReactMarkdown>{content.markdown}</ReactMarkdown>
+              </div>
+            ) : content.content?.overview ? (
+              <div className="prose prose-gray max-w-none pt-6">
+                {content.content.overview.split('\n\n').map((paragraph: string, index: number) => (
+                  <p key={index} className="text-gray-700 leading-relaxed mb-4">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            ) : null}
+          </CardContent>
+        </Card>
+        {content.content && content.content.objectives && (
+          <Card>
+            <CardHeader>
+              <CardTitle>Learning Objectives</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-3">
+                {content.content.objectives.map((objective: string, index: number) => (
+                  <li key={index} className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700">{objective}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        )}
         {/* Navigation */}
         <div className="flex justify-between items-center pt-8 border-t border-gray-200">
           <Button 
