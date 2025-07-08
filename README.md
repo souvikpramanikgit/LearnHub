@@ -1,6 +1,6 @@
 # LearnHub
 
-![image](https://github.com/user-attachments/assets/ad4cbd0e-9089-4b87-84e0-4187b1bbbf70)
+![image](https://github.com/user-attachments/assets/9dbbdd58-e5e5-4e3a-bfc7-fc5809cb756c)
 <!-- ![image](https://github.com/user-attachments/assets/bae45c33-bb0c-4705-9763-a4786fe9d183) -->
 
 ## Tech Stack
