@@ -29,7 +29,7 @@ Close #<issue_no>
 
 - [ ] I'm a GSSOC contributor
 
-**[Do you follow me](https://github.com/souvikpramanikgit)? (Optional 😊)**  
+** [Do you follow me](https://github.com/souvikpramanikgit) ? (Optional 😊)**  
 <!-- Just for fun and connection! -->
 
 - [ ] Yes, I follow you on GitHub  
