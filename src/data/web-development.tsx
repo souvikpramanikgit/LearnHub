@@ -1,5 +1,18 @@
 import introductionContent from './web-development/introduction.md?raw';
 import setupContent from './web-development/setup.md?raw';
+import basicsContent from './web-development/basics.md?raw';
+import htmlElementsContent from './web-development/html-elements.md?raw';
+import htmlAttributesContent from './web-development/html-attributes.md?raw';
+import htmlFormsContent from './web-development/html-forms.md?raw';
+import cssBasicsContent from './web-development/css-basics.md?raw';
+import cssSelectorsContent from './web-development/css-selectors.md?raw';
+import cssLayoutContent from './web-development/css-layout.md?raw';
+import jsBasicsContent from './web-development/js-basics.md?raw';
+import jsDomContent from './web-development/js-dom.md?raw';
+import jsEventsContent from './web-development/js-events.md?raw';
+import responsiveContent from './web-development/responsive.md?raw';
+import frameworksContent from './web-development/frameworks.md?raw';
+import deploymentContent from './web-development/deployment.md?raw';
 
 export const webDevelopmentContent = {
   introduction: {
@@ -7,6 +20,45 @@ export const webDevelopmentContent = {
   },
   setup: {
     markdown: setupContent,
+  },
+  basics: {
+    markdown: basicsContent,
+  },
+  'html-elements': {
+    markdown: htmlElementsContent,
+  },
+  'html-attributes': {
+    markdown: htmlAttributesContent,
+  },
+  'html-forms': {
+    markdown: htmlFormsContent,
+  },
+  'css-basics': {
+    markdown: cssBasicsContent,
+  },
+  'css-selectors': {
+    markdown: cssSelectorsContent,
+  },
+  'css-layout': {
+    markdown: cssLayoutContent,
+  },
+  'js-basics': {
+    markdown: jsBasicsContent,
+  },
+  'js-dom': {
+    markdown: jsDomContent,
+  },
+  'js-events': {
+    markdown: jsEventsContent,
+  },
+  responsive: {
+    markdown: responsiveContent,
+  },
+  frameworks: {
+    markdown: frameworksContent,
+  },
+  deployment: {
+    markdown: deploymentContent,
   },
   // Add other sections here as needed
 };

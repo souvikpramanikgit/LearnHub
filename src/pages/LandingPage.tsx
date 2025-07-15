@@ -117,6 +117,9 @@ export const LandingPage = () => {
 
           <div className="hidden md:flex items-center space-x-6">
             <Button variant="ghost" onClick={handleViewCourses}>Courses</Button>
+            <Button variant="outline" onClick={() => navigate('/dsa-sheet')}>
+              DSA Sheet
+            </Button>
             <Button onClick={handleStartLearning} className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700">
               Start Learning
             </Button>
@@ -140,16 +143,16 @@ export const LandingPage = () => {
               Zero fluff. One roadmap. Your path to becoming a complete developer starts now.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 onClick={handleStartLearning}
                 className="bg-green-700 hover:bg-green-800 text-lg px-8 py-6 rounded-xl font-semibold flex items-center gap-2"
               >
                 🚀 Get Started Free
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 onClick={handleViewCourses}
                 className="text-lg px-8 py-6 rounded-xl border-2 font-semibold flex items-center gap-2"
               >
@@ -170,7 +173,7 @@ export const LandingPage = () => {
               {/* Code content */}
               <div className="px-6 pt-4 pb-2">
                 <pre className="font-mono text-green-400 text-sm leading-relaxed mb-2 bg-transparent p-0">
-{`// Day 1: Binary Search + React Setup
+                  {`// Day 1: Binary Search + React Setup
 function binarySearch(arr, target) {
   return recursiveSearch(arr, 0, arr.length-1, target);
 }
@@ -180,7 +183,7 @@ function binarySearch(arr, target) {
               </div>
               {/* Project deployed banner */}
               <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-b-2xl px-4 py-3 flex items-center gap-2 border-t border-gray-700">
-                <span className="text-white font-semibold text-base">✅ Project Deployed</span><br/>
+                <span className="text-white font-semibold text-base">✅ Project Deployed</span><br />
                 <span className="text-white text-xs">Portfolio + 150 DSA Problems Solved</span>
               </div>
             </div>
@@ -226,8 +229,8 @@ function binarySearch(arr, target) {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {courses.map((course) => (
-              <Card 
-                key={course.id} 
+              <Card
+                key={course.id}
                 className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer border-0 shadow-lg"
                 onClick={() => handleCourseClick(course.id)}
               >
@@ -279,11 +282,11 @@ function binarySearch(arr, target) {
         <div className="relative max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Career?</h2>
           <p className="text-xl mb-10 max-w-2xl mx-auto opacity-90">
-            Join thousands of successful learners who have accelerated their careers with LearnHub's 
+            Join thousands of successful learners who have accelerated their careers with LearnHub's
             comprehensive technology courses.
           </p>
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             onClick={handleStartLearning}
             className="bg-white text-green-600 hover:bg-gray-100 text-lg px-8 py-6 rounded-xl font-semibold"
           >
