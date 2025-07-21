@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .tilt-on-hover {
+    transform: rotate(10deg);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .tilt-on-hover:hover {
+
+    transform: rotate(0deg);
+  }
+}
