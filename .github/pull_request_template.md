@@ -1,33 +1,20 @@
-# Title and Issue number 
-<!-- Please make sure issue number is mention in Pull Request else PR will not be merged. -->
-Title :
+## 📥 Pull Request
 
-Code Stack : 
+### Description
+Please include a summary of the change and which issue is fixed. Please also include relevant motivation and context. List any dependencies that are required for this change.
 
-Close #<issue_no>
-<!-- Example Close #244  -->
-<!-- Replace `issue_no` with the issue number which is fixed in this PR -->
+Fixes # (issue number)
 
-
-# Video or Photo (mandatory)
+### Video or Photo (mandatory)
 <!--Please try to attach the working video of your new deployed project here -->
 
-
-# Checklist:
+### Checklist:
 
 - [ ] I have mentioned the issue number in my Pull Request.
 - [ ] I have commented my code, particularly in hard-to-understand areas
 - [ ] I have created a helpful and easy to understand `README.md` if its a new page/tech stack
 - [ ] I have gone through the `CONTRIBUTING.md` file before contributing
 
-
-<!-- [X] - put a cross/X inside [] to check the box -->
-**Additional context (Mandatory )**
-
-***Are you contributing under any Open-source programme?***
-<!--Mention it here-->
-
-- [ ] I'm a GSSOC contributor
 
 **Do you follow me? (Optional 😊)** 
 <!-- Just for fun and connection! -->
