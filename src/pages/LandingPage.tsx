@@ -162,7 +162,7 @@ export const LandingPage = () => {
             </div>
           </div>
           {/* Right: Code Card */}
-          <div className="flex-1 flex justify-center lg:justify-end mt-12 lg:mt-0 hover:animate-rotate-left-right">
+          <div className="flex-1 flex justify-center lg:justify-end mt-12 lg:mt-0 tilt-on-hover">
             <div className=" bg-[#181f2a] rounded-2xl shadow-2xl p-0 w-full max-w-md text-left relative border border-gray-800 ">
               {/* VS Code style top bar */}
               <div className="flex items-center gap-2 px-4 py-2 bg-[#232b3a] rounded-t-2xl border-b border-gray-700">

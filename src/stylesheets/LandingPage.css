@@ -3,22 +3,13 @@
 @tailwind utilities;
 
 @layer utilities {
-  .animate-rotate-left-right {
-    animation: rotateLeftRight 1s ease-in-out infinite alternate;
+  .tilt-on-hover {
+    transform: rotate(10deg);
+    transition: transform 0.5s ease-in-out;
   }
-}
 
-@keyframes rotateLeftRight {
-  0% {
-    transform: rotate(5deg);
-  }
-  25% {
-    transform: rotate(-5deg);
-  }
-  75% {
-    transform: rotate(5deg);
-  }
-  100% {
-    transform: rotate(5deg);
+  .tilt-on-hover:hover {
+
+    transform: rotate(0deg);
   }
 }
