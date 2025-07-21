@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-rotate-left-right {
+    animation: rotateLeftRight 1s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes rotateLeftRight {
+  0% {
+    transform: rotate(5deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
