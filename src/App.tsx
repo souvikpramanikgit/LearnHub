@@ -9,6 +9,8 @@ import { LandingPage } from "./pages/LandingPage";
 import CoursePage from "./pages/CoursePage";
 import NotFound from "./pages/NotFound";
 import DSASheet from './pages/DSASheet';
+import LearningAnalytics from "@/components/LearningAnalytics";
+
 
 const queryClient = new QueryClient();
 
@@ -24,6 +26,8 @@ const App = () => (
           <Route path="/course/:courseId" element={<CoursePage />} />
           <Route path="/dsa-sheet" element={<DSASheet />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/analytics" element={<LearningAnalytics />} />
+
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

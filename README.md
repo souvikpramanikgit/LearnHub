@@ -2,7 +2,6 @@
 
 ![Screen Recording 2025-07-22 145437](https://github.com/user-attachments/assets/55fc4eba-8956-4b65-8f62-7ec6a902c6c8)
 <!-- ![image](https://github.com/user-attachments/assets/9dbbdd58-e5e5-4e3a-bfc7-fc5809cb756c) -->
-<!-- ![image](https://github.com/user-attachments/assets/bae45c33-bb0c-4705-9763-a4786fe9d183) -->
 
 ## Tech Stack
 
@@ -11,7 +10,6 @@
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-
 
 ## Overview
 
