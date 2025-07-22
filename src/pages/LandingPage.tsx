@@ -172,8 +172,8 @@ export const LandingPage = () => {
                 <span className="ml-2 text-xs text-gray-400 font-mono">VS Code + LeetCode</span>
               </div>
               {/* Code content */}
-              <div className="px-6 pt-4 pb-2">
-                <pre className="font-mono text-green-400 text-sm leading-relaxed mb-2 bg-transparent p-0">
+              <div className="px-4 pt-4 pb-2">
+                <pre className="font-mono text-green-400 text-sm leading-relaxed mb-2 bg-transparent px-2 py-1 whitespace-pre-wrap break-words">
                   {`// Day 1: Binary Search + React Setup
 function binarySearch(arr, target) {
   return recursiveSearch(arr, 0, arr.length-1, target);
