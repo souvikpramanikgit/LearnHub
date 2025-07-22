@@ -136,7 +136,7 @@ export const TopNav = ({ onMenuClick, sidebarOpen }: TopNavProps) => {
 
 {/* courses and start learning button on next row for mobile devices */}
 
-      <div className="flex  justify-center items-center gap-3 mt-3 sm:hidden">
+      <div className="flex  justify-center items-center gap-3 my-1 pt-3 sm:hidden ">
         {" "}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
