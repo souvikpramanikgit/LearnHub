@@ -9,6 +9,8 @@ import CoursePage from "./pages/CoursePage";
 import NotFound from "./pages/NotFound";
 import DSASheet from './pages/DSASheet';
 import CSFundamentals from '@/pages/CSFundamentals';
+import LearningAnalytics from "@/components/LearningAnalytics";
+
 
 const queryClient = new QueryClient();
 
@@ -25,6 +27,8 @@ const App = () => (
           <Route path="/dsa-sheet" element={<DSASheet />} />
           <Route path="/cs-fundamentals" element={<CSFundamentals />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/analytics" element={<LearningAnalytics />} />
+
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
