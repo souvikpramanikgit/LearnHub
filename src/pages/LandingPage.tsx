@@ -139,19 +139,58 @@ export const LandingPage = () => {
               </p>
             </div>
           </div>
-
+          
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            <Button variant="ghost" onClick={handleViewCourses}>
+            {/* Courses */}
+            <button 
+              onClick={handleViewCourses}
+              className="text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200"
+            >
               Courses
-            </Button>
-            <Button variant="outline" onClick={() => navigate("/dsa-sheet")}>
+            </button>
+            
+            {/* DSA Sheet */}
+            <button 
+              onClick={() => navigate('/dsa-sheet')}
+              className="px-4 py-2 border border-gray-200 rounded-lg text-gray-700 hover:text-gray-900 hover:border-gray-300 font-medium transition-all duration-200"
+            >
               DSA Sheet
-            </Button>
-            <Button
-              onClick={handleStartLearning}
-              className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700"
+            </button>
+            
+            {/* Analytics */}
+            <button 
+              onClick={() => navigate('/analytics')}
+              className="flex items-center space-x-2 text-purple-600 hover:text-purple-700 font-medium transition-colors duration-200"
+            >
+              <BarChart3 className="h-4 w-4" />
+              <span>Analytics</span>
+            </button>
+            
+            {/* Start Learning Button */}
+            <Button 
+              onClick={handleStartLearning} 
+              className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200"
             >
               Start Learning
+            </Button>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="md:hidden flex items-center space-x-2">
+            <button 
+              onClick={() => navigate('/analytics')}
+              className="flex items-center space-x-1 text-purple-600 px-2 py-1"
+            >
+              <BarChart3 className="h-4 w-4" />
+              <span className="text-sm">Analytics</span>
+            </button>
+            <Button 
+              size="sm" 
+              onClick={handleStartLearning} 
+              className="bg-green-600 hover:bg-green-700 text-white"
+            >
+              Start
             </Button>
           </div>
         </div>
@@ -230,8 +269,7 @@ export const LandingPage = () => {
                   {`// Day 1: Binary Search + React Setup
 function binarySearch(arr, target) {
   return recursiveSearch(arr, 0, arr.length-1, target);
-}
-`}
+}`}
                 </pre>
                 <span className="block text-yellow-400 text-xs font-mono mb-2">
                   // Building TodoApp with optimized search...
@@ -353,6 +391,22 @@ function binarySearch(arr, target) {
 
                 <div className="p-4 pt-0">
                   <Button className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700">
+                    <Badge variant="secondary" className="text-xs">
+                      {course.level}
+                    </Badge>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-600 text-sm leading-relaxed">{course.description}</p>
+                  <div className="space-y-2 text-sm text-gray-500">
+                    <div className="flex items-center justify-between">
+                      <span className="flex items-center">
+                      </span>
+                      <span className="flex items-center">
+                      </span>
+                    </div>
+                  </div>
+                  <Button className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 mt-4">
                     Start Course <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
