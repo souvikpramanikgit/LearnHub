@@ -11,6 +11,7 @@ import {
   blockchainContent, blockchainStructure
 } from '@/data';
 import ReactMarkdown from 'react-markdown';
+import { useNavigate } from 'react-router-dom'; // <-- Added import
 
 interface CourseContentProps {
   activeSection: string;
@@ -35,15 +36,16 @@ const courseStructure: Record<string, any> = {
 export const CourseContent = ({ activeSection, courseId, onSectionChange }: CourseContentProps) => {
   const [copiedCode, setCopiedCode] = useState(false);
   const { toast } = useToast();
-  
+  const navigate = useNavigate(); // <-- Added hook
+
   const courseContent = contentData[courseId] || contentData['web-development'];
   const content = courseContent[activeSection] || courseContent[Object.keys(courseContent)[0]];
-  
+
   // Get all sections in order for navigation
   const currentCourseStructure = courseStructure[courseId] || courseStructure['web-development'];
   const allSections = currentCourseStructure.flatMap((module: any) => module.sections);
   const currentIndex = allSections.findIndex((section: any) => section.id === activeSection);
-  
+
   const previousSection = currentIndex > 0 ? allSections[currentIndex - 1] : null;
   const nextSection = currentIndex < allSections.length - 1 ? allSections[currentIndex + 1] : null;
 
@@ -83,6 +85,17 @@ export const CourseContent = ({ activeSection, courseId, onSectionChange }: Cour
         </div>
         <h1 className="text-3xl font-bold text-gray-900 mb-2">{content.title}</h1>
         <p className="text-lg text-gray-600">{content.description}</p>
+      </div>
+
+      {/* Back to Home Button */}
+      <div className="mb-6">
+        <Button
+          className="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-sm transition"
+          onClick={() => navigate('/')}
+        >
+          <ArrowLeft className="h-4 w-4" />
+          <span>Back to Home</span>
+        </Button>
       </div>
 
       {/* Main Content */}
