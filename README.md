@@ -11,7 +11,6 @@
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
-
 ## Overview
 
 LearnHub is a platform designed to help users master essential technology skills. Built primarily with TypeScript, LearnHub aims to provide an engaging, modular, and scalable learning experience for developers and technology enthusiasts.
