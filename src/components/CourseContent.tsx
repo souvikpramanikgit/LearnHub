@@ -72,7 +72,7 @@ export const CourseContent = ({ activeSection, courseId, onSectionChange }: Cour
   };
 
   return (
-    <div className="p-6 pt-6 max-w-4xl mx-auto">
+    <div className="p-4 sm:p-6 pt-6 max-w-full sm:max-w-4xl mx-auto">
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center space-x-2 mb-4">
