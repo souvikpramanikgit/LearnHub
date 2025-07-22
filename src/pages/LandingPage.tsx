@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, Users, Award, ArrowRight, Code, Brain, Database, Link, Star, TrendingUp } from 'lucide-react';
+import { BookOpen, Users, Award, ArrowRight, Code, Brain, Database, Link, Star, TrendingUp, BarChart3 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -14,9 +14,6 @@ const courses = [
     description: 'Learn HTML, CSS, JavaScript, and modern frameworks to build stunning websites and web applications.',
     icon: Code,
     color: 'bg-blue-500',
-    // students: '15,432',
-    // lessons: 45,
-    // duration: '12 weeks',
     level: 'Beginner to Advanced',
     rating: 4.8
   },
@@ -26,9 +23,6 @@ const courses = [
     description: 'Master AI technologies including ChatGPT, DALL-E, and learn to build AI-powered applications.',
     icon: Brain,
     color: 'bg-purple-500',
-    // students: '8,721',
-    // lessons: 32,
-    // duration: '8 weeks',
     level: 'Intermediate',
     rating: 4.9
   },
@@ -38,9 +32,6 @@ const courses = [
     description: 'Build strong programming foundations with essential data structures and algorithmic thinking.',
     icon: Database,
     color: 'bg-green-500',
-    // students: '12,156',
-    // lessons: 38,
-    // duration: '10 weeks',
     level: 'Beginner to Intermediate',
     rating: 4.7
   },
@@ -50,9 +41,6 @@ const courses = [
     description: 'Explore cryptocurrency, smart contracts, and decentralized applications on various blockchain platforms.',
     icon: Link,
     color: 'bg-orange-500',
-    // students: '6,543',
-    // lessons: 28,
-    // duration: '6 weeks',
     level: 'Advanced',
     rating: 4.6
   }
@@ -116,14 +104,58 @@ export const LandingPage = () => {
               <p className="text-xs text-gray-500 font-medium">Master Technology Skills</p>
             </div>
           </div>
-
+          
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            <Button variant="ghost" onClick={handleViewCourses}>Courses</Button>
-            <Button variant="outline" onClick={() => navigate('/dsa-sheet')}>
+            {/* Courses */}
+            <button 
+              onClick={handleViewCourses}
+              className="text-gray-700 hover:text-gray-900 font-medium transition-colors duration-200"
+            >
+              Courses
+            </button>
+            
+            {/* DSA Sheet */}
+            <button 
+              onClick={() => navigate('/dsa-sheet')}
+              className="px-4 py-2 border border-gray-200 rounded-lg text-gray-700 hover:text-gray-900 hover:border-gray-300 font-medium transition-all duration-200"
+            >
               DSA Sheet
-            </Button>
-            <Button onClick={handleStartLearning} className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700">
+            </button>
+            
+            {/* Analytics */}
+            <button 
+              onClick={() => navigate('/analytics')}
+              className="flex items-center space-x-2 text-purple-600 hover:text-purple-700 font-medium transition-colors duration-200"
+            >
+              <BarChart3 className="h-4 w-4" />
+              <span>Analytics</span>
+            </button>
+            
+            {/* Start Learning Button */}
+            <Button 
+              onClick={handleStartLearning} 
+              className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium transition-all duration-200"
+            >
               Start Learning
+            </Button>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="md:hidden flex items-center space-x-2">
+            <button 
+              onClick={() => navigate('/analytics')}
+              className="flex items-center space-x-1 text-purple-600 px-2 py-1"
+            >
+              <BarChart3 className="h-4 w-4" />
+              <span className="text-sm">Analytics</span>
+            </button>
+            <Button 
+              size="sm" 
+              onClick={handleStartLearning} 
+              className="bg-green-600 hover:bg-green-700 text-white"
+            >
+              Start
             </Button>
           </div>
         </div>
@@ -190,8 +222,7 @@ export const LandingPage = () => {
                   {`// Day 1: Binary Search + React Setup
 function binarySearch(arr, target) {
   return recursiveSearch(arr, 0, arr.length-1, target);
-}
-`}
+}`}
                 </pre>
                 <span className="block text-yellow-400 text-xs font-mono mb-2">// Building TodoApp with optimized search...</span>
               </div>
@@ -268,17 +299,10 @@ function binarySearch(arr, target) {
                   <div className="space-y-2 text-sm text-gray-500">
                     <div className="flex items-center justify-between">
                       <span className="flex items-center">
-                        {/* <Users className="h-4 w-4 mr-1" />
-                        {course.students} */}
                       </span>
                       <span className="flex items-center">
-                        {/* <Clock className="h-4 w-4 mr-1" />
-                        {course.duration} */}
                       </span>
                     </div>
-                    {/* <div className="flex justify-between">
-                      <span>{course.lessons} lessons</span>
-                    </div> */}
                   </div>
                   <Button className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 mt-4">
                     Start Course <ArrowRight className="ml-2 h-4 w-4" />
