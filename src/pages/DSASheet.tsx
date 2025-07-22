@@ -17,19 +17,32 @@ const demoData = [
     {
         title: 'Arrays',
         solved: 1,
-        total: 2,
+        total: 14,
         problems: [
             { question: 'Reverse an Array', difficulty: 'Easy', solved: true },
+            { question: 'Two Sum - Pairs with 0 sum', difficulty: 'Easy', solved: false },
+            { question: 'Remove Duplicates from sorted array', difficulty: 'Easy', solved: false },
+            { question: 'Left Rotate an array by D places', difficulty: 'Easy', solved: false },
+            { question: 'Maximum Consecutive Ones', difficulty: 'Easy', solved: false },
             { question: 'Find the Maximum Subarray Sum', difficulty: 'Medium', solved: false },
+            { question: 'Find the number that appears once and other twice', difficulty: 'Medium', solved: false },
+            { question: "Sort an array of 0's 1's and 2's", difficulty: 'Medium', solved: false },
+            { question: "Next Permutation", difficulty: 'Medium', solved: false },
+            { question: "Count Inversions", difficulty: 'Medium', solved: false },
+            { question: "Spirally traversing a matrix", difficulty: 'Medium', solved: false },
+            { question: "Find the repeating and missing number", difficulty: 'Hard', solved: false },
+            { question: "Count number of subarrays with given xor K", difficulty: 'Hard', solved: false },
+            { question: "4 Sum Problem", difficulty: 'Hard', solved: false },
         ],
     },
     {
         title: 'Strings',
         solved: 0,
-        total: 10,
+        total: 11,
         problems: [
             { question: 'Reverse a String', difficulty: 'Easy', solved: false },
             { question: 'Check for Palindrome', difficulty: 'Easy', solved: false },
+            { question: 'Sort Characters by frequency', difficulty: 'Easy', solved: false },
             { question: 'Longest Common Prefix', difficulty: 'Medium', solved: false },
             { question: 'String to Integer (atoi)', difficulty: 'Medium', solved: false },
             { question: 'Group Anagrams', difficulty: 'Medium', solved: false },
@@ -40,6 +53,100 @@ const demoData = [
             { question: 'Count and Say', difficulty: 'Easy', solved: false },
         ],
     },
+    {
+       title: 'Recursion',
+        solved: 0,
+        total: 10, 
+        problems:[
+             { question: 'Reverse a stack using recursion', difficulty: 'Easy', solved: false },
+             { question: 'Count Good numbers', difficulty: 'Easy', solved: false },
+             { question: 'Letter Combinations of a Phone number', difficulty: 'Medium', solved: false },
+             { question: 'Combination Sum', difficulty: 'Medium', solved: false },
+             { question: 'Check if there exists a subsequence with sum K', difficulty: 'Medium', solved: false },
+             { question: 'Print all subsequences/Power Set', difficulty: 'Medium', solved: false },
+             { question: 'Word Search', difficulty: 'Medium', solved: false },
+             { question: 'Count all subsequences with sum K', difficulty: 'Hard', solved: false },
+             { question: 'Expression Add Operators', difficulty: 'Hard', solved: false },
+             { question: 'N Queen', difficulty: 'Hard', solved: false },
+
+        ],
+
+    },
+    {
+       title: 'Hash',
+        solved: 0,
+        total: 8, 
+        problems:[
+             { question: 'Frequencies in a Limited Array', difficulty: 'Easy', solved: false },
+             { question: 'Non Repeating Character', difficulty: 'Easy', solved: false },
+             { question: 'Longest Substring with K Unique ', difficulty: 'Medium', solved: false },
+             { question: 'Zero Sum Subarrays', difficulty: 'Medium', solved: false },
+             { question: 'Smallest distinct window', difficulty: 'Medium', solved: false },
+             { question: 'Longest subarray with sum divisible by K', difficulty: 'Medium', solved: false },
+             { question: 'Smallest window containing all characters of a string', difficulty: 'Hard', solved: false },
+             { question: 'Minimum operations to convert Array A to B', difficulty: 'Hard', solved: false },
+
+        ],
+
+    },
+    {
+       title: 'Linked List',
+        solved: 0,
+        total: 10, 
+        problems:[
+             { question: 'Linked List Insertion At End', difficulty: 'Easy', solved: false },
+             { question: 'Reverse a linked list', difficulty: 'Easy', solved: false },
+             { question: 'Add Number Linked Lists', difficulty: 'Medium', solved: false },
+             { question: 'Rotate a Linked List', difficulty: 'Medium', solved: false },
+             { question: 'Check if there exists a subsequence with sum K', difficulty: 'Medium', solved: false },
+             { question: 'Detect a loop in Linked List', difficulty: 'Medium', solved: false },
+             { question: 'Delete the middle node of LL', difficulty: 'Medium', solved: false },
+             { question: 'Reverse LL in group of given size K', difficulty: 'Hard', solved: false },
+             { question: 'Linked List Group Reverse', difficulty: 'Hard', solved: false },
+             { question: 'Clone a Linked List with random and next pointer', difficulty: 'Hard', solved: false },
+
+        ],
+
+    },
+    {
+       title: 'Trees',
+        solved: 0,
+        total: 11, 
+        problems:[
+             { question: 'Left View of Binary Tree', difficulty: 'Easy', solved: false },
+             { question: 'Right View of Binary Tree', difficulty: 'Easy', solved: false },
+             { question: 'Balanced Tree Check', difficulty: 'Easy', solved: false },
+             { question: 'Tree Boundary Traversal', difficulty: 'Medium', solved: false },
+             { question: 'Vertical Tree Traversal', difficulty: 'Medium', solved: false },
+             { question: 'Sum of nodes on the longest Path', difficulty: 'Medium', solved: false },
+             { question: 'Isomorphic Trees', difficulty: 'Medium', solved: false },
+             { question: 'Maximum path sum from any node', difficulty: 'Medium', solved: false },
+             { question: 'Burning Tree', difficulty: 'Hard', solved: false },
+             { question: 'Min distance between two given nodes in a Binary Tree', difficulty: 'Hard', solved: false },
+             { question: 'Max Path Sum 2 Special Nodes', difficulty: 'Hard', solved: false },
+
+        ],
+
+    },
+    {
+       title: 'Graphs',
+        solved: 0,
+        total: 9, 
+        problems:[
+             { question: 'BFS of Graph', difficulty: 'Easy', solved: false },
+             { question: 'DFS of Graph', difficulty: 'Easy', solved: false },
+             { question: 'Number of provinces', difficulty: 'Medium', solved: false },
+             { question: '0/1 Matrix (Bfs Problem)', difficulty: 'Medium', solved: false },
+             { question: 'Dijkstra Algorithm', difficulty: 'Medium', solved: false },
+             { question: 'Minimum Spanning Tree', difficulty: 'Medium', solved: false },
+             { question: 'Bipartite Graph (DFS)', difficulty: 'Hard', solved: false },
+             { question: 'Cycle Detection in Directed Graph (DFS)', difficulty: 'Hard', solved: false },
+             { question: 'Surrounded Regions (dfs)', difficulty: 'Hard', solved: false },
+
+        ],
+
+    },
+    
 ];
 
 const DSASheet = () => {
