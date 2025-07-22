@@ -42,9 +42,10 @@ export const Sidebar = ({ activeSection, onSectionChange, isOpen, onClose, cours
         "fixed top-16 left-0 z-40 w-64 h-[calc(100vh-4rem)] bg-white border-r border-gray-200 transform transition-transform duration-300 ease-in-out lg:translate-x-0",
         isOpen ? "translate-x-0" : "-translate-x-full"
       )}>
-        <div className="flex flex-col h-full">
+        {/* sidebar goes a bit down for mobile screens */}
+        <div className="flex flex-col  sm:translate-y-0 pt-2 sm:pt-0 translate-y-12 h-full">
           {/* Close button for mobile */}
-          <div className="flex items-center justify-between p-4 border-b lg:hidden">
+          <div className="flex items-center  justify-between p-4 border-b lg:hidden">
             <h2 className="font-semibold text-gray-900">Course Content</h2>
             <Button variant="ghost" size="sm" onClick={onClose}>
               <X className="h-4 w-4" />
