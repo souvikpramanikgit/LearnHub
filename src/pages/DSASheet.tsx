@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, CheckSquare, Square } from 'lucide-react';
+import { ChevronDown, ChevronUp, CheckSquare, Square, Bookmark, BookmarkCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { TopNav } from '@/components/TopNav';
 
@@ -27,11 +27,27 @@ const demoData = [
 
 const DSASheet = () => {
     const [openSections, setOpenSections] = useState<number[]>([]);
+    // Bookmark state: { 'sectionIdx-problemIdx': true }
+    const [bookmarks, setBookmarks] = useState<{ [key: string]: boolean }>(() => {
+        // Load from localStorage if available
+        const saved = localStorage.getItem('dsaBookmarks');
+        return saved ? JSON.parse(saved) : {};
+    });
 
     const toggleSection = (idx: number) => {
         setOpenSections((prev) =>
             prev.includes(idx) ? prev.filter((i) => i !== idx) : [...prev, idx]
         );
+    };
+
+    // Handle bookmark toggle
+    const handleBookmark = (sectionIdx: number, problemIdx: number) => {
+        const key = `${sectionIdx}-${problemIdx}`;
+        setBookmarks((prev) => {
+            const updated = { ...prev, [key]: !prev[key] };
+            localStorage.setItem('dsaBookmarks', JSON.stringify(updated));
+            return updated;
+        });
     };
 
     // Force light mode for this page
@@ -81,6 +97,7 @@ const DSASheet = () => {
                                                 <th className="py-2">Question</th>
                                                 <th className="py-2">Difficulty</th>
                                                 <th className="py-2">Solved</th>
+                                                <th className="py-2">Bookmark</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -103,6 +120,19 @@ const DSASheet = () => {
                                                         ) : (
                                                             <Square className="inline h-5 w-5 text-gray-400" />
                                                         )}
+                                                    </td>
+                                                    <td className="py-2 text-center">
+                                                        <button
+                                                            aria-label={bookmarks[`${idx}-${pidx}`] ? 'Remove Bookmark' : 'Add Bookmark'}
+                                                            onClick={() => handleBookmark(idx, pidx)}
+                                                            className="focus:outline-none"
+                                                        >
+                                                            {bookmarks[`${idx}-${pidx}`] ? (
+                                                                <BookmarkCheck className="inline h-5 w-5 text-blue-600" />
+                                                            ) : (
+                                                                <Bookmark className="inline h-5 w-5 text-gray-400" />
+                                                            )}
+                                                        </button>
                                                     </td>
                                                 </tr>
                                             ))}
