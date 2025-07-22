@@ -79,11 +79,12 @@ const DSASheet = () => {
     const [topic, setTopic] = useState('All Topics');
     const [showBookmarks, setShowBookmarks] = useState(false);
 
-  // Load data from localStorage or use default
-  useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    setSections(stored ? JSON.parse(stored) : defaultData);
-  }, []);
+    // Toggle section open/close
+    const toggleSection = (idx: number) => {
+        setOpenSections((prev) =>
+            prev.includes(idx) ? prev.filter((i) => i !== idx) : [...prev, idx]
+        );
+    };
 
     // Handle bookmark toggle
     const handleBookmark = (sectionIdx: number, problemIdx: number) => {
@@ -158,7 +159,7 @@ const DSASheet = () => {
 
     return (
         <>
-            <TopNav onMenuClick={() => {}} sidebarOpen={false} />
+            <TopNav onMenuClick={() => { }} sidebarOpen={false} />
             <div className="min-h-screen bg-white text-gray-900 px-4 py-8 flex flex-row gap-8 max-w-7xl mx-auto">
                 {/* Stats Sidebar */}
                 <aside className="w-80 flex-shrink-0">
@@ -368,61 +369,61 @@ const DSASheet = () => {
                                     }
                                     if (filteredProblems.length === 0) return null;
                                     return (
-                        <div key={section.title} className="border rounded-lg bg-white shadow">
-                            <button
-                                className="w-full flex justify-between items-center px-6 py-4 text-lg font-semibold focus:outline-none"
-                                onClick={() => toggleSection(idx)}
-                            >
-                                <span>{section.title}</span>
-                                <span className="flex items-center space-x-2">
-                                    <span className="text-green-600 font-medium">
-                                        {section.solved} / {section.total} solved
-                                    </span>
-                                    {openSections.includes(idx) ? (
-                                        <ChevronUp className="h-5 w-5" />
-                                    ) : (
-                                        <ChevronDown className="h-5 w-5" />
-                                    )}
-                                </span>
-                            </button>
-                            {openSections.includes(idx) && (
-                                <div className="px-6 pb-4">
-                                    <table className="w-full text-left border-t mt-2">
-                                        <thead>
-                                            <tr className="text-gray-700">
-                                                <th className="py-2">Question</th>
-                                                <th className="py-2">Difficulty</th>
-                                                <th className="py-2">Solved</th>
+                                        <div key={section.title} className="border rounded-lg bg-white shadow">
+                                            <button
+                                                className="w-full flex justify-between items-center px-6 py-4 text-lg font-semibold focus:outline-none"
+                                                onClick={() => toggleSection(idx)}
+                                            >
+                                                <span>{section.title}</span>
+                                                <span className="flex items-center space-x-2">
+                                                    <span className="text-green-600 font-medium">
+                                                        {section.solved} / {section.total} solved
+                                                    </span>
+                                                    {openSections.includes(idx) ? (
+                                                        <ChevronUp className="h-5 w-5" />
+                                                    ) : (
+                                                        <ChevronDown className="h-5 w-5" />
+                                                    )}
+                                                </span>
+                                            </button>
+                                            {openSections.includes(idx) && (
+                                                <div className="px-6 pb-4">
+                                                    <table className="w-full text-left border-t mt-2">
+                                                        <thead>
+                                                            <tr className="text-gray-700">
+                                                                <th className="py-2">Question</th>
+                                                                <th className="py-2">Difficulty</th>
+                                                                <th className="py-2">Solved</th>
                                                                 <th className="py-2">Bookmark</th>
                                                                 <th className="py-2">Notes</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
                                                             {filteredProblems.map((problem, pidx) => {
                                                                 const key = `${idx}-${pidx}`;
                                                                 return (
-                                                <tr key={problem.question} className="border-b last:border-b-0">
-                                                    <td className="py-2">{problem.question}</td>
-                                                    <td className={
-                                                        'py-2 ' +
-                                                        (problem.difficulty === 'Easy'
-                                                            ? 'text-green-600'
-                                                            : problem.difficulty === 'Medium'
-                                                                ? 'text-yellow-600'
-                                                                : 'text-red-600')
-                                                    }>
-                                                        {problem.difficulty}
-                                                    </td>
-                                                    <td className="py-2 text-center">
+                                                                    <tr key={problem.question} className="border-b last:border-b-0">
+                                                                        <td className="py-2">{problem.question}</td>
+                                                                        <td className={
+                                                                            'py-2 ' +
+                                                                            (problem.difficulty === 'Easy'
+                                                                                ? 'text-green-600'
+                                                                                : problem.difficulty === 'Medium'
+                                                                                    ? 'text-yellow-600'
+                                                                                    : 'text-red-600')
+                                                                        }>
+                                                                            {problem.difficulty}
+                                                                        </td>
+                                                                        <td className="py-2 text-center">
                                                                             <button
                                                                                 aria-label={solved[key] ? 'Mark as Unsolved' : 'Mark as Solved'}
                                                                                 onClick={() => handleToggleSolved(idx, pidx)}
                                                                                 className="focus:outline-none"
                                                                             >
                                                                                 {solved[key] ? (
-                                                            <CheckSquare className="inline h-5 w-5 text-green-600" />
-                                                        ) : (
-                                                            <Square className="inline h-5 w-5 text-gray-400" />
+                                                                                    <CheckSquare className="inline h-5 w-5 text-green-600" />
+                                                                                ) : (
+                                                                                    <Square className="inline h-5 w-5 text-gray-400" />
                                                                                 )}
                                                                             </button>
                                                                         </td>
@@ -472,119 +473,24 @@ const DSASheet = () => {
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                        )}
-                                                    </td>
-                                                </tr>
+                                                                            )}
+                                                                        </td>
+                                                                    </tr>
                                                                 );
                                                             })}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            )}
-                        </div>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            )}
+                                        </div>
                                     );
                                 })
                         )}
-                </div>
+                    </div>
                 </main>
             </div>
         </>
     );
-  };
-
-  const toggleSolved = (sectionIdx: number, problemIdx: number) => {
-    const updated = [...sections];
-    updated[sectionIdx].problems[problemIdx].solved =
-      !updated[sectionIdx].problems[problemIdx].solved;
-    setSections(updated);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
-  };
-
-  return (
-    <>
-      <TopNav onMenuClick={() => {}} sidebarOpen={false} />
-      <div className="min-h-screen bg-white text-gray-900 px-4 py-8">
-        <h1 className="text-4xl font-bold text-center mb-2">DSA Practice Problems</h1>
-
-        <div className="max-w-4xl mx-auto space-y-4 mt-10">
-          {sections.map((section, sectionIdx) => {
-            const total = section.problems.length;
-            const solved = section.problems.filter((p) => p.solved).length;
-
-            return (
-              <div key={section.title} className="border rounded-lg bg-white shadow">
-                <button
-                  className="w-full flex justify-between items-center px-6 py-4 text-lg font-semibold focus:outline-none"
-                  onClick={() => toggleSection(sectionIdx)}
-                >
-                  <span>{section.title}</span>
-                  <span className="flex items-center space-x-2">
-                    <span className="text-green-600 font-medium">
-                      {solved} / {total} solved
-                    </span>
-                    {openSections.includes(sectionIdx) ? (
-                      <ChevronUp className="h-5 w-5" />
-                    ) : (
-                      <ChevronDown className="h-5 w-5" />
-                    )}
-                  </span>
-                </button>
-
-                {openSections.includes(sectionIdx) && (
-                  <div className="px-6 pb-4">
-                    <table className="w-full text-left border-t mt-2">
-                      <thead>
-                        <tr className="text-gray-700">
-                          <th className="py-2">Question</th>
-                          <th className="py-2">Difficulty</th>
-                          <th className="py-2 text-center">Solved</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {section.problems.map((problem, problemIdx) => (
-                          <tr
-                            key={problem.question}
-                            className="border-b last:border-b-0 hover:bg-gray-50"
-                          >
-                            <td className="py-2">{problem.question}</td>
-                            <td
-                              className={
-                                'py-2 ' +
-                                (problem.difficulty === 'Easy'
-                                  ? 'text-green-600'
-                                  : problem.difficulty === 'Medium'
-                                  ? 'text-yellow-600'
-                                  : 'text-red-600')
-                              }
-                            >
-                              {problem.difficulty}
-                            </td>
-                            <td className="py-2 text-center">
-                              <button
-                                onClick={() => toggleSolved(sectionIdx, problemIdx)}
-                                className="focus:outline-none"
-                                aria-label="Toggle solved"
-                              >
-                                {problem.solved ? (
-                                  <CheckSquare className="inline h-5 w-5 text-green-600" />
-                                ) : (
-                                  <Square className="inline h-5 w-5 text-gray-400" />
-                                )}
-                              </button>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </>
-  );
 };
 
 export default DSASheet;
