@@ -1,88 +1,107 @@
-import React from 'react';
-import { BookOpen, Users, Award, ArrowRight, Code, Brain, Database, Link, Star, TrendingUp } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { useNavigate } from 'react-router-dom';
-import "../stylesheets/LandingPage.css"
-import { Typewriter } from 'react-simple-typewriter';
+import React from "react";
+import {
+  BookOpen,
+  Users,
+  Award,
+  ArrowRight,
+  Code,
+  Brain,
+  Database,
+  Link,
+  Star,
+  TrendingUp,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
+import "../stylesheets/LandingPage.css";
+import { Typewriter } from "react-simple-typewriter";
 
 const courses = [
   {
-    id: 'web-development',
-    title: 'Web Development',
-    description: 'Learn HTML, CSS, JavaScript, and modern frameworks to build stunning websites and web applications.',
+    id: "web-development",
+    title: "Web Development",
+    description:
+      "Learn HTML, CSS, JavaScript, and modern frameworks to build stunning websites and web applications.",
     icon: Code,
-    color: 'bg-blue-500',
+    color: "bg-blue-500",
     // students: '15,432',
     // lessons: 45,
     // duration: '12 weeks',
-    level: 'Beginner to Advanced',
-    rating: 4.8
+    level: "Beginner to Advanced",
+    rating: 4.8,
   },
   {
-    id: 'generative-ai',
-    title: 'Generative AI',
-    description: 'Master AI technologies including ChatGPT, DALL-E, and learn to build AI-powered applications.',
+    id: "generative-ai",
+    title: "Generative AI",
+    description:
+      "Master AI technologies including ChatGPT, DALL-E, and learn to build AI-powered applications.",
     icon: Brain,
-    color: 'bg-purple-500',
+    color: "bg-purple-500",
     // students: '8,721',
     // lessons: 32,
     // duration: '8 weeks',
-    level: 'Intermediate',
-    rating: 4.9
+    level: "Intermediate",
+    rating: 4.9,
   },
   {
-    id: 'data-structures',
-    title: 'Data Structures & Algorithms',
-    description: 'Build strong programming foundations with essential data structures and algorithmic thinking.',
+    id: "data-structures",
+    title: "Data Structures & Algorithms",
+    description:
+      "Build strong programming foundations with essential data structures and algorithmic thinking.",
     icon: Database,
-    color: 'bg-green-500',
+    color: "bg-green-500",
     // students: '12,156',
     // lessons: 38,
     // duration: '10 weeks',
-    level: 'Beginner to Intermediate',
-    rating: 4.7
+    level: "Beginner to Intermediate",
+    rating: 4.7,
   },
   {
-    id: 'blockchain',
-    title: 'Blockchain Development',
-    description: 'Explore cryptocurrency, smart contracts, and decentralized applications on various blockchain platforms.',
+    id: "blockchain",
+    title: "Blockchain Development",
+    description:
+      "Explore cryptocurrency, smart contracts, and decentralized applications on various blockchain platforms.",
     icon: Link,
-    color: 'bg-orange-500',
+    color: "bg-orange-500",
     // students: '6,543',
     // lessons: 28,
     // duration: '6 weeks',
-    level: 'Advanced',
-    rating: 4.6
-  }
+    level: "Advanced",
+    rating: 4.6,
+  },
 ];
 
 const features = [
   {
     icon: BookOpen,
-    title: 'Interactive Learning',
-    description: 'Hands-on coding exercises and real-world projects that reinforce your learning.',
-    gradient: 'from-blue-500 to-cyan-500'
+    title: "Interactive Learning",
+    description:
+      "Hands-on coding exercises and real-world projects that reinforce your learning.",
+    gradient: "from-blue-500 to-cyan-500",
   },
   {
     icon: Users,
-    title: 'Expert Community',
-    description: 'Connect with industry professionals and fellow learners in our vibrant community.',
-    gradient: 'from-purple-500 to-pink-500'
+    title: "Expert Community",
+    description:
+      "Connect with industry professionals and fellow learners in our vibrant community.",
+    gradient: "from-purple-500 to-pink-500",
   },
   {
     icon: Award,
-    title: 'Industry Recognition',
-    description: 'Earn certificates recognized by top tech companies and boost your career.',
-    gradient: 'from-green-500 to-emerald-500'
+    title: "Industry Recognition",
+    description:
+      "Earn certificates recognized by top tech companies and boost your career.",
+    gradient: "from-green-500 to-emerald-500",
   },
   {
     icon: TrendingUp,
-    title: 'Career Growth',
-    description: 'Track your progress and see measurable improvements in your technical skills.',
-    gradient: 'from-orange-500 to-red-500'
-  }
+    title: "Career Growth",
+    description:
+      "Track your progress and see measurable improvements in your technical skills.",
+    gradient: "from-orange-500 to-red-500",
+  },
 ];
 
 export const LandingPage = () => {
@@ -93,11 +112,13 @@ export const LandingPage = () => {
   };
 
   const handleStartLearning = () => {
-    navigate('/course/web-development');
+    navigate("/course/web-development");
   };
 
   const handleViewCourses = () => {
-    document.getElementById('courses-section')?.scrollIntoView({ behavior: 'smooth' });
+    document
+      .getElementById("courses-section")
+      ?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -285,6 +306,7 @@ function binarySearch(arr, target) {
                 className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer border-0 shadow-lg min-h-[300px] flex flex-col justify-between align-center"
                 onClick={() => handleCourseClick(course.id)}
               >
+                {/* Grouping CardHeader and CardContent inside one container to separate them visually and structurally from the Button section below.*/}
                 <div className="transition-all">
                   <CardHeader className="pb-4">
                     <div
