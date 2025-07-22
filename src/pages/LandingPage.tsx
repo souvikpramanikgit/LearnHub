@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useNavigate } from 'react-router-dom';
 import "../stylesheets/LandingPage.css"
+import { Typewriter } from 'react-simple-typewriter';
 
 const courses = [
   {
@@ -140,6 +141,18 @@ export const LandingPage = () => {
               Master <span className="text-green-700">DSA</span> and <span className="text-green-700">Full Stack Development</span><br />
               in Just <span className="text-green-700">30 Days</span>
             </h1>
+            {/* Typewriter animation below heading */}
+            <h2 className="text-2xl font-semibold mb-6 bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 text-transparent bg-clip-text">
+              <Typewriter
+                words={['Explore Courses', 'Master Web Dev, GenAI, DSA, Blockchain etc.', 'Earn Certificates Recognized by Tech Leaders', 'Upskill with Industry-Ready Courses', 'Learn by Building Real-World Projects', 'Code Connect & Grow with LearnHub']}
+                loop={true}
+                cursor
+                cursorStyle="|"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </h2>
             <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
               Zero fluff. One roadmap. Your path to becoming a complete developer starts now.
             </p>
