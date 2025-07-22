@@ -122,30 +122,30 @@ export const CourseContent = ({ activeSection, courseId, onSectionChange }: Cour
           </Card>
         )}
         {/* Navigation */}
-        <div className="flex justify-between items-center pt-8 border-t border-gray-200">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-6 pt-8 border-t border-gray-200 text-center">
           <Button 
             variant="outline" 
-            className="flex items-center space-x-2"
+            className="flex items-center space-x-2 px-6 py-2 rounded-lg shadow-sm hover:shadow-md transition"
             onClick={() => previousSection && handleNavigation(previousSection.id)}
             disabled={!previousSection}
           >
             <ArrowLeft className="h-4 w-4" />
-            <span>Previous</span>
+            <span className="font-medium">Previous</span>
           </Button>
           
-          <div className="text-center">
-            <p className="text-sm text-gray-500 mb-2">Continue Learning</p>
-            <p className="font-medium text-gray-900">
+          <div className="text-gray-700 ">
+            <p className="text-sm font-semibold tracking-wide text-gray-500 mb-1">Continue Learning</p>
+            <p className="font-lg font-bold text-green-700">
               {nextSection ? nextSection.title : 'Course Complete!'}
             </p>
           </div>
           
           <Button 
-            className="flex items-center space-x-2 bg-green-600 hover:bg-green-700"
+            className="flex items-center space-x-2 px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-sm hover:shadow-md transition"
             onClick={() => nextSection && handleNavigation(nextSection.id)}
             disabled={!nextSection}
           >
-            <span>Next</span>
+            <span className="font-medium">Next</span>
             <ArrowRight className="h-4 w-4" />
           </Button>
         </div>
