@@ -1,23 +1,11 @@
-import React from "react";
-import {
-  BookOpen,
-  Users,
-  Award,
-  ArrowRight,
-  Code,
-  Brain,
-  Database,
-  Link,
-  Star,
-  TrendingUp,
-  BarChart3,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { useNavigate } from "react-router-dom";
-import "../stylesheets/LandingPage.css";
-import { Typewriter } from "react-simple-typewriter";
+import React from 'react';
+import { BookOpen, Users, Award, ArrowRight, Code, Brain, Database, Link, Star, TrendingUp, BarChart3 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { useNavigate, Link as RouterLink } from 'react-router-dom';
+import "../stylesheets/LandingPage.css"
+import { Typewriter } from 'react-simple-typewriter';
 
 const courses = [
   {
@@ -143,14 +131,12 @@ export const LandingPage = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            {/* Courses */}
-            <button
-              onClick={handleViewCourses}
-              className="px-4 py-2 border border-gray-200 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900 hover:border-gray-300 font-medium transition-all duration-200"
-            >
-              Courses
-            </button>
-
+            <Button variant="ghost" onClick={handleViewCourses}>Courses</Button>
+            <RouterLink to="/cs-fundamentals">
+              <Button variant="ghost">
+                CS Fundamentals
+              </Button>
+            </RouterLink>
             {/* DSA Sheet */}
             <button
               onClick={() => navigate('/dsa-sheet')}
@@ -397,6 +383,43 @@ function binarySearch(arr, target) {
                 </div>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CS Fundamentals Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">CS Fundamentals</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              All the core Computer Science subjects you need for interviews and real-world engineering: OS, DBMS, CN, OOP, and more.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer border-0 shadow-lg bg-gradient-to-br from-blue-700 to-teal-600 text-white w-80">
+              <CardHeader className="pb-4">
+                <div className="bg-blue-700 p-4 rounded-2xl w-16 h-16 flex items-center justify-center mb-4">
+                  <BookOpen className="h-8 w-8 text-white" />
+                </div>
+                <CardTitle className="text-xl mb-2">CS Fundamentals</CardTitle>
+                <div className="flex items-center space-x-2 mb-3">
+                  <Badge variant="secondary" className="text-xs bg-white text-blue-700">
+                    Core Subjects
+                  </Badge>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-white text-sm leading-relaxed">
+                  OS, DBMS, CN, OOP and more. All the core subjects you need for interviews and real-world engineering.
+                </p>
+                <RouterLink to="/cs-fundamentals">
+                  <Button className="w-full bg-white text-blue-700 font-semibold rounded-lg mt-4 hover:bg-blue-100 transition">
+                    Explore CS Fundamentals <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </RouterLink>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
