@@ -57,7 +57,7 @@ export const TopNav = ({ onMenuClick, sidebarOpen }: TopNavProps) => {
             </div>
             <div>
               {/* on mobile devices, hide the learnhub logo title and the line below it, only display the logo. */}
-              <h1 className="text-xl font-bold text-gray-900">LearnHub</h1>
+              <h1 className=" text-md sm:text-xl  font-bold text-gray-900">LearnHub</h1>
               <p className="text-xs text-gray-500 ">Master Technology Skills</p>
             </div>
           </div>
@@ -91,7 +91,7 @@ export const TopNav = ({ onMenuClick, sidebarOpen }: TopNavProps) => {
             className="md:hidden flex items-center space-x-1 px-3 py-2 rounded-lg text-green-600 bg-green-50 font-medium text-sm"
           >
             <BarChart3 className="h-4 w-4" />
-            <span className="">Analytics</span>
+            <span className="hidden sm:block ">Analytics</span>
           </Link>
           <div className="hidden  sm:flex gap-4">
             <DropdownMenu>
