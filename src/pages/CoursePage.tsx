@@ -11,30 +11,31 @@ const CoursePage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <TopNav 
-        onMenuClick={() => setSidebarOpen(!sidebarOpen)}
-        sidebarOpen={sidebarOpen}
+    <div className="min-h-screen bg-white text-gray-900 dark:bg-black dark:text-white">
+  <TopNav 
+    onMenuClick={() => setSidebarOpen(!sidebarOpen)}
+    sidebarOpen={sidebarOpen}
+  />
+
+  <div className="flex">
+    <Sidebar 
+      activeSection={activeSection}
+      onSectionChange={setActiveSection}
+      isOpen={sidebarOpen}
+      onClose={() => setSidebarOpen(false)}
+      courseId={courseId || 'web-development'}
+    />
+
+    <main className="flex-1 lg:ml-64 bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white">
+      <CourseContent 
+        activeSection={activeSection} 
+        courseId={courseId || 'web-development'} 
+        onSectionChange={setActiveSection}
       />
-      
-      <div className="flex">
-        <Sidebar 
-          activeSection={activeSection}
-          onSectionChange={setActiveSection}
-          isOpen={sidebarOpen}
-          onClose={() => setSidebarOpen(false)}
-          courseId={courseId || 'web-development'}
-        />
-        
-        <main className="flex-1 lg:ml-64">
-          <CourseContent 
-            activeSection={activeSection} 
-            courseId={courseId || 'web-development'} 
-            onSectionChange={setActiveSection}
-          />
-        </main>
-      </div>
-    </div>
+    </main>
+  </div>
+</div>
+
   );
 };
 
