@@ -10,13 +10,14 @@ import NotFound from "./pages/NotFound";
 import DSASheet from './pages/DSASheet';
 import CSFundamentals from '@/pages/CSFundamentals';
 import LearningAnalytics from "@/components/LearningAnalytics";
-
+import { ThemeProvider } from "./Context/ThemeContext";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <ThemeProvider>
       <Toaster />
       <Sonner />
       <Analytics />
@@ -31,6 +32,7 @@ const App = () => (
 
         </Routes>
       </BrowserRouter>
+      </ThemeProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
