@@ -119,7 +119,7 @@ export const TopNav = ({ onMenuClick, sidebarOpen }: TopNavProps) => {
           {/* Start Learning Button */}
           <Button 
             className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium shadow-md transition-all duration-200 hover:shadow-lg"
-            onClick={() => navigate('/start-learning')}
+            onClick={() => navigate('/course/web-development')}
           >
             Start Learning
           </Button>
