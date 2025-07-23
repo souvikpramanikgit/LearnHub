@@ -1,151 +1,463 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, CheckSquare, Square, Bookmark, BookmarkCheck, StickyNote } from 'lucide-react';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Button } from '@/components/ui/button';
 import { TopNav } from '@/components/TopNav';
+import gfg from '../assets/gfg.png';
+import leetcode from '../assets/leetcode.svg'
+import hackerrank from '../assets/hackerrank-brands-solid-full.svg'
 
 const demoData = [
+  {
+  title: 'Basics of Programming',
+  solved: 0,
+  total: 3,
+  problems: [
     {
-        title: 'Basics of Programming',
-        solved: 0,
-        total: 3,
-        problems: [
-            { question: 'Say "Hello, World!" with c++ (for practice)', difficulty: 'Easy', solved: false },
-            { question: 'Basic Data Types (for practice)', difficulty: 'Easy', solved: false },
-            { question: 'Input and Output (for practice)', difficulty: 'Easy', solved: false },
-        ],
+      question: 'Say "Hello, World!" with C++ (for practice)',
+      difficulty: 'Easy',
+      solved: false,
+      link: 'https://www.hackerrank.com/challenges/cpp-hello-world/problem'
     },
     {
-        title: 'Arrays',
-        solved: 1,
-        total: 14,
-        problems: [
-            { question: 'Reverse an Array', difficulty: 'Easy', solved: true },
-            { question: 'Two Sum - Pairs with 0 sum', difficulty: 'Easy', solved: false },
-            { question: 'Remove Duplicates from sorted array', difficulty: 'Easy', solved: false },
-            { question: 'Left Rotate an array by D places', difficulty: 'Easy', solved: false },
-            { question: 'Maximum Consecutive Ones', difficulty: 'Easy', solved: false },
-            { question: 'Find the Maximum Subarray Sum', difficulty: 'Medium', solved: false },
-            { question: 'Find the number that appears once and other twice', difficulty: 'Medium', solved: false },
-            { question: "Sort an array of 0's 1's and 2's", difficulty: 'Medium', solved: false },
-            { question: "Next Permutation", difficulty: 'Medium', solved: false },
-            { question: "Count Inversions", difficulty: 'Medium', solved: false },
-            { question: "Spirally traversing a matrix", difficulty: 'Medium', solved: false },
-            { question: "Find the repeating and missing number", difficulty: 'Hard', solved: false },
-            { question: "Count number of subarrays with given xor K", difficulty: 'Hard', solved: false },
-            { question: "4 Sum Problem", difficulty: 'Hard', solved: false },
-        ],
+      question: 'Basic Data Types (for practice)',
+      difficulty: 'Easy',
+      solved: false,
+      link: 'https://www.hackerrank.com/challenges/c-tutorial-basic-data-types/problem'
     },
     {
-        title: 'Strings',
-        solved: 0,
-        total: 11,
-        problems: [
-            { question: 'Reverse a String', difficulty: 'Easy', solved: false },
-            { question: 'Check for Palindrome', difficulty: 'Easy', solved: false },
-            { question: 'Sort Characters by frequency', difficulty: 'Easy', solved: false },
-            { question: 'Longest Common Prefix', difficulty: 'Medium', solved: false },
-            { question: 'String to Integer (atoi)', difficulty: 'Medium', solved: false },
-            { question: 'Group Anagrams', difficulty: 'Medium', solved: false },
-            { question: 'Longest Substring Without Repeating Characters', difficulty: 'Medium', solved: false },
-            { question: 'Minimum Window Substring', difficulty: 'Hard', solved: false },
-            { question: 'Wildcard Matching', difficulty: 'Hard', solved: false },
-            { question: 'Regular Expression Matching', difficulty: 'Hard', solved: false },
-            { question: 'Count and Say', difficulty: 'Easy', solved: false },
-        ],
-    },
+      question: 'Input and Output (for practice)',
+      difficulty: 'Easy',
+      solved: false,
+      link: 'https://www.hackerrank.com/challenges/c-tutorial-basic-input-output/problem'
+    }
+  ]
+}
+,
     {
-       title: 'Recursion',
-        solved: 0,
-        total: 10, 
-        problems:[
-             { question: 'Reverse a stack using recursion', difficulty: 'Easy', solved: false },
-             { question: 'Count Good numbers', difficulty: 'Easy', solved: false },
-             { question: 'Letter Combinations of a Phone number', difficulty: 'Medium', solved: false },
-             { question: 'Combination Sum', difficulty: 'Medium', solved: false },
-             { question: 'Check if there exists a subsequence with sum K', difficulty: 'Medium', solved: false },
-             { question: 'Print all subsequences/Power Set', difficulty: 'Medium', solved: false },
-             { question: 'Word Search', difficulty: 'Medium', solved: false },
-             { question: 'Count all subsequences with sum K', difficulty: 'Hard', solved: false },
-             { question: 'Expression Add Operators', difficulty: 'Hard', solved: false },
-             { question: 'N Queen', difficulty: 'Hard', solved: false },
-
-        ],
-
-    },
+  title: 'Arrays',
+  solved: 1,
+  total: 14,
+  problems: [
+    { question: 'Reverse an Array', difficulty: 'Easy', solved: true, link: 'https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/' },
+    { question: 'Two Sum - Pairs with 0 sum', difficulty: 'Easy', solved: false, link: 'https://leetcode.com/problems/two-sum/' },
+    { question: 'Remove Duplicates from sorted array', difficulty: 'Easy', solved: false, link: 'https://leetcode.com/problems/remove-duplicates-from-sorted-array/' },
+    { question: 'Left Rotate an array by D places', difficulty: 'Easy', solved: false, link: 'https://www.geeksforgeeks.org/array-rotation/' },
+    { question: 'Maximum Consecutive Ones', difficulty: 'Easy', solved: false, link: 'https://leetcode.com/problems/max-consecutive-ones/' },
+    { question: 'Find the Maximum Subarray Sum', difficulty: 'Medium', solved: false, link: 'https://leetcode.com/problems/maximum-subarray/' },
+    { question: 'Find the number that appears once and other twice', difficulty: 'Medium', solved: false, link: 'https://leetcode.com/problems/single-number/' },
+    { question: "Sort an array of 0's 1's and 2's", difficulty: 'Medium', solved: false, link: 'https://leetcode.com/problems/sort-colors/' },
+    { question: "Next Permutation", difficulty: 'Medium', solved: false, link: 'https://leetcode.com/problems/next-permutation/' },
+    { question: "Count Inversions", difficulty: 'Medium', solved: false, link: 'https://www.geeksforgeeks.org/counting-inversions/' },
+    { question: "Spirally traversing a matrix", difficulty: 'Medium', solved: false, link: 'https://leetcode.com/problems/spiral-matrix/' },
+    { question: "Find the repeating and missing number", difficulty: 'Hard', solved: false, link: 'https://www.geeksforgeeks.org/find-a-repeating-and-a-missing-number/' },
+    { question: "Count number of subarrays with given xor K", difficulty: 'Hard', solved: false, link: 'https://www.geeksforgeeks.org/count-number-subarrays-given-xor/' },
+    { question: "4 Sum Problem", difficulty: 'Hard', solved: false, link: 'https://leetcode.com/problems/4sum/' },
+  ]
+}
+,
+  {
+    title: 'Strings',
+    solved: 0,
+    total: 11,
+    problems: [
+        {
+            question: 'Reverse a String',
+            difficulty: 'Easy',
+            solved: false,
+            link: 'https://leetcode.com/problems/reverse-words-in-a-string/'
+        },
+        {
+            question: 'Check for Palindrome',
+            difficulty: 'Easy',
+            solved: false,
+            link: 'https://leetcode.com/problems/valid-palindrome/'
+        },
+        {
+            question: 'Sort Characters by frequency',
+            difficulty: 'Easy',
+            solved: false,
+            link: 'https://leetcode.com/problems/sort-characters-by-frequency/'
+        },
+        {
+            question: 'Longest Common Prefix',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://leetcode.com/problems/longest-common-prefix/'
+        },
+        {
+            question: 'String to Integer (atoi)',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://leetcode.com/problems/string-to-integer-atoi/'
+        },
+        {
+            question: 'Group Anagrams',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://leetcode.com/problems/group-anagrams/'
+        },
+        {
+            question: 'Longest Substring Without Repeating Characters',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://leetcode.com/problems/longest-substring-without-repeating-characters/'
+        },
+        {
+            question: 'Minimum Window Substring',
+            difficulty: 'Hard',
+            solved: false,
+            link: 'https://leetcode.com/problems/minimum-window-substring/'
+        },
+        {
+            question: 'Wildcard Matching',
+            difficulty: 'Hard',
+            solved: false,
+            link: 'https://leetcode.com/problems/wildcard-matching/'
+        },
+        {
+            question: 'Regular Expression Matching',
+            difficulty: 'Hard',
+            solved: false,
+            link: 'https://leetcode.com/problems/regular-expression-matching/'
+        },
+        {
+            question: 'Count and Say',
+            difficulty: 'Easy',
+            solved: false,
+            link: 'https://leetcode.com/problems/count-and-say/'
+        }
+    ]
+}
+ ,
     {
-       title: 'Hash',
-        solved: 0,
-        total: 8, 
-        problems:[
-             { question: 'Frequencies in a Limited Array', difficulty: 'Easy', solved: false },
-             { question: 'Non Repeating Character', difficulty: 'Easy', solved: false },
-             { question: 'Longest Substring with K Unique ', difficulty: 'Medium', solved: false },
-             { question: 'Zero Sum Subarrays', difficulty: 'Medium', solved: false },
-             { question: 'Smallest distinct window', difficulty: 'Medium', solved: false },
-             { question: 'Longest subarray with sum divisible by K', difficulty: 'Medium', solved: false },
-             { question: 'Smallest window containing all characters of a string', difficulty: 'Hard', solved: false },
-             { question: 'Minimum operations to convert Array A to B', difficulty: 'Hard', solved: false },
-
-        ],
-
-    },
+    title: 'Recursion',
+    solved: 0,
+    total: 10,
+    problems: [
+        {
+            question: 'Reverse a stack using recursion',
+            difficulty: 'Easy',
+            solved: false,
+            link: 'https://www.geeksforgeeks.org/reverse-a-stack-using-recursion/'
+        },
+        {
+            question: 'Count Good numbers',
+            difficulty: 'Easy',
+            solved: false,
+            link: 'https://leetcode.com/problems/count-good-numbers/'
+        },
+        {
+            question: 'Letter Combinations of a Phone number',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://leetcode.com/problems/letter-combinations-of-a-phone-number/'
+        },
+        {
+            question: 'Combination Sum',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://leetcode.com/problems/combination-sum/'
+        },
+        {
+            question: 'Check if there exists a subsequence with sum K',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://www.geeksforgeeks.org/subset-sum-problem-dp-25/' // Classic subset sum
+        },
+        {
+            question: 'Print all subsequences/Power Set',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://leetcode.com/problems/subsets/' // Power set via recursion
+        },
+        {
+            question: 'Word Search',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://leetcode.com/problems/word-search/'
+        },
+        {
+            question: 'Count all subsequences with sum K',
+            difficulty: 'Hard',
+            solved: false,
+            link: 'https://www.geeksforgeeks.org/count-of-subsets-with-sum-equal-to-x/' // GFG: Subsets with given sum
+        },
+        {
+            question: 'Expression Add Operators',
+            difficulty: 'Hard',
+            solved: false,
+            link: 'https://leetcode.com/problems/expression-add-operators/'
+        },
+        {
+            question: 'N Queen',
+            difficulty: 'Hard',
+            solved: false,
+            link: 'https://leetcode.com/problems/n-queens/'
+        }
+    ]
+}
+,
     {
-       title: 'Linked List',
-        solved: 0,
-        total: 10, 
-        problems:[
-             { question: 'Linked List Insertion At End', difficulty: 'Easy', solved: false },
-             { question: 'Reverse a linked list', difficulty: 'Easy', solved: false },
-             { question: 'Add Number Linked Lists', difficulty: 'Medium', solved: false },
-             { question: 'Rotate a Linked List', difficulty: 'Medium', solved: false },
-             { question: 'Check if there exists a subsequence with sum K', difficulty: 'Medium', solved: false },
-             { question: 'Detect a loop in Linked List', difficulty: 'Medium', solved: false },
-             { question: 'Delete the middle node of LL', difficulty: 'Medium', solved: false },
-             { question: 'Reverse LL in group of given size K', difficulty: 'Hard', solved: false },
-             { question: 'Linked List Group Reverse', difficulty: 'Hard', solved: false },
-             { question: 'Clone a Linked List with random and next pointer', difficulty: 'Hard', solved: false },
-
-        ],
-
-    },
-    {
-       title: 'Trees',
-        solved: 0,
-        total: 11, 
-        problems:[
-             { question: 'Left View of Binary Tree', difficulty: 'Easy', solved: false },
-             { question: 'Right View of Binary Tree', difficulty: 'Easy', solved: false },
-             { question: 'Balanced Tree Check', difficulty: 'Easy', solved: false },
-             { question: 'Tree Boundary Traversal', difficulty: 'Medium', solved: false },
-             { question: 'Vertical Tree Traversal', difficulty: 'Medium', solved: false },
-             { question: 'Sum of nodes on the longest Path', difficulty: 'Medium', solved: false },
-             { question: 'Isomorphic Trees', difficulty: 'Medium', solved: false },
-             { question: 'Maximum path sum from any node', difficulty: 'Medium', solved: false },
-             { question: 'Burning Tree', difficulty: 'Hard', solved: false },
-             { question: 'Min distance between two given nodes in a Binary Tree', difficulty: 'Hard', solved: false },
-             { question: 'Max Path Sum 2 Special Nodes', difficulty: 'Hard', solved: false },
-
-        ],
-
-    },
-    {
-       title: 'Graphs',
-        solved: 0,
-        total: 9, 
-        problems:[
-             { question: 'BFS of Graph', difficulty: 'Easy', solved: false },
-             { question: 'DFS of Graph', difficulty: 'Easy', solved: false },
-             { question: 'Number of provinces', difficulty: 'Medium', solved: false },
-             { question: '0/1 Matrix (Bfs Problem)', difficulty: 'Medium', solved: false },
-             { question: 'Dijkstra Algorithm', difficulty: 'Medium', solved: false },
-             { question: 'Minimum Spanning Tree', difficulty: 'Medium', solved: false },
-             { question: 'Bipartite Graph (DFS)', difficulty: 'Hard', solved: false },
-             { question: 'Cycle Detection in Directed Graph (DFS)', difficulty: 'Hard', solved: false },
-             { question: 'Surrounded Regions (dfs)', difficulty: 'Hard', solved: false },
-
-        ],
-
-    },
+    title: 'Hash',
+    solved: 0,
+    total: 8,
+    problems: [
+        {
+            question: 'Frequencies in a Limited Array',
+            difficulty: 'Easy',
+            solved: false,
+            link: 'https://www.geeksforgeeks.org/frequency-of-limited-range-array-elements/'
+        },
+        {
+            question: 'Non Repeating Character',
+            difficulty: 'Easy',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/non-repeating-character-1587115620/'
+        },
+        {
+            question: 'Longest Substring with K Unique',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/'
+        },
+        {
+            question: 'Zero Sum Subarrays',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://www.geeksforgeeks.org/zero-sum-subarrays/'
+        },
+        {
+            question: 'Smallest distinct window',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/smallest-distant-window3132/'
+        },
+        {
+            question: 'Longest subarray with sum divisible by K',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://www.geeksforgeeks.org/longest-subarray-sum-divisible-k/'
+        },
+        {
+            question: 'Smallest window containing all characters of a string',
+            difficulty: 'Hard',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/smallest-window-in-a-string-containing-all-the-characters-of-another-string/0'
+        },
+        {
+            question: 'Minimum operations to convert Array A to B',
+            difficulty: 'Hard',
+            solved: false,
+            link: 'https://www.geeksforgeeks.org/minimum-number-of-steps-to-convert-one-array-into-another-by-rearranging-elements/'
+        }
+    ]
+}
+,
+   {
+    title: 'Linked List',
+    solved: 0,
+    total: 10,
+    problems: [
+        {
+            question: 'Linked List Insertion At End',
+            difficulty: 'Easy',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/linked-list-insertion-1587115620/'
+        },
+        {
+            question: 'Reverse a linked list',
+            difficulty: 'Easy',
+            solved: false,
+            link: 'https://leetcode.com/problems/reverse-linked-list/'
+        },
+        {
+            question: 'Add Number Linked Lists',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://leetcode.com/problems/add-two-numbers/'
+        },
+        {
+            question: 'Rotate a Linked List',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://leetcode.com/problems/rotate-list/'
+        },
+        {
+            question: 'Check if there exists a subsequence with sum K',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://www.geeksforgeeks.org/find-subarray-with-given-sum/'
+        },
+        {
+            question: 'Detect a loop in Linked List',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/detect-loop-in-linked-list/1'
+        },
+        {
+            question: 'Delete the middle node of LL',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/'
+        },
+        {
+            question: 'Reverse LL in group of given size K',
+            difficulty: 'Hard',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/reverse-a-linked-list-in-groups-of-given-size/1'
+        },
+        {
+            question: 'Linked List Group Reverse',
+            difficulty: 'Hard',
+            solved: false,
+            link: 'https://leetcode.com/problems/reverse-nodes-in-k-group/'
+        },
+        {
+            question: 'Clone a Linked List with random and next pointer',
+            difficulty: 'Hard',
+            solved: false,
+            link: 'https://leetcode.com/problems/copy-list-with-random-pointer/'
+        }
+    ]
+}
+ ,
+  {
+    title: 'Trees',
+    solved: 0,
+    total: 11,
+    problems: [
+        {
+            question: 'Left View of Binary Tree',
+            difficulty: 'Easy',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1'
+        },
+        {
+            question: 'Right View of Binary Tree',
+            difficulty: 'Easy',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/right-view-of-binary-tree/1'
+        },
+        {
+            question: 'Balanced Tree Check',
+            difficulty: 'Easy',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/check-for-balanced-tree/1'
+        },
+        {
+            question: 'Tree Boundary Traversal',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1'
+        },
+        {
+            question: 'Vertical Tree Traversal',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/'
+        },
+        {
+            question: 'Sum of nodes on the longest Path',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/sum-of-the-longest-bloodline-of-a-tree/1'
+        },
+        {
+            question: 'Isomorphic Trees',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/isomorphic-tree/1'
+        },
+        {
+            question: 'Maximum path sum from any node',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/max-sum-path-in-binary-tree/1'
+        },
+        {
+            question: 'Burning Tree',
+            difficulty: 'Hard',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/burning-tree/1'
+        },
+        {
+            question: 'Min distance between two given nodes in a Binary Tree',
+            difficulty: 'Hard',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/min-distance-between-two-given-nodes-of-a-binary-tree/1'
+        },
+        {
+            question: 'Max Path Sum 2 Special Nodes',
+            difficulty: 'Hard',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/maximum-path-between-2-leaves/1'
+        }
+    ]
+}
+ ,
+  {
+    title: 'Graphs',
+    solved: 0,
+    total: 9,
+    problems: [
+        {
+            question: 'BFS of Graph',
+            difficulty: 'Easy',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/bfs-traversal-of-graph/1'
+        },
+        {
+            question: 'DFS of Graph',
+            difficulty: 'Easy',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1'
+        },
+        {
+            question: 'Number of provinces',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://leetcode.com/problems/number-of-provinces/'
+        },
+        {
+            question: '0/1 Matrix (Bfs Problem)',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://leetcode.com/problems/01-matrix/'
+        },
+        {
+            question: 'Dijkstra Algorithm',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1'
+        },
+        {
+            question: 'Minimum Spanning Tree',
+            difficulty: 'Medium',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1'
+        },
+        {
+            question: 'Bipartite Graph (DFS)',
+            difficulty: 'Hard',
+            solved: false,
+            link: 'https://leetcode.com/problems/is-graph-bipartite/'
+        },
+        {
+            question: 'Cycle Detection in Directed Graph (DFS)',
+            difficulty: 'Hard',
+            solved: false,
+            link: 'https://practice.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1'
+        },
+        {
+            question: 'Surrounded Regions (dfs)',
+            difficulty: 'Hard',
+            solved: false,
+            link: 'https://leetcode.com/problems/surrounded-regions/'
+        }
+    ]
+}
+ ,
     
 ];
 
@@ -374,6 +686,7 @@ const DSASheet = () => {
                                                         <th className="py-2">Solved</th>
                                                         <th className="py-2">Bookmark</th>
                                                         <th className="py-2">Notes</th>
+                                                        <th className="py-2 text-center">LeetCode</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -453,6 +766,17 @@ const DSASheet = () => {
                                                                         </div>
                                                                     )}
                                                                 </td>
+                                                                <td className="py-2 text-center">
+  <a
+    href={problem.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-blue-600 hover:underline"
+  >
+    Visit
+  </a>
+</td>
+
                                                             </tr>
                                                         );
                                                     })}
@@ -547,41 +871,43 @@ const DSASheet = () => {
                                                                                 )}
                                                                             </button>
                                                                         </td>
-                                                                        <td className="py-2 text-center relative">
-                                                                            <button
-                                                                                aria-label="Add/Edit Note"
-                                                                                onClick={() => handleOpenNote(idx, pidx)}
-                                                                                className="focus:outline-none mr-2"
-                                                                            >
-                                                                                <StickyNote className={notes[key] ? 'inline h-5 w-5 text-yellow-500' : 'inline h-5 w-5 text-gray-400'} />
-                                                                            </button>
-                                                                            {/* Inline note editor popover */}
-                                                                            {openNote === key && (
-                                                                                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
-                                                                                    <div className="w-[38rem] bg-white border border-gray-400 rounded-xl shadow-2xl p-8 flex flex-col items-stretch">
-                                                                                        <textarea
-                                                                                            className="w-full border border-gray-300 rounded-md p-4 text-gray-900 text-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-200"
-                                                                                            rows={8}
-                                                                                            maxLength={600}
-                                                                                            value={noteDraft}
-                                                                                            onChange={e => setNoteDraft(e.target.value)}
-                                                                                            placeholder="Write your note here..."
-                                                                                            style={{ minHeight: '160px', maxHeight: '320px' }}
-                                                                                        />
-                                                                                        <div className="flex gap-4 mt-6 justify-end">
-                                                                                            <button
-                                                                                                className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded font-semibold text-base transition"
-                                                                                                onClick={() => handleSaveNote(idx, pidx)}
-                                                                                            >Save</button>
-                                                                                            <button
-                                                                                                className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded font-semibold text-base transition"
-                                                                                                onClick={handleCancelNote}
-                                                                                            >Cancel</button>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            )}
-                                                                        </td>
+                                                                      <td className="py-2 text-center relative group">
+  {problem.link ? (
+    <a
+      href={problem.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block hover:opacity-80"
+    >
+      {/* Icon based on link source */}
+      {problem.link.includes("geeksforgeeks") ? (
+        <img src={gfg} alt="GFG" className="w-5 h-5 inline" />
+      ) : problem.link.includes("hackerrank") ? (
+        <img src={hackerrank} alt="HackerRank" className="w-5 h-5 inline" />
+      ) : (
+        <img src={leetcode} alt="LeetCode" className="w-5 h-5 inline" />
+      )}
+      
+      {/* Tooltip on hover */}
+      <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max text-xs bg-black text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none z-50">
+        {problem.link}
+      </span>
+    </a>
+  ) : (
+    <span
+      className="text-gray-400 cursor-not-allowed"
+      title="Link not available"
+    >
+      🚫
+      <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max text-xs bg-gray-800 text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none z-50">
+        Link not available
+      </span>
+    </span>
+  )}
+</td>
+
+
+
                                                                     </tr>
                                                                 );
                                                             })}
