@@ -116,7 +116,7 @@ export const CourseContent = ({ activeSection, courseId, onSectionChange }: Cour
 
   return (
     <div className="flex max-w-7xl mx-auto">
-      <div className="flex-1 p-6 pt-6 pr-0 max-w-4xl">
+      <div className="p-4 sm:p-6 pt-6 max-w-full sm:max-w-4xl mx-auto">
         <div className="mb-8">
           <div className="flex items-center space-x-2 mb-4">
             <BookOpen className="h-6 w-6 text-green-600" />
