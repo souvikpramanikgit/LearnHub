@@ -9,26 +9,30 @@ const Index = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <TopNav 
-        onMenuClick={() => setSidebarOpen(!sidebarOpen)}
-        sidebarOpen={sidebarOpen}
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+  <TopNav 
+    onMenuClick={() => setSidebarOpen(!sidebarOpen)}
+    sidebarOpen={sidebarOpen}
+  />
+  
+  <div className="flex">
+    <Sidebar 
+      activeSection={activeSection}
+      onSectionChange={setActiveSection}
+      isOpen={sidebarOpen}
+      onClose={() => setSidebarOpen(false)}
+      courseId="web-development"
+    />
+    
+    <main className="flex-1 lg:ml-64">
+      <CourseContent 
+        activeSection={activeSection} 
+        courseId="web-development" 
       />
-      
-      <div className="flex">
-        <Sidebar 
-          activeSection={activeSection}
-          onSectionChange={setActiveSection}
-          isOpen={sidebarOpen}
-          onClose={() => setSidebarOpen(false)}
-          courseId="web-development"
-        />
-        
-        <main className="flex-1 lg:ml-64">
-          <CourseContent activeSection={activeSection} courseId="web-development" />
-        </main>
-      </div>
-    </div>
+    </main>
+  </div>
+</div>
+
   );
 };
 

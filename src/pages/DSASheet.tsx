@@ -54,99 +54,99 @@ const demoData = [
         ],
     },
     {
-       title: 'Recursion',
+        title: 'Recursion',
         solved: 0,
-        total: 10, 
-        problems:[
-             { question: 'Reverse a stack using recursion', difficulty: 'Easy', solved: false },
-             { question: 'Count Good numbers', difficulty: 'Easy', solved: false },
-             { question: 'Letter Combinations of a Phone number', difficulty: 'Medium', solved: false },
-             { question: 'Combination Sum', difficulty: 'Medium', solved: false },
-             { question: 'Check if there exists a subsequence with sum K', difficulty: 'Medium', solved: false },
-             { question: 'Print all subsequences/Power Set', difficulty: 'Medium', solved: false },
-             { question: 'Word Search', difficulty: 'Medium', solved: false },
-             { question: 'Count all subsequences with sum K', difficulty: 'Hard', solved: false },
-             { question: 'Expression Add Operators', difficulty: 'Hard', solved: false },
-             { question: 'N Queen', difficulty: 'Hard', solved: false },
+        total: 10,
+        problems: [
+            { question: 'Reverse a stack using recursion', difficulty: 'Easy', solved: false },
+            { question: 'Count Good numbers', difficulty: 'Easy', solved: false },
+            { question: 'Letter Combinations of a Phone number', difficulty: 'Medium', solved: false },
+            { question: 'Combination Sum', difficulty: 'Medium', solved: false },
+            { question: 'Check if there exists a subsequence with sum K', difficulty: 'Medium', solved: false },
+            { question: 'Print all subsequences/Power Set', difficulty: 'Medium', solved: false },
+            { question: 'Word Search', difficulty: 'Medium', solved: false },
+            { question: 'Count all subsequences with sum K', difficulty: 'Hard', solved: false },
+            { question: 'Expression Add Operators', difficulty: 'Hard', solved: false },
+            { question: 'N Queen', difficulty: 'Hard', solved: false },
 
         ],
 
     },
     {
-       title: 'Hash',
+        title: 'Hash',
         solved: 0,
-        total: 8, 
-        problems:[
-             { question: 'Frequencies in a Limited Array', difficulty: 'Easy', solved: false },
-             { question: 'Non Repeating Character', difficulty: 'Easy', solved: false },
-             { question: 'Longest Substring with K Unique ', difficulty: 'Medium', solved: false },
-             { question: 'Zero Sum Subarrays', difficulty: 'Medium', solved: false },
-             { question: 'Smallest distinct window', difficulty: 'Medium', solved: false },
-             { question: 'Longest subarray with sum divisible by K', difficulty: 'Medium', solved: false },
-             { question: 'Smallest window containing all characters of a string', difficulty: 'Hard', solved: false },
-             { question: 'Minimum operations to convert Array A to B', difficulty: 'Hard', solved: false },
+        total: 8,
+        problems: [
+            { question: 'Frequencies in a Limited Array', difficulty: 'Easy', solved: false },
+            { question: 'Non Repeating Character', difficulty: 'Easy', solved: false },
+            { question: 'Longest Substring with K Unique ', difficulty: 'Medium', solved: false },
+            { question: 'Zero Sum Subarrays', difficulty: 'Medium', solved: false },
+            { question: 'Smallest distinct window', difficulty: 'Medium', solved: false },
+            { question: 'Longest subarray with sum divisible by K', difficulty: 'Medium', solved: false },
+            { question: 'Smallest window containing all characters of a string', difficulty: 'Hard', solved: false },
+            { question: 'Minimum operations to convert Array A to B', difficulty: 'Hard', solved: false },
 
         ],
 
     },
     {
-       title: 'Linked List',
+        title: 'Linked List',
         solved: 0,
-        total: 10, 
-        problems:[
-             { question: 'Linked List Insertion At End', difficulty: 'Easy', solved: false },
-             { question: 'Reverse a linked list', difficulty: 'Easy', solved: false },
-             { question: 'Add Number Linked Lists', difficulty: 'Medium', solved: false },
-             { question: 'Rotate a Linked List', difficulty: 'Medium', solved: false },
-             { question: 'Check if there exists a subsequence with sum K', difficulty: 'Medium', solved: false },
-             { question: 'Detect a loop in Linked List', difficulty: 'Medium', solved: false },
-             { question: 'Delete the middle node of LL', difficulty: 'Medium', solved: false },
-             { question: 'Reverse LL in group of given size K', difficulty: 'Hard', solved: false },
-             { question: 'Linked List Group Reverse', difficulty: 'Hard', solved: false },
-             { question: 'Clone a Linked List with random and next pointer', difficulty: 'Hard', solved: false },
+        total: 10,
+        problems: [
+            { question: 'Linked List Insertion At End', difficulty: 'Easy', solved: false },
+            { question: 'Reverse a linked list', difficulty: 'Easy', solved: false },
+            { question: 'Add Number Linked Lists', difficulty: 'Medium', solved: false },
+            { question: 'Rotate a Linked List', difficulty: 'Medium', solved: false },
+            { question: 'Check if there exists a subsequence with sum K', difficulty: 'Medium', solved: false },
+            { question: 'Detect a loop in Linked List', difficulty: 'Medium', solved: false },
+            { question: 'Delete the middle node of LL', difficulty: 'Medium', solved: false },
+            { question: 'Reverse LL in group of given size K', difficulty: 'Hard', solved: false },
+            { question: 'Linked List Group Reverse', difficulty: 'Hard', solved: false },
+            { question: 'Clone a Linked List with random and next pointer', difficulty: 'Hard', solved: false },
 
         ],
 
     },
     {
-       title: 'Trees',
+        title: 'Trees',
         solved: 0,
-        total: 11, 
-        problems:[
-             { question: 'Left View of Binary Tree', difficulty: 'Easy', solved: false },
-             { question: 'Right View of Binary Tree', difficulty: 'Easy', solved: false },
-             { question: 'Balanced Tree Check', difficulty: 'Easy', solved: false },
-             { question: 'Tree Boundary Traversal', difficulty: 'Medium', solved: false },
-             { question: 'Vertical Tree Traversal', difficulty: 'Medium', solved: false },
-             { question: 'Sum of nodes on the longest Path', difficulty: 'Medium', solved: false },
-             { question: 'Isomorphic Trees', difficulty: 'Medium', solved: false },
-             { question: 'Maximum path sum from any node', difficulty: 'Medium', solved: false },
-             { question: 'Burning Tree', difficulty: 'Hard', solved: false },
-             { question: 'Min distance between two given nodes in a Binary Tree', difficulty: 'Hard', solved: false },
-             { question: 'Max Path Sum 2 Special Nodes', difficulty: 'Hard', solved: false },
+        total: 11,
+        problems: [
+            { question: 'Left View of Binary Tree', difficulty: 'Easy', solved: false },
+            { question: 'Right View of Binary Tree', difficulty: 'Easy', solved: false },
+            { question: 'Balanced Tree Check', difficulty: 'Easy', solved: false },
+            { question: 'Tree Boundary Traversal', difficulty: 'Medium', solved: false },
+            { question: 'Vertical Tree Traversal', difficulty: 'Medium', solved: false },
+            { question: 'Sum of nodes on the longest Path', difficulty: 'Medium', solved: false },
+            { question: 'Isomorphic Trees', difficulty: 'Medium', solved: false },
+            { question: 'Maximum path sum from any node', difficulty: 'Medium', solved: false },
+            { question: 'Burning Tree', difficulty: 'Hard', solved: false },
+            { question: 'Min distance between two given nodes in a Binary Tree', difficulty: 'Hard', solved: false },
+            { question: 'Max Path Sum 2 Special Nodes', difficulty: 'Hard', solved: false },
 
         ],
 
     },
     {
-       title: 'Graphs',
+        title: 'Graphs',
         solved: 0,
-        total: 9, 
-        problems:[
-             { question: 'BFS of Graph', difficulty: 'Easy', solved: false },
-             { question: 'DFS of Graph', difficulty: 'Easy', solved: false },
-             { question: 'Number of provinces', difficulty: 'Medium', solved: false },
-             { question: '0/1 Matrix (Bfs Problem)', difficulty: 'Medium', solved: false },
-             { question: 'Dijkstra Algorithm', difficulty: 'Medium', solved: false },
-             { question: 'Minimum Spanning Tree', difficulty: 'Medium', solved: false },
-             { question: 'Bipartite Graph (DFS)', difficulty: 'Hard', solved: false },
-             { question: 'Cycle Detection in Directed Graph (DFS)', difficulty: 'Hard', solved: false },
-             { question: 'Surrounded Regions (dfs)', difficulty: 'Hard', solved: false },
+        total: 9,
+        problems: [
+            { question: 'BFS of Graph', difficulty: 'Easy', solved: false },
+            { question: 'DFS of Graph', difficulty: 'Easy', solved: false },
+            { question: 'Number of provinces', difficulty: 'Medium', solved: false },
+            { question: '0/1 Matrix (Bfs Problem)', difficulty: 'Medium', solved: false },
+            { question: 'Dijkstra Algorithm', difficulty: 'Medium', solved: false },
+            { question: 'Minimum Spanning Tree', difficulty: 'Medium', solved: false },
+            { question: 'Bipartite Graph (DFS)', difficulty: 'Hard', solved: false },
+            { question: 'Cycle Detection in Directed Graph (DFS)', difficulty: 'Hard', solved: false },
+            { question: 'Surrounded Regions (dfs)', difficulty: 'Hard', solved: false },
 
         ],
 
     },
-    
+
 ];
 
 const DSASheet = () => {
@@ -234,14 +234,8 @@ const DSASheet = () => {
         });
     };
 
-    // Force light mode for this page
-    React.useEffect(() => {
-        document.body.classList.remove('dark');
-        document.body.classList.add('bg-white');
-        return () => {
-            document.body.classList.remove('bg-white');
-        };
-    }, []);
+  
+      
 
     // Calculate stats
     const stats = { Easy: { solved: 0, total: 0 }, Medium: { solved: 0, total: 0 }, Hard: { solved: 0, total: 0 } };
@@ -267,10 +261,10 @@ const DSASheet = () => {
     return (
         <>
             <TopNav onMenuClick={() => { }} sidebarOpen={false} />
-            <div className="min-h-screen bg-white text-gray-900 px-4 py-8 flex flex-row gap-8 max-w-7xl mx-auto">
+            <div className="min-h-screen  bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 px-4 py-8 flex flex-row gap-8 max-w-7xl mx-auto">
                 {/* Stats Sidebar */}
                 <aside className="w-80 flex-shrink-0">
-                    <div className="sticky top-20 bg-gray-900 border border-gray-800 rounded-2xl shadow-lg p-6">
+                    <div className="sticky top-20 bg-gray-900 dark:bg-gray-800 border border-gray-800 dark:border-gray-700 rounded-2xl shadow-lg p-6">
                         <h2 className="text-3xl font-bold mb-6 text-center text-white">Stats</h2>
                         {/* Easy */}
                         <div className="mb-6">
@@ -315,22 +309,22 @@ const DSASheet = () => {
                 </aside>
                 {/* Main Content */}
                 <main className="flex-1 overflow-x-auto">
-                    <h1 className="text-4xl font-bold text-center mb-2 bg-white sticky top-20 z-30">DSA Practice Problems</h1>
+                    <h1 className="text-4xl font-bold text-center mb-2 bg-white dark:bg-gray-900 sticky top-20 z-30">DSA Practice Problems</h1>
                     {/* Search and Filter UI */}
-                    <div className="flex flex-row items-center gap-4 mt-6 mb-4 sticky top-36 z-20 bg-white py-2 rounded justify-center">
+                    <div className="flex flex-row items-center gap-4 mt-6 mb-4 sticky top-36 z-20 bg-white dark:bg-gray-900 py-2 rounded justify-center">
                         {/* Search Input */}
                         <input
                             type="text"
                             value={search}
                             onChange={e => setSearch(e.target.value)}
                             placeholder="Search all problems..."
-                            className="w-64 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-200 text-base"
+                            className="w-64 px-4 py-2 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-base text-gray-900 dark:text-gray-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-200"
                         />
                         {/* Topic Dropdown */}
                         <select
                             value={topic}
                             onChange={e => { setTopic(e.target.value); setShowBookmarks(false); }}
-                            className="px-4 py-2 rounded-lg border border-gray-300 text-base focus:outline-none focus:ring-2 focus:ring-blue-200 bg-white shadow-sm"
+                            className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 text-base focus:outline-none focus:ring-2 focus:ring-blue-200 bg-white dark:bg-gray-800 shadow-sm text-gray-900 dark:text-gray-100"
                         >
                             {sectionTitles.map(title => (
                                 <option key={title} value={title}>{title}</option>
@@ -340,7 +334,7 @@ const DSASheet = () => {
                         <select
                             value={filter}
                             onChange={e => setFilter(e.target.value as 'All' | 'Easy' | 'Medium' | 'Hard')}
-                            className="px-4 py-2 rounded-lg border border-gray-300 text-base focus:outline-none focus:ring-2 focus:ring-blue-200 bg-white shadow-sm"
+                            className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 text-base focus:outline-none focus:ring-2 focus:ring-blue-200 bg-white dark:bg-gray-800 shadow-sm text-gray-900 dark:text-gray-100"
                         >
                             <option value="All">All Difficulty</option>
                             <option value="Easy">Easy</option>
@@ -356,19 +350,20 @@ const DSASheet = () => {
                         </button>
                     </div>
                     {/* Main Problems List (unchanged design) */}
-                    <div className="max-w-4xl mx-auto space-y-4 mt-10 pt-20" style={{ maxHeight: 'calc(100vh - 120px)', overflowY: 'auto' }}>
+                    <div className="max-w-4xl mx-auto space-y-4 mt-10 pt-20 text-gray-900 dark:text-gray-100"
+                        style={{ maxHeight: 'calc(100vh - 120px)', overflowY: 'auto' }}>
                         {showBookmarks ? (
                             // Show only bookmarked problems, grouped by section
                             bookmarkedBySection.length === 0 ? (
-                                <div className="text-center text-gray-500">No bookmarked problems yet.</div>
+                                <div className="text-center text-gray-500 dark:text-gray-400">No bookmarked problems yet.</div>
                             ) : (
                                 bookmarkedBySection.map((section) => (
-                                    <div key={section.title} className="border rounded-lg bg-blue-50 shadow">
-                                        <div className="px-6 py-2 font-semibold text-blue-900">{section.title}</div>
+                                    <div key={section.title} className="border dark:border-gray-700 rounded-lg bg-blue-50 dark:bg-gray-800 shadow">
+                                        <div className="px-6 py-2 font-semibold text-blue-900 dark:text-blue-300">{section.title}</div>
                                         <div className="px-6 pb-4">
-                                            <table className="w-full text-left border-t mt-2">
+                                            <table className="w-full text-left border-t dark:border-gray-700 mt-2">
                                                 <thead>
-                                                    <tr className="text-gray-700">
+                                                    <tr className="text-gray-700 dark:text-gray-300">
                                                         <th className="py-2">Question</th>
                                                         <th className="py-2">Difficulty</th>
                                                         <th className="py-2">Solved</th>
@@ -380,7 +375,7 @@ const DSASheet = () => {
                                                     {section.problems.map((problem) => {
                                                         const key = `${problem._sectionIdx}-${problem._problemIdx}`;
                                                         return (
-                                                            <tr key={problem.question} className="border-b last:border-b-0">
+                                                            <tr key={problem.question} className="border-b dark:border-gray-700 last:border-b-0">
                                                                 <td className="py-2">{problem.question}</td>
                                                                 <td className={
                                                                     'py-2 ' +
@@ -401,7 +396,7 @@ const DSASheet = () => {
                                                                         {solved[key] ? (
                                                                             <CheckSquare className="inline h-5 w-5 text-green-600" />
                                                                         ) : (
-                                                                            <Square className="inline h-5 w-5 text-gray-400" />
+                                                                            <Square className="inline h-5 w-5 text-gray-400 dark:text-gray-500" />
                                                                         )}
                                                                     </button>
                                                                 </td>
@@ -414,7 +409,7 @@ const DSASheet = () => {
                                                                         {bookmarks[key] ? (
                                                                             <BookmarkCheck className="inline h-5 w-5 text-blue-600" />
                                                                         ) : (
-                                                                            <Bookmark className="inline h-5 w-5 text-gray-400" />
+                                                                            <Bookmark className="inline h-5 w-5 text-gray-400 dark:text-gray-500" />
                                                                         )}
                                                                     </button>
                                                                 </td>
@@ -429,9 +424,9 @@ const DSASheet = () => {
                                                                     {/* Inline note editor popover */}
                                                                     {openNote === key && (
                                                                         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
-                                                                            <div className="w-[38rem] bg-white border border-gray-400 rounded-xl shadow-2xl p-8 flex flex-col items-stretch">
+                                                                            <div className="w-[38rem] bg-white dark:bg-gray-900 border border-gray-400 dark:border-gray-700 rounded-xl shadow-2xl p-8 flex flex-col items-stretch">
                                                                                 <textarea
-                                                                                    className="w-full border border-gray-300 rounded-md p-4 text-gray-900 text-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-200"
+                                                                                    className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-lg resize-none p-4 focus:outline-none focus:ring-2 focus:ring-blue-200"
                                                                                     rows={8}
                                                                                     maxLength={600}
                                                                                     value={noteDraft}
@@ -445,7 +440,7 @@ const DSASheet = () => {
                                                                                         onClick={() => handleSaveNote(problem._sectionIdx, problem._problemIdx)}
                                                                                     >Save</button>
                                                                                     <button
-                                                                                        className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded font-semibold text-base transition"
+                                                                                        className="bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white px-6 py-2 rounded font-semibold text-base transition"
                                                                                         onClick={handleCancelNote}
                                                                                     >Cancel</button>
                                                                                 </div>
@@ -476,28 +471,29 @@ const DSASheet = () => {
                                     }
                                     if (filteredProblems.length === 0) return null;
                                     return (
-                                        <div key={section.title} className="border rounded-lg bg-white shadow">
+                                        <div key={section.title} className="border rounded-lg bg-white dark:bg-gray-800 dark:border-gray-700 shadow">
                                             <button
-                                                className="w-full flex justify-between items-center px-6 py-4 text-lg font-semibold focus:outline-none"
+                                                className="w-full flex justify-between items-center px-6 py-4 text-lg font-semibold focus:outline-none dark:text-white"
                                                 onClick={() => toggleSection(idx)}
                                             >
                                                 <span>{section.title}</span>
                                                 <span className="flex items-center space-x-2">
-                                                    <span className="text-green-600 font-medium">
+                                                    <span className="text-green-600 dark:text-green-400 font-medium">
                                                         {section.solved} / {section.total} solved
                                                     </span>
                                                     {openSections.includes(idx) ? (
-                                                        <ChevronUp className="h-5 w-5" />
+                                                        <ChevronUp className="h-5 w-5 text-gray-600 dark:text-gray-300" />
                                                     ) : (
-                                                        <ChevronDown className="h-5 w-5" />
+                                                        <ChevronDown className="h-5 w-5 text-gray-600 dark:text-gray-300" />
                                                     )}
                                                 </span>
                                             </button>
+
                                             {openSections.includes(idx) && (
                                                 <div className="px-6 pb-4">
-                                                    <table className="w-full text-left border-t mt-2">
+                                                    <table className="w-full text-left border-t mt-2 dark:border-gray-700">
                                                         <thead>
-                                                            <tr className="text-gray-700">
+                                                            <tr className="text-gray-700 dark:text-gray-300">
                                                                 <th className="py-2">Question</th>
                                                                 <th className="py-2">Difficulty</th>
                                                                 <th className="py-2">Solved</th>
@@ -509,15 +505,15 @@ const DSASheet = () => {
                                                             {filteredProblems.map((problem, pidx) => {
                                                                 const key = `${idx}-${pidx}`;
                                                                 return (
-                                                                    <tr key={problem.question} className="border-b last:border-b-0">
-                                                                        <td className="py-2">{problem.question}</td>
+                                                                    <tr key={problem.question} className="border-b last:border-b-0 dark:border-gray-700">
+                                                                        <td className="py-2 text-gray-900 dark:text-gray-100">{problem.question}</td>
                                                                         <td className={
                                                                             'py-2 ' +
                                                                             (problem.difficulty === 'Easy'
-                                                                                ? 'text-green-600'
+                                                                                ? 'text-green-600 dark:text-green-400'
                                                                                 : problem.difficulty === 'Medium'
-                                                                                    ? 'text-yellow-600'
-                                                                                    : 'text-red-600')
+                                                                                    ? 'text-yellow-600 dark:text-yellow-400'
+                                                                                    : 'text-red-600 dark:text-red-400')
                                                                         }>
                                                                             {problem.difficulty}
                                                                         </td>
@@ -528,9 +524,9 @@ const DSASheet = () => {
                                                                                 className="focus:outline-none"
                                                                             >
                                                                                 {solved[key] ? (
-                                                                                    <CheckSquare className="inline h-5 w-5 text-green-600" />
+                                                                                    <CheckSquare className="inline h-5 w-5 text-green-600 dark:text-green-400" />
                                                                                 ) : (
-                                                                                    <Square className="inline h-5 w-5 text-gray-400" />
+                                                                                    <Square className="inline h-5 w-5 text-gray-400 dark:text-gray-500" />
                                                                                 )}
                                                                             </button>
                                                                         </td>
@@ -541,9 +537,9 @@ const DSASheet = () => {
                                                                                 className="focus:outline-none"
                                                                             >
                                                                                 {bookmarks[key] ? (
-                                                                                    <BookmarkCheck className="inline h-5 w-5 text-blue-600" />
+                                                                                    <BookmarkCheck className="inline h-5 w-5 text-blue-600 dark:text-blue-400" />
                                                                                 ) : (
-                                                                                    <Bookmark className="inline h-5 w-5 text-gray-400" />
+                                                                                    <Bookmark className="inline h-5 w-5 text-gray-400 dark:text-gray-500" />
                                                                                 )}
                                                                             </button>
                                                                         </td>
@@ -553,14 +549,16 @@ const DSASheet = () => {
                                                                                 onClick={() => handleOpenNote(idx, pidx)}
                                                                                 className="focus:outline-none mr-2"
                                                                             >
-                                                                                <StickyNote className={notes[key] ? 'inline h-5 w-5 text-yellow-500' : 'inline h-5 w-5 text-gray-400'} />
+                                                                                <StickyNote className={notes[key]
+                                                                                    ? 'inline h-5 w-5 text-yellow-500 dark:text-yellow-400'
+                                                                                    : 'inline h-5 w-5 text-gray-400 dark:text-gray-500'} />
                                                                             </button>
-                                                                            {/* Inline note editor popover */}
+
                                                                             {openNote === key && (
                                                                                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
-                                                                                    <div className="w-[38rem] bg-white border border-gray-400 rounded-xl shadow-2xl p-8 flex flex-col items-stretch">
+                                                                                    <div className="w-[38rem] bg-white dark:bg-gray-900 border border-gray-400 dark:border-gray-600 rounded-xl shadow-2xl p-8 flex flex-col items-stretch">
                                                                                         <textarea
-                                                                                            className="w-full border border-gray-300 rounded-md p-4 text-gray-900 text-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-200"
+                                                                                            className="w-full border border-gray-300 dark:border-gray-600 rounded-md p-4 text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 text-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-500"
                                                                                             rows={8}
                                                                                             maxLength={600}
                                                                                             value={noteDraft}
@@ -574,7 +572,7 @@ const DSASheet = () => {
                                                                                                 onClick={() => handleSaveNote(idx, pidx)}
                                                                                             >Save</button>
                                                                                             <button
-                                                                                                className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded font-semibold text-base transition"
+                                                                                                className="bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-100 px-6 py-2 rounded font-semibold text-base transition"
                                                                                                 onClick={handleCancelNote}
                                                                                             >Cancel</button>
                                                                                         </div>
@@ -590,6 +588,7 @@ const DSASheet = () => {
                                                 </div>
                                             )}
                                         </div>
+
                                     );
                                 })
                         )}
