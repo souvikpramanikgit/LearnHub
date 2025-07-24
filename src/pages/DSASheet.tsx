@@ -27,6 +27,7 @@ const demoData = [
 
 const DSASheet = () => {
     const [openSections, setOpenSections] = useState<number[]>([]);
+    const [data, setData] = useState(demoData);
 
     const toggleSection = (idx: number) => {
         setOpenSections((prev) =>
@@ -34,7 +35,17 @@ const DSASheet = () => {
         );
     };
 
-    // Force light mode for this page
+    const toggleSolved = (sectionIdx: number, problemIdx: number) => {
+        setData(prevData => {
+            const newData = [...prevData];
+            const problem = newData[sectionIdx].problems[problemIdx];
+            problem.solved = !problem.solved;
+            // Update solved count
+            newData[sectionIdx].solved = newData[sectionIdx].problems.filter(p => p.solved).length;
+            return newData;
+        });
+    };
+
     React.useEffect(() => {
         document.body.classList.remove('dark');
         document.body.classList.add('bg-white');
@@ -48,14 +59,8 @@ const DSASheet = () => {
             <TopNav onMenuClick={() => {}} sidebarOpen={false} />
             <div className="min-h-screen bg-white text-gray-900 px-4 py-8">
                 <h1 className="text-4xl font-bold text-center mb-2">DSA Practice Problems</h1>
-                {/* <p className="text-center text-gray-600 mb-8">
-        <b>Note:</b> The provided code solutions in this section serve as hints or are solutions to similar problems from platforms like
-        <a href="https://leetcode.com" className="text-blue-600 hover:underline mx-1" target="_blank" rel="noopener noreferrer">LeetCode</a>,
-        <a href="https://geeksforgeeks.org" className="text-green-600 hover:underline mx-1" target="_blank" rel="noopener noreferrer">GeeksforGeeks</a>, or
-        <a href="https://hackerrank.com" className="text-yellow-600 hover:underline mx-1" target="_blank" rel="noopener noreferrer">HackerRank</a> ...
-      </p> */}
                 <div className="max-w-4xl mx-auto space-y-4 mt-10">
-                    {demoData.map((section, idx) => (
+                    {data.map((section, idx) => (
                         <div key={section.title} className="border rounded-lg bg-white shadow">
                             <button
                                 className="w-full flex justify-between items-center px-6 py-4 text-lg font-semibold focus:outline-none"
@@ -98,11 +103,13 @@ const DSASheet = () => {
                                                         {problem.difficulty}
                                                     </td>
                                                     <td className="py-2 text-center">
-                                                        {problem.solved ? (
-                                                            <CheckSquare className="inline h-5 w-5 text-green-600" />
-                                                        ) : (
-                                                            <Square className="inline h-5 w-5 text-gray-400" />
-                                                        )}
+                                                        <button onClick={() => toggleSolved(idx, pidx)}>
+                                                            {problem.solved ? (
+                                                                <CheckSquare className="inline h-5 w-5 text-green-600" />
+                                                            ) : (
+                                                                <Square className="inline h-5 w-5 text-gray-400" />
+                                                            )}
+                                                        </button>
                                                     </td>
                                                 </tr>
                                             ))}
@@ -118,4 +125,4 @@ const DSASheet = () => {
     );
 };
 
-export default DSASheet; 
+export default DSASheet;
