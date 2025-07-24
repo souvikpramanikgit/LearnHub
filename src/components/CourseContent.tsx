@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BookOpen, Code, ArrowRight, ArrowLeft, Copy, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -11,7 +11,7 @@ import {
   blockchainContent, blockchainStructure
 } from '@/data';
 import ReactMarkdown from 'react-markdown';
-import { useNavigate } from 'react-router-dom'; // <-- Added import
+import { useNavigate } from 'react-router-dom';
 
 interface CourseContentProps {
   activeSection: string;
@@ -35,19 +35,56 @@ const courseStructure: Record<string, any> = {
 
 export const CourseContent = ({ activeSection, courseId, onSectionChange }: CourseContentProps) => {
   const [copiedCode, setCopiedCode] = useState(false);
+  const [tocItems, setTocItems] = useState<{id: string, title: string, level: number}[]>([]);
+  const [activeHeading, setActiveHeading] = useState<string>('');
   const { toast } = useToast();
-  const navigate = useNavigate(); // <-- Added hook
+  const navigate = useNavigate();
 
   const courseContent = contentData[courseId] || contentData['web-development'];
   const content = courseContent[activeSection] || courseContent[Object.keys(courseContent)[0]];
 
-  // Get all sections in order for navigation
   const currentCourseStructure = courseStructure[courseId] || courseStructure['web-development'];
   const allSections = currentCourseStructure.flatMap((module: any) => module.sections);
   const currentIndex = allSections.findIndex((section: any) => section.id === activeSection);
 
   const previousSection = currentIndex > 0 ? allSections[currentIndex - 1] : null;
   const nextSection = currentIndex < allSections.length - 1 ? allSections[currentIndex + 1] : null;
+
+  // NEW: Build TOC from all sections in course structure
+  useEffect(() => {
+    const buildTOCFromStructure = () => {
+      const toc: { id: string, title: string, level: number }[] = [];
+      currentCourseStructure.forEach((module: any) => {
+        module.sections.forEach((section: any) => {
+          toc.push({ id: section.id, title: section.title, level: 2 });
+        });
+      });
+      setTocItems(toc);
+    };
+
+    buildTOCFromStructure();
+  }, [currentCourseStructure]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6, .section-heading');
+      let current = '';
+
+      headings.forEach((heading) => {
+        const rect = heading.getBoundingClientRect();
+        if (rect.top <= 100) {
+          current = heading.id || heading.textContent?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') || '';
+        }
+      });
+
+      setActiveHeading(current);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [content]);
 
   const handleNavigation = (sectionId: string) => {
     if (onSectionChange) {
@@ -73,94 +110,66 @@ export const CourseContent = ({ activeSection, courseId, onSectionChange }: Cour
     }
   };
 
+  const scrollToHeading = (headingId: string) => {
+    handleNavigation(headingId);
+  };
+
   return (
-    <div className="p-6 pt-6 max-w-4xl mx-auto">
-      {/* Header */}
-      <div className="mb-8">
-        <div className="flex items-center space-x-2 mb-4">
-          <BookOpen className="h-6 w-6 text-green-600" />
-          <Badge variant="secondary" className="bg-green-100 text-green-800">
-            {courseId.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
-          </Badge>
+    <div className="flex max-w-7xl mx-auto">
+      <div className="p-4 sm:p-6 pt-6 max-w-full sm:max-w-4xl mx-auto">
+        <div className="mb-8">
+          <div className="flex items-center space-x-2 mb-4">
+            <BookOpen className="h-6 w-6 text-green-600" />
+            <Badge variant="secondary" className="bg-green-100 text-green-800">
+              {courseId.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+            </Badge>
+          </div>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">{content.title}</h1>
+          <p className="text-lg text-gray-600">{content.description}</p>
         </div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">{content.title}</h1>
-        <p className="text-lg text-gray-600">{content.description}</p>
-      </div>
 
-      {/* Back to Home Button */}
-      <div className="mb-6">
-        <Button
-          className="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-sm transition"
-          onClick={() => navigate('/')}
-        >
-          <ArrowLeft className="h-4 w-4" />
-          <span>Back to Home</span>
-        </Button>
-      </div>
+        <div className="mb-6">
+          <Button className="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-sm transition" onClick={() => navigate('/')}> <ArrowLeft className="h-4 w-4" /><span>Back to Home</span></Button>
+        </div>
 
-      {/* Main Content */}
-      <div className="space-y-8">
-        <Card>
-          <CardContent>
-            {content.markdown ? (
-              <div className="prose prose-gray max-w-none pt-6">
-                <ReactMarkdown>{content.markdown}</ReactMarkdown>
-              </div>
-            ) : content.content?.overview ? (
-              <div className="prose prose-gray max-w-none pt-6">
-                {content.content.overview.split('\n\n').map((paragraph: string, index: number) => (
-                  <p key={index} className="text-gray-700 leading-relaxed mb-4">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            ) : null}
-          </CardContent>
-        </Card>
-        {content.content && content.content.objectives && (
+        <div className="space-y-8 pr-6">
           <Card>
-            <CardHeader>
-              <CardTitle>Learning Objectives</CardTitle>
-            </CardHeader>
             <CardContent>
-              <ul className="space-y-3">
-                {content.content.objectives.map((objective: string, index: number) => (
-                  <li key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <span className="text-gray-700">{objective}</span>
-                  </li>
-                ))}
-              </ul>
+              {content.markdown && (
+                <div className="prose prose-gray max-w-none pt-6">
+                  <ReactMarkdown 
+                    components={{
+                      h1: ({node, children, ...props}) => <h1 id={children.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-')}>{children}</h1>,
+                      h2: ({node, children, ...props}) => <h2 id={children.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-')}>{children}</h2>,
+                    }}
+                  >{content.markdown}</ReactMarkdown>
+                </div>
+              )}
             </CardContent>
           </Card>
-        )}
-        {/* Navigation */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-6 pt-8 border-t border-gray-200 text-center">
-          <Button 
-            variant="outline" 
-            className="flex items-center space-x-2 px-6 py-2 rounded-lg shadow-sm hover:shadow-md transition"
-            onClick={() => previousSection && handleNavigation(previousSection.id)}
-            disabled={!previousSection}
-          >
-            <ArrowLeft className="h-4 w-4" />
-            <span className="font-medium">Previous</span>
-          </Button>
-          
-          <div className="text-gray-700 ">
-            <p className="text-sm font-semibold tracking-wide text-gray-500 mb-1">Continue Learning</p>
-            <p className="font-lg font-bold text-green-700">
-              {nextSection ? nextSection.title : 'Course Complete!'}
-            </p>
-          </div>
-          
-          <Button 
-            className="flex items-center space-x-2 px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-sm hover:shadow-md transition"
-            onClick={() => nextSection && handleNavigation(nextSection.id)}
-            disabled={!nextSection}
-          >
-            <span className="font-medium">Next</span>
-            <ArrowRight className="h-4 w-4" />
-          </Button>
+        </div>
+      </div>
+
+      <div className="hidden xl:block w-72 p-6 pt-6">
+        <div className="sticky top-6">
+          <h3 className="text-base font-semibold text-gray-900 mb-4">On This Page</h3>
+          <nav className="space-y-1">
+            {tocItems.map((item, index) => (
+              <button
+                key={index}
+                onClick={() => scrollToHeading(item.id)}
+                className={`w-full text-left px-2 py-1.5 text-sm rounded transition-colors ${activeHeading === item.id ? 'bg-blue-50 text-blue-700 font-medium' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}
+                style={{ paddingLeft: `${8 + (item.level - 1) * 12}px` }}
+              >
+                {item.title}
+              </button>
+            ))}
+            {tocItems.length === 0 && (
+              <p className="text-sm text-gray-500 italic px-2 py-1.5">
+                No headings found in this content
+              </p>
+            )}
+          </nav>
         </div>
       </div>
     </div>
