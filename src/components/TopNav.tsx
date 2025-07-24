@@ -179,6 +179,7 @@ export const TopNav = ({ onMenuClick, sidebarOpen }: TopNavProps) => {
     </Button>
    </div>
       </div>
+      </div>
     </nav>
   );
 };
