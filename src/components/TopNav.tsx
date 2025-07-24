@@ -94,34 +94,35 @@ export const TopNav = ({ onMenuClick, sidebarOpen }: TopNavProps) => {
             <span className="hidden sm:block ">Analytics</span>
           </Link>
           <div className="hidden  sm:flex gap-4">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-                <Button
-                  variant="outline"
-                  className="flex items-center space-x-2 hover:bg-green-50 hover:border-green-200"
-                >
-                <span>Courses</span>
-                <ChevronDown className="h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent
-              align="end"
-              className="w-64 bg-white border border-gray-200 shadow-lg rounded-lg"
-            >
-              {courses.map((course) => (
-                <DropdownMenuItem
-                  key={course.id}
-                  onClick={() => handleCourseSelect(course.id)}
-                  className="cursor-pointer hover:bg-green-50 p-3 rounded-md mx-1 my-1 transition-colors"
-                >
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="font-medium">{course.title}</span>
-                  </div>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="outline"
+                    className="flex items-center space-x-2 hover:bg-green-50 hover:border-green-200"
+                  >
+                  <span>Courses</span>
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                align="end"
+                className="w-64 bg-white border border-gray-200 shadow-lg rounded-lg"
+              >
+                {courses.map((course) => (
+                  <DropdownMenuItem
+                    key={course.id}
+                    onClick={() => handleCourseSelect(course.id)}
+                    className="cursor-pointer hover:bg-green-50 p-3 rounded-md mx-1 my-1 transition-colors"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <span className="font-medium">{course.title}</span>
+                    </div>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
 
           {/* Start Learning Button */}
           <Button 
