@@ -11,10 +11,17 @@ import DSASheet from './pages/DSASheet';
 import CSFundamentals from '@/pages/CSFundamentals';
 import LearningAnalytics from "@/components/LearningAnalytics";
 import { ThemeProvider } from "./Context/ThemeContext";
+import Preloader from "@/components/Preloader";
+import { usePreloader } from "@/hooks/use-preloader";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+const App = () => {
+  const { isLoading, fadeOut } = usePreloader(2500);
+  if (isLoading) {
+    return <Preloader fadeOut={fadeOut} />;
+  }
+  return(
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <ThemeProvider>
@@ -36,5 +43,6 @@ const App = () => (
     </TooltipProvider>
   </QueryClientProvider>
 );
+};
 
 export default App;
