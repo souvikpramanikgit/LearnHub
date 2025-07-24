@@ -46,7 +46,7 @@ export const TopNav = ({ onMenuClick, sidebarOpen }: TopNavProps) => {
           >
             <Menu className="h-5 w-5" />
           </Button>
-
+          
           {/* Logo and title */}
           <div
             className="flex items-center space-x-3 cursor-pointer"
@@ -94,91 +94,43 @@ export const TopNav = ({ onMenuClick, sidebarOpen }: TopNavProps) => {
             <span className="hidden sm:block ">Analytics</span>
           </Link>
           <div className="hidden  sm:flex gap-4">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
                 <Button
                   variant="outline"
                   className="flex items-center space-x-2 hover:bg-green-50 hover:border-green-200"
                 >
-                  <span>Courses</span>
-                  <ChevronDown className="h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent
-                align="end"
-                className="w-64 bg-white border border-gray-200 shadow-lg rounded-lg"
-              >
-                {courses.map((course) => (
-                  <DropdownMenuItem
-                    key={course.id}
-                    onClick={() => handleCourseSelect(course.id)}
-                    className="cursor-pointer hover:bg-green-50 p-3 rounded-md mx-1 my-1 transition-colors"
-                  >
-                    <div className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span className="font-medium">{course.title}</span>
-                    </div>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            {/* Start Learning Button */}
-            <Button
-              className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium shadow-md transition-all duration-200 hover:shadow-lg"
-              onClick={() => navigate("/start-learning")}
+                <span>Courses</span>
+                <ChevronDown className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+              align="end"
+              className="w-64 bg-white border border-gray-200 shadow-lg rounded-lg"
             >
-              Start Learning
-            </Button>
-          </div>
-        </div>
-      </div>{" "}
-
-{/* courses and start learning button on next row for mobile devices */}
-
+              {courses.map((course) => (
+                <DropdownMenuItem
+                  key={course.id}
+                  onClick={() => handleCourseSelect(course.id)}
+                  className="cursor-pointer hover:bg-green-50 p-3 rounded-md mx-1 my-1 transition-colors"
+                >
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <span className="font-medium">{course.title}</span>
+                  </div>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
 
           {/* Start Learning Button */}
           <Button 
             className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium shadow-md transition-all duration-200 hover:shadow-lg"
             onClick={() => navigate('/course/web-development')}
-
-      <div className="flex  justify-center items-center gap-3 my-1 pt-3 sm:hidden ">
-        {" "}
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button
-              variant="outline"
-              className="flex items-center space-x-2 hover:bg-green-50 hover:border-green-200"
-            >
-              <span>Courses</span>
-              <ChevronDown className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent
-            align="end"
-            className="w-64 bg-white border border-gray-200 shadow-lg rounded-lg"
           >
-            {courses.map((course) => (
-              <DropdownMenuItem
-                key={course.id}
-                onClick={() => handleCourseSelect(course.id)}
-                className="cursor-pointer hover:bg-green-50 p-3 rounded-md mx-1 my-1 transition-colors"
-              >
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="font-medium">{course.title}</span>
-                </div>
-              </DropdownMenuItem>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-        {/* Start Learning Button */}
-        <Button
-          className="bg-green-600 hover:bg-green-700 text-white  rounded-lg font-medium shadow-md transition-all duration-200 hover:shadow-lg"
-          onClick={() => navigate("/start-learning")}
-        >
-          Start Learning
-        </Button>
+            Start Learning
+          </Button>
+        </div>
       </div>
     </nav>
   );
