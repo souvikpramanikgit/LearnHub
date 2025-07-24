@@ -579,10 +579,10 @@ const DSASheet = () => {
     return (
         <>
             <TopNav onMenuClick={() => { }} sidebarOpen={false} />
-            <div className="min-h-screen bg-white text-gray-900 px-4 py-8 flex flex-row gap-8 max-w-7xl mx-auto">
+            <div className="min-h-screen  bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 px-4 py-8 flex flex-row gap-8 max-w-7xl mx-auto">
                 {/* Stats Sidebar */}
                 <aside className="w-80 flex-shrink-0">
-                    <div className="sticky top-20 bg-gray-900 border border-gray-800 rounded-2xl shadow-lg p-6">
+                    <div className="sticky top-20 bg-gray-900 dark:bg-gray-800 border border-gray-800 dark:border-gray-700 rounded-2xl shadow-lg p-6">
                         <h2 className="text-3xl font-bold mb-6 text-center text-white">Stats</h2>
                         {/* Easy */}
                         <div className="mb-6">
@@ -627,22 +627,22 @@ const DSASheet = () => {
                 </aside>
                 {/* Main Content */}
                 <main className="flex-1 overflow-x-auto">
-                    <h1 className="text-4xl font-bold text-center mb-2 bg-white sticky top-20 z-30">DSA Practice Problems</h1>
+                    <h1 className="text-4xl font-bold text-center mb-2 bg-white dark:bg-gray-900 sticky top-20 z-30">DSA Practice Problems</h1>
                     {/* Search and Filter UI */}
-                    <div className="flex flex-row items-center gap-4 mt-6 mb-4 sticky top-36 z-20 bg-white py-2 rounded justify-center">
+                    <div className="flex flex-row items-center gap-4 mt-6 mb-4 sticky top-36 z-20 bg-white dark:bg-gray-900 py-2 rounded justify-center">
                         {/* Search Input */}
                         <input
                             type="text"
                             value={search}
                             onChange={e => setSearch(e.target.value)}
                             placeholder="Search all problems..."
-                            className="w-64 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-200 text-base"
+                            className="w-64 px-4 py-2 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-base text-gray-900 dark:text-gray-100 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-200"
                         />
                         {/* Topic Dropdown */}
                         <select
                             value={topic}
                             onChange={e => { setTopic(e.target.value); setShowBookmarks(false); }}
-                            className="px-4 py-2 rounded-lg border border-gray-300 text-base focus:outline-none focus:ring-2 focus:ring-blue-200 bg-white shadow-sm"
+                            className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 text-base focus:outline-none focus:ring-2 focus:ring-blue-200 bg-white dark:bg-gray-800 shadow-sm text-gray-900 dark:text-gray-100"
                         >
                             {sectionTitles.map(title => (
                                 <option key={title} value={title}>{title}</option>
@@ -652,7 +652,7 @@ const DSASheet = () => {
                         <select
                             value={filter}
                             onChange={e => setFilter(e.target.value as 'All' | 'Easy' | 'Medium' | 'Hard')}
-                            className="px-4 py-2 rounded-lg border border-gray-300 text-base focus:outline-none focus:ring-2 focus:ring-blue-200 bg-white shadow-sm"
+                            className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 text-base focus:outline-none focus:ring-2 focus:ring-blue-200 bg-white dark:bg-gray-800 shadow-sm text-gray-900 dark:text-gray-100"
                         >
                             <option value="All">All Difficulty</option>
                             <option value="Easy">Easy</option>
@@ -668,19 +668,19 @@ const DSASheet = () => {
                         </button>
                     </div>
                     {/* Main Problems List (unchanged design) */}
-                    <div className="max-w-4xl mx-auto space-y-4 mt-10 pt-20" style={{ maxHeight: 'calc(100vh - 120px)', overflowY: 'auto' }}>
+                    <div className="max-w-4xl mx-auto space-y-4 mt-10 pt-20 text-gray-900 dark:text-gray-100" style={{ maxHeight: 'calc(100vh - 120px)', overflowY: 'auto' }}>
                         {showBookmarks ? (
                             // Show only bookmarked problems, grouped by section
                             bookmarkedBySection.length === 0 ? (
-                                <div className="text-center text-gray-500">No bookmarked problems yet.</div>
+                                <div className="text-center text-gray-500 dark:text-gray-400">No bookmarked problems yet.</div>
                             ) : (
                                 bookmarkedBySection.map((section) => (
-                                    <div key={section.title} className="border rounded-lg bg-blue-50 shadow">
-                                        <div className="px-6 py-2 font-semibold text-blue-900">{section.title}</div>
+                                    <div key={section.title} className="border rounded-lg dark:border-gray-700 bg-blue-50 dark:bg-gray-800 shadow">
+                                        <div className="px-6 py-2 font-semibold text-blue-900 dark:text-blue-300">{section.title}</div>
                                         <div className="px-6 pb-4">
-                                            <table className="w-full text-left border-t mt-2">
+                                            <table className="w-full text-left border-t dark:border-gray-700 mt-2">
                                                 <thead>
-                                                    <tr className="text-gray-700">
+                                                    <tr className="text-gray-700 dark:border-gray-300">
                                                         <th className="py-2">Question</th>
                                                         <th className="py-2">Difficulty</th>
                                                         <th className="py-2">Solved</th>
@@ -693,7 +693,7 @@ const DSASheet = () => {
                                                     {section.problems.map((problem) => {
                                                         const key = `${problem._sectionIdx}-${problem._problemIdx}`;
                                                         return (
-                                                            <tr key={problem.question} className="border-b last:border-b-0">
+                                                            <tr key={problem.question} className="border-b dark:border-gray-700  last:border-b-0">
                                                                 <td className="py-2">{problem.question}</td>
                                                                 <td className={
                                                                     'py-2 ' +
@@ -714,7 +714,7 @@ const DSASheet = () => {
                                                                         {solved[key] ? (
                                                                             <CheckSquare className="inline h-5 w-5 text-green-600" />
                                                                         ) : (
-                                                                            <Square className="inline h-5 w-5 text-gray-400" />
+                                                                            <Square className="inline h-5 w-5 text-gray-400 dark:text-gray-500" />
                                                                         )}
                                                                     </button>
                                                                 </td>
@@ -727,7 +727,7 @@ const DSASheet = () => {
                                                                         {bookmarks[key] ? (
                                                                             <BookmarkCheck className="inline h-5 w-5 text-blue-600" />
                                                                         ) : (
-                                                                            <Bookmark className="inline h-5 w-5 text-gray-400" />
+                                                                            <Bookmark className="inline h-5 w-5 text-gray-400 dark:text-gray-500" />
                                                                         )}
                                                                     </button>
                                                                 </td>
@@ -742,9 +742,9 @@ const DSASheet = () => {
                                                                     {/* Inline note editor popover */}
                                                                     {openNote === key && (
                                                                         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
-                                                                            <div className="w-[38rem] bg-white border border-gray-400 rounded-xl shadow-2xl p-8 flex flex-col items-stretch">
+                                                                            <div className="w-[38rem] bg-white dark:bg-gray-900 border border-gray-400 dark:border-gray-700 rounded-xl shadow-2xl p-8 flex flex-col items-stretch">
                                                                                 <textarea
-                                                                                    className="w-full border border-gray-300 rounded-md p-4 text-gray-900 text-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-200"
+                                                                                    className="w-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 text-lg resize-none p-4 focus:outline-none focus:ring-2 focus:ring-blue-200"
                                                                                     rows={8}
                                                                                     maxLength={600}
                                                                                     value={noteDraft}
@@ -758,7 +758,7 @@ const DSASheet = () => {
                                                                                         onClick={() => handleSaveNote(problem._sectionIdx, problem._problemIdx)}
                                                                                     >Save</button>
                                                                                     <button
-                                                                                        className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded font-semibold text-base transition"
+                                                                                        className="bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white px-6 py-2 rounded font-semibold text-base transition"
                                                                                         onClick={handleCancelNote}
                                                                                     >Cancel</button>
                                                                                 </div>
@@ -800,28 +800,28 @@ const DSASheet = () => {
                                     }
                                     if (filteredProblems.length === 0) return null;
                                     return (
-                                        <div key={section.title} className="border rounded-lg bg-white shadow">
+                                        <div key={section.title} className="border rounded-lg bg-white dark:bg-gray-800 dark:border-gray-700 shadow">
                                             <button
                                                 className="w-full flex justify-between items-center px-6 py-4 text-lg font-semibold focus:outline-none"
                                                 onClick={() => toggleSection(idx)}
                                             >
                                                 <span>{section.title}</span>
                                                 <span className="flex items-center space-x-2">
-                                                    <span className="text-green-600 font-medium">
+                                                    <span className="text-green-600 dark:text-green-400  font-medium">
                                                         {section.solved} / {section.total} solved
                                                     </span>
                                                     {openSections.includes(idx) ? (
-                                                        <ChevronUp className="h-5 w-5" />
+                                                        <ChevronUp className="h-5 w-5 text-gray-600 dark:text-gray-300" />
                                                     ) : (
-                                                        <ChevronDown className="h-5 w-5" />
+                                                        <ChevronDown className="h-5 w-5 text-gray-600 dark:text-gray-300" />
                                                     )}
                                                 </span>
                                             </button>
                                             {openSections.includes(idx) && (
                                                 <div className="px-6 pb-4">
-                                                    <table className="w-full text-left border-t mt-2">
+                                                    <table className="w-full text-left border-t mt-2 dark:border-gray-700">
                                                         <thead>
-                                                            <tr className="text-gray-700">
+                                                            <tr className="text-gray-700 dark:text-gray-300">
                                                                 <th className="py-2">Question</th>
                                                                 <th className="py-2">Difficulty</th>
                                                                 <th className="py-2">Solved</th>
@@ -833,15 +833,15 @@ const DSASheet = () => {
                                                             {filteredProblems.map((problem, pidx) => {
                                                                 const key = `${idx}-${pidx}`;
                                                                 return (
-                                                                    <tr key={problem.question} className="border-b last:border-b-0">
-                                                                        <td className="py-2">{problem.question}</td>
+                                                                    <tr key={problem.question} className="border-b last:border-b-0 dark:border-gray-700">
+                                                                        <td className="py-2 text-gray-900 dark:text-gray-100">{problem.question}</td>
                                                                         <td className={
                                                                             'py-2 ' +
                                                                             (problem.difficulty === 'Easy'
-                                                                                ? 'text-green-600'
+                                                                                ? 'text-green-600 dark:text-green-400'
                                                                                 : problem.difficulty === 'Medium'
-                                                                                    ? 'text-yellow-600'
-                                                                                    : 'text-red-600')
+                                                                                    ? 'text-yellow-600 dark:text-yellow-400'
+                                                                                    : 'text-red-600 dark:text-red-400')
                                                                         }>
                                                                             {problem.difficulty}
                                                                         </td>
@@ -852,9 +852,9 @@ const DSASheet = () => {
                                                                                 className="focus:outline-none"
                                                                             >
                                                                                 {solved[key] ? (
-                                                                                    <CheckSquare className="inline h-5 w-5 text-green-600" />
+                                                                                    <CheckSquare className="inline h-5 w-5 text-green-600 dark:text-green-400" />
                                                                                 ) : (
-                                                                                    <Square className="inline h-5 w-5 text-gray-400" />
+                                                                                    <Square className="inline h-5 w-5 text-gray-400 dark:text-gray-500" />
                                                                                 )}
                                                                             </button>
                                                                         </td>
@@ -871,7 +871,7 @@ const DSASheet = () => {
                                                                                 )}
                                                                             </button>
                                                                         </td>
-                                                                      <td className="py-2 text-center relative group">
+                                                                                       <td className="py-2 text-center relative group">
   {problem.link ? (
     <a
       href={problem.link}
@@ -904,10 +904,42 @@ const DSASheet = () => {
       </span>
     </span>
   )}
-</td>
-
-
-
+ </td>                                                                              
+                                                                  <td className="py-2 text-center relative">
+                                                                            <button
+                                                                                aria-label="Add/Edit Note"
+                                                                                onClick={() => handleOpenNote(idx, pidx)}
+                                                                                className="focus:outline-none mr-2"
+                                                                            >
+                                                                                <StickyNote className={notes[key] ? 'inline h-5 w-5 text-yellow-500' : 'inline h-5 w-5 text-gray-400'} />
+                                                                            </button>
+                                                                            {/* Inline note editor popover */}
+                                                                            {openNote === key && (
+                                                                                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
+                                                                                    <div className="w-[38rem] bg-white dark:bg-gray-900 border border-gray-400 dark:border-gray-600 rounded-xl shadow-2xl p-8 flex flex-col items-stretch">
+                                                                                        <textarea
+                                                                                            className="w-full border border-gray-300 dark:border-gray-600 rounded-md p-4 text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-800 text-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-500"
+                                                                                            rows={8}
+                                                                                            maxLength={600}
+                                                                                            value={noteDraft}
+                                                                                            onChange={e => setNoteDraft(e.target.value)}
+                                                                                            placeholder="Write your note here..."
+                                                                                            style={{ minHeight: '160px', maxHeight: '320px' }}
+                                                                                        />
+                                                                                        <div className="flex gap-4 mt-6 justify-end">
+                                                                                            <button
+                                                                                                className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded font-semibold text-base transition"
+                                                                                                onClick={() => handleSaveNote(idx, pidx)}
+                                                                                            >Save</button>
+                                                                                            <button
+                                                                                                className="bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-100 px-6 py-2 rounded font-semibold text-base transition"
+                                                                                                onClick={handleCancelNote}
+                                                                                            >Cancel</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            )}
+                                                                        </td>
                                                                     </tr>
                                                                 );
                                                             })}
