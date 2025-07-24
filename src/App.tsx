@@ -10,14 +10,14 @@ import NotFound from "./pages/NotFound";
 import DSASheet from './pages/DSASheet';
 import CSFundamentals from '@/pages/CSFundamentals';
 import LearningAnalytics from "@/components/LearningAnalytics";
+import { ThemeProvider } from "./Context/ThemeContext";
 import Preloader from "@/components/Preloader";
 import { usePreloader } from "@/hooks/use-preloader";
-
 
 const queryClient = new QueryClient();
 
 const App = () => {
-  const { isLoading, fadeOut } = usePreloader(2500); // Show preloader for at least 2.5 seconds
+  const { isLoading, fadeOut } = usePreloader(2500);
 
   if (isLoading) {
     return <Preloader fadeOut={fadeOut} />;
@@ -26,20 +26,21 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <Analytics />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/course/:courseId" element={<CoursePage />} />
-            <Route path="/dsa-sheet" element={<DSASheet />} />
-            <Route path="/cs-fundamentals" element={<CSFundamentals />} />
-            <Route path="*" element={<NotFound />} />
-            <Route path="/analytics" element={<LearningAnalytics />} />
-
-          </Routes>
-        </BrowserRouter>
+        <ThemeProvider>
+          <Toaster />
+          <Sonner />
+          <Analytics />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/course/:courseId" element={<CoursePage />} />
+              <Route path="/dsa-sheet" element={<DSASheet />} />
+              <Route path="/cs-fundamentals" element={<CSFundamentals />} />
+              <Route path="/analytics" element={<LearningAnalytics />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </ThemeProvider>
       </TooltipProvider>
     </QueryClientProvider>
   );

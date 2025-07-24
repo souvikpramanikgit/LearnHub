@@ -62,7 +62,7 @@ export default function LearningAnalytics() {
   return (
     <>
       <TopNav onMenuClick={() => {}} sidebarOpen={false} />
-      <div className="min-h-screen p-6 bg-gray-50">
+      <div className="min-h-screen p-6 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         <div className="mx-auto space-y-6 max-w-7xl">
           {/* Header */}
           <div className="flex items-center justify-between">
@@ -71,7 +71,7 @@ export default function LearningAnalytics() {
                 <Brain className="w-8 h-8 text-green-600" />
                 Learning Analytics Dashboard
               </h1>
-              <p className="mt-2 text-gray-600">
+              <p className="mt-2 text-gray-600 dark:text-gray-400">
                 Track your progress and optimize your learning journey
               </p>
             </div>
@@ -90,7 +90,7 @@ export default function LearningAnalytics() {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-gray-600">
+                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
                       Overall Progress
                     </p>
                     <p className="text-2xl font-bold">78%</p>
@@ -105,7 +105,7 @@ export default function LearningAnalytics() {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-gray-600">
+                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
                       Learning Streak
                     </p>
                     <p className="text-2xl font-bold">12 Days</p>
@@ -120,7 +120,7 @@ export default function LearningAnalytics() {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-gray-600">
+                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
                       Problems Solved
                     </p>
                     <p className="text-2xl font-bold">156</p>
@@ -135,7 +135,7 @@ export default function LearningAnalytics() {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-gray-600">
+                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
                       Study Hours
                     </p>
                     <p className="text-2xl font-bold">48h</p>
@@ -158,8 +158,8 @@ export default function LearningAnalytics() {
                 <ResponsiveContainer width="100%" height={300}>
                   <LineChart data={performanceData}>
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="date" />
-                    <YAxis />
+                    <XAxis dataKey="date" stroke="#8884d8" />
+                    <YAxis stroke="#8884d8" />
                     <Tooltip />
                     <Line
                       type="monotone"
@@ -232,8 +232,8 @@ export default function LearningAnalytics() {
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-                <div className="p-4 rounded-lg bg-blue-50">
-                  <h4 className="mb-2 font-semibold text-blue-800">
+                <div className="p-4 rounded-lg bg-blue-50 dark:bg-blue-900">
+                  <h4 className="mb-2 font-semibold text-blue-800 dark:text-blue-300">
                     Focus Area
                   </h4>
                   <p className="text-sm text-blue-700">
@@ -241,20 +241,20 @@ export default function LearningAnalytics() {
                     growth opportunity
                   </p>
                 </div>
-                <div className="p-4 rounded-lg bg-green-50">
-                  <h4 className="mb-2 font-semibold text-green-800">
+                <div className="p-4 rounded-lg bg-green-50 dark:bg-green-900">
+                  <h4 className="mb-2 font-semibold text-green-800 dark:text-green-200">
                     Keep It Up!
                   </h4>
-                  <p className="text-sm text-green-700">
+                  <p className="text-sm text-green-700 dark:text-green-300">
                     Your JavaScript skills are excellent. Consider advanced
                     patterns next.
                   </p>
                 </div>
-                <div className="p-4 rounded-lg bg-yellow-50">
-                  <h4 className="mb-2 font-semibold text-yellow-800">
+                <div className="p-4 rounded-lg bg-yellow-50 dark:bg-yellow-900">
+                  <h4 className="mb-2 font-semibold text-yellow-800 dark:text-yellow-200">
                     Study Tip
                   </h4>
-                  <p className="text-sm text-yellow-700">
+                  <p className="text-sm text-yellow-700 dark:text-yellow-300">
                     You learn best through visual content. Try more
                     diagram-based learning.
                   </p>
