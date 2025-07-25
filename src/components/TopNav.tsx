@@ -180,11 +180,11 @@ export const TopNav = ({ onMenuClick, sidebarOpen }: TopNavProps) => {
               <DropdownMenuItem
                 key={course.id}
                 onClick={() => handleCourseSelect(course.id)}
-                className="cursor-pointer hover:bg-green-50 p-3 rounded-md mx-1 my-1 transition-colors"
+                className="cursor-pointer dark:hover:bg-gray-800 hover:bg-green-50 p-3 rounded-md mx-1 my-1 transition-colors"
               >
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="font-medium">{course.title}</span>
+                      <span className="font-medium dark:text-gray-200">{course.title}</span>
                 </div>
               </DropdownMenuItem>
             ))}
