@@ -41,7 +41,7 @@ export const TopNav = ({ onMenuClick, sidebarOpen }: TopNavProps) => {
 
   return (
     <nav className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-4 py-3 sticky top-0 z-50 shadow-sm">
-      {" "}
+    
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Left side */}
 
@@ -155,13 +155,13 @@ export const TopNav = ({ onMenuClick, sidebarOpen }: TopNavProps) => {
               onClick={() => navigate("/course/web-development")}
             >
               Start Learning
-            </Button>{" "}
+            </Button>
           </div>
         </div>
       </div>
       {/* courses and start learning button on next row for mobile devices */}
       <div className="flex  justify-center items-center gap-3 my-1 pt-3 sm:hidden ">
-        {" "}
+      
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
