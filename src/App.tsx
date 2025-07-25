@@ -13,7 +13,8 @@ import LearningAnalytics from "@/components/LearningAnalytics";
 import { ThemeProvider } from "./Context/ThemeContext";
 import Preloader from "@/components/Preloader";
 import { usePreloader } from "@/hooks/use-preloader";
-import BackToTopButton from '@/components/ui/BackToTopButton';
+import BackToTopButton from "@/components/ui/BackToTopButton";
+import Footer from "./components/Footer";
 
 const queryClient = new QueryClient();
 
@@ -23,7 +24,6 @@ const App = () => {
   if (isLoading) {
     return <Preloader fadeOut={fadeOut} />;
   }
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -46,6 +46,7 @@ const App = () => {
       </TooltipProvider>
     </QueryClientProvider>
   );
+
 };
 
 export default App;
