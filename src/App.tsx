@@ -13,6 +13,7 @@ import LearningAnalytics from "@/components/LearningAnalytics";
 import { ThemeProvider } from "./Context/ThemeContext";
 import Preloader from "@/components/Preloader";
 import { usePreloader } from "@/hooks/use-preloader";
+import BackToTopButton from '@/components/ui/BackToTopButton';
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => {
           <Sonner />
           <Analytics />
           <BrowserRouter>
+          <BackToTopButton />
             <Routes>
               <Route path="/" element={<LandingPage />} />
               <Route path="/course/:courseId" element={<CoursePage />} />
