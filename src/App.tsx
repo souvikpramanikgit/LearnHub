@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import DSASheet from './pages/DSASheet';
 import CSFundamentals from '@/pages/CSFundamentals';
 import LearningAnalytics from "@/components/LearningAnalytics";
+import BackToTopButton from '@/components/ui/BackToTopButton';
 
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
       <Sonner />
       <Analytics />
       <BrowserRouter>
+      <BackToTopButton />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/course/:courseId" element={<CoursePage />} />
