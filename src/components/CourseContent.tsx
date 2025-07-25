@@ -115,17 +115,17 @@ export const CourseContent = ({ activeSection, courseId, onSectionChange }: Cour
   };
 
   return (
-    <div className="flex max-w-7xl mx-auto">
-      <div className="flex-1 p-6 pt-6 pr-0 max-w-4xl">
+    <div className="flex max-w-7xl mx-auto text-gray-900 dark:text-gray-100">
+      <div className="p-4 sm:p-6 pt-6 max-w-full sm:max-w-4xl mx-auto">
         <div className="mb-8">
           <div className="flex items-center space-x-2 mb-4">
             <BookOpen className="h-6 w-6 text-green-600" />
-            <Badge variant="secondary" className="bg-green-100 text-green-800">
+            <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-200 dark:text-green-900">
               {courseId.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
             </Badge>
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">{content.title}</h1>
-          <p className="text-lg text-gray-600">{content.description}</p>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{content.title}</h1>
+          <p className="text-lg text-gray-600 dark:text-gray-300">{content.description}</p>
         </div>
 
         <div className="mb-6">
@@ -133,10 +133,10 @@ export const CourseContent = ({ activeSection, courseId, onSectionChange }: Cour
         </div>
 
         <div className="space-y-8 pr-6">
-          <Card>
+          <Card className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700">
             <CardContent>
               {content.markdown && (
-                <div className="prose prose-gray max-w-none pt-6">
+                <div className="prose prose-gray max-w-none pt-6 dark:prose-invert">
                   <ReactMarkdown 
                     components={{
                       h1: ({node, children, ...props}) => <h1 id={children.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-')}>{children}</h1>,
@@ -152,13 +152,13 @@ export const CourseContent = ({ activeSection, courseId, onSectionChange }: Cour
 
       <div className="hidden xl:block w-72 p-6 pt-6">
         <div className="sticky top-6">
-          <h3 className="text-base font-semibold text-gray-900 mb-4">On This Page</h3>
+          <h3 className="text-base font-semibold text-gray-900 dark:text-gray-400 mb-4">On This Page</h3>
           <nav className="space-y-1">
             {tocItems.map((item, index) => (
               <button
                 key={index}
                 onClick={() => scrollToHeading(item.id)}
-                className={`w-full text-left px-2 py-1.5 text-sm rounded transition-colors ${activeHeading === item.id ? 'bg-blue-50 text-blue-700 font-medium' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}
+                className={`w-full text-left px-2 py-1.5 text-sm rounded transition-colors ${activeHeading === item.id ? 'bg-blue-50 text-blue-700 font-medium' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 hover:text-gray-900'}`}
                 style={{ paddingLeft: `${8 + (item.level - 1) * 12}px` }}
               >
                 {item.title}

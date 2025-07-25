@@ -1,12 +1,12 @@
 import React from 'react';
-import { BookOpen, Users, Award, ArrowRight, Code, Brain, Database, Link, Star, TrendingUp, BarChart3 } from 'lucide-react';
+import { BookOpen, Users, Award, ArrowRight, Code, Brain, Database, Link, Star, TrendingUp, BarChart3, Sun, Moon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import "../stylesheets/LandingPage.css"
 import { Typewriter } from 'react-simple-typewriter';
-
+import { useTheme } from '@/Context/ThemeContext';
 const courses = [
   {
     id: "web-development",
@@ -95,6 +95,7 @@ const features = [
 
 export const LandingPage = () => {
   const navigate = useNavigate();
+  const { theme, toggleTheme } = useTheme();
 
   const handleCourseClick = (courseId: string) => {
     navigate(`/course/${courseId}`);
@@ -111,9 +112,9 @@ export const LandingPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {/* Header */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-gray-100 px-4 py-4 sticky top-0 z-50">
+      <nav className="bg-white/80 dark:bg-gray-800/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-700 px-4 py-4 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="bg-gradient-to-r from-green-600 to-blue-600 p-2.5 rounded-xl">
@@ -131,6 +132,18 @@ export const LandingPage = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="rounded-full border border-gray-300 dark:border-gray-600"
+            >
+              {theme === 'light' ? (
+                <Moon className="h-5 w-5 text-gray-700" />
+              ) : (
+                <Sun className="h-5 w-5 text-yellow-400" />
+              )}
+            </Button>
             <Button variant="ghost" onClick={handleViewCourses}>Courses</Button>
             <RouterLink to="/cs-fundamentals">
               <Button variant="ghost">
@@ -140,7 +153,7 @@ export const LandingPage = () => {
             {/* DSA Sheet */}
             <button
               onClick={() => navigate('/dsa-sheet')}
-              className="px-4 py-2 border border-gray-200 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900 hover:border-gray-300 font-medium transition-all duration-200"
+              className="px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200"
             >
               DSA Sheet
             </button>
@@ -148,7 +161,7 @@ export const LandingPage = () => {
             {/* Analytics */}
             <button
               onClick={() => navigate('/analytics')}
-              className="flex flex-row items-center space-x-2 hover:bg-gray-100 px-4 py-2 border border-gray-200 rounded-lg text-gray-700 hover:text-gray-900 hover:border-gray-300 font-medium transition-all duration-200"
+              className="flex flex-row items-center space-x-2 hover:bg-gray-100 dark:hover:bg-gray-700 px-4 py-2 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-200 transition-all duration-200"
             >
               <BarChart3 className="h-4 w-4" />
               <span>Analytics</span>
@@ -184,18 +197,18 @@ export const LandingPage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 py-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-900 py-20">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between px-4 gap-12">
           {/* Left: Text Content */}
           <div className="flex-1 text-center lg:text-left">
-            <Badge className="hover:text-white hover:bg-green-700 hover:scale-105 transition-transform duration-500 mb-6 bg-green-100 text-green-800 border-green-200 px-4 py-2 text-base font-medium">
+            <Badge className="hover:text-white hover:bg-green-700 hover:scale-105 transition-transform duration-500 mb-6 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 border-green-200 dark:border-green-700 px-4 py-2 text-base font-medium">
               🚀 Launch Your Tech Career in 30 Days
             </Badge>
             <h1 className="text-5xl sm:text-6xl font-extrabold mb-6 leading-tight">
-              Master <span className="text-green-700">DSA</span> and{" "}
-              <span className="text-green-700">Full Stack Development</span>
+              Master <span className="text-green-700 dark:text-green-400">DSA</span> and{" "}
+              <span className="text-green-700 dark:text-green-400">Full Stack Development</span>
               <br />
-              in Just <span className="text-green-700">30 Days</span>
+              in Just <span className="text-green-700 dark:text-green-400">30 Days</span>
             </h1>
             {/* Typewriter animation below heading */}
             <h2 className="text-2xl font-semibold mb-6 bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 text-transparent bg-clip-text">
@@ -216,7 +229,7 @@ export const LandingPage = () => {
                 delaySpeed={1000}
               />
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0">
               Zero fluff. One roadmap. Your path to becoming a complete
               developer starts now.
             </p>
@@ -232,7 +245,7 @@ export const LandingPage = () => {
                 size="lg"
                 variant="outline"
                 onClick={handleViewCourses}
-                className="text-lg px-8 py-6 rounded-xl border-2 font-semibold flex items-center gap-2"
+                className="text-lg px-8 py-6 rounded-xl border-2 font-semibold flex items-center gap-2 dark:border-gray-500"
               >
                 <Code className="h-5 w-5" /> See Roadmap
               </Button>
@@ -278,13 +291,13 @@ function binarySearch(arr, target) {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Why Choose LearnHub?
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Experience a new way of learning with our innovative platform
               designed for modern developers
             </p>
@@ -293,7 +306,7 @@ function binarySearch(arr, target) {
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white dark:bg-gray-800"
               >
                 <CardHeader className="text-center pb-4">
                   <div
@@ -301,10 +314,10 @@ function binarySearch(arr, target) {
                   >
                     <feature.icon className="h-8 w-8 text-white" />
                   </div>
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
+                  <CardTitle className="text-xl text-gray-900 dark:text-white">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
-                  <p className="text-gray-600">{feature.description}</p>
+                  <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -313,13 +326,13 @@ function binarySearch(arr, target) {
       </section>
 
       {/* Courses Section */}
-      <section id="courses-section" className="py-20 bg-white">
+      <section id="courses-section" className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Popular Courses
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               Choose from our comprehensive selection of technology courses
               designed by industry experts
             </p>
@@ -328,7 +341,7 @@ function binarySearch(arr, target) {
             {courses.map((course) => (
               <Card
                 key={course.id}
-                className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer border-0 shadow-lg min-h-[300px] flex flex-col justify-between align-center"
+                className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer border-0 shadow-lg min-h-[300px] flex flex-col justify-between align-center bg-white dark:bg-gray-800"
                 onClick={() => handleCourseClick(course.id)}
               >
                 {/* Grouping CardHeader and CardContent inside one container to separate them visually and structurally from the Button section below.*/}
@@ -339,26 +352,26 @@ function binarySearch(arr, target) {
                     >
                       <course.icon className="h-8 w-8 text-white" />
                     </div>
-                    <CardTitle className="text-xl mb-2">
+                    <CardTitle className="text-xl mb-2 text-gray-900 dark:text-white">
                       {course.title}
                     </CardTitle>
                     <div className="flex items-center space-x-2 mb-3">
                       <div className="flex items-center">
                         <Star className="h-4 w-4 text-yellow-400 fill-current" />
-                        <span className="text-sm font-medium ml-1">
+                        <span className="text-sm font-medium ml-1 text-gray-700 dark:text-gray-200">
                           {course.rating}
                         </span>
                       </div>
-                      <Badge variant="secondary" className="text-xs">
+                      <Badge variant="secondary" className="text-xs bg-gray-200 text-gray-800 dark:bg-gray-300 dark:text-gray-900">
                         {course.level}
                       </Badge>
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
                       {course.description}
                     </p>
-                    <div className="space-y-2 text-sm text-gray-500">
+                    <div className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
                       <div className="flex items-center justify-between">
                         <span className="flex items-center">
                           {/* <Users className="h-4 w-4 mr-1" />
@@ -377,7 +390,7 @@ function binarySearch(arr, target) {
                 </div>
 
                 <div className="p-4 pt-0">
-                  <Button className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 mt-4">
+                <Button className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white dark:from-green-700 dark:to-blue-700 dark:hover:from-green-800 dark:hover:to-blue-800 mt-4">
                     Start Course <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
@@ -388,23 +401,23 @@ function binarySearch(arr, target) {
       </section>
 
       {/* CS Fundamentals Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">CS Fundamentals</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">CS Fundamentals</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               All the core Computer Science subjects you need for interviews and real-world engineering: OS, DBMS, CN, OOP, and more.
             </p>
           </div>
           <div className="flex justify-center">
-            <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer border-0 shadow-lg bg-gradient-to-br from-blue-700 to-teal-600 text-white w-80">
+            <Card className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer border-0 shadow-lg bg-gradient-to-br from-blue-700 to-teal-600 text-white w-80 dark:from-blue-800 dark:to-teal-700">
               <CardHeader className="pb-4">
                 <div className="bg-blue-700 p-4 rounded-2xl w-16 h-16 flex items-center justify-center mb-4">
                   <BookOpen className="h-8 w-8 text-white" />
                 </div>
                 <CardTitle className="text-xl mb-2">CS Fundamentals</CardTitle>
                 <div className="flex items-center space-x-2 mb-3">
-                  <Badge variant="secondary" className="text-xs bg-white text-blue-700">
+                  <Badge variant="secondary" className="text-xs bg-white text-blue-700 dark:bg-gray-200 dark:text-blue-800">
                     Core Subjects
                   </Badge>
                 </div>
@@ -414,7 +427,7 @@ function binarySearch(arr, target) {
                   OS, DBMS, CN, OOP and more. All the core subjects you need for interviews and real-world engineering.
                 </p>
                 <RouterLink to="/cs-fundamentals">
-                  <Button className="w-full bg-white text-blue-700 font-semibold rounded-lg mt-4 hover:bg-blue-100 transition">
+                  <Button className="w-full bg-white text-blue-700 font-semibold rounded-lg mt-4 hover:bg-blue-100 dark:bg-gray-100 dark:hover:bg-gray-300 dark:text-blue-800 transition">
                     Explore CS Fundamentals <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </RouterLink>
