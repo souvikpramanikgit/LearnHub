@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
@@ -46,6 +46,26 @@ const courses = [
 ];
 
 export default function Home(): React.ReactElement {
+  
+   useEffect(() => {
+    const logoEl = document.querySelector(".navbar__title");
+
+    if (!logoEl) return;
+
+    const handleClick = (e: MouseEvent) => {
+      if (window.location.pathname === "/") {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    };
+
+    logoEl.addEventListener("click", handleClick);
+
+    return () => {
+      logoEl.removeEventListener("click", handleClick);
+    };
+  }, []);
+
   return (
     <Layout
       title="Launch Your Tech Career in 30 Days"
