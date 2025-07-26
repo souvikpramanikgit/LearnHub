@@ -35,10 +35,10 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         // These paths correspond to MDX files under docs/learning-paths/devops/
-        'learning-paths/devops/01-intro',
-        'learning-paths/devops/02-ci-cd',
-        'learning-paths/devops/03-containers',
-        'learning-paths/devops/04-monitoring',
+        'devops/01-intro',
+        'devops/02-ci-cd',
+        'devops/03-containers',
+        'devops/04-monitoring',
       ],
     },
    ],
