@@ -1,0 +1,181 @@
+.featuresSection {
+  padding: 4rem 0;
+  background: #f8fafc;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .featuresGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.featureCard {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px 0 rgba(30, 41, 59, 0.08);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  text-align: center;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.featureCard:hover {
+  box-shadow: 0 8px 32px 0 rgba(30, 41, 59, 0.16);
+  transform: translateY(-6px);
+}
+
+.featureIconWrapper {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.featureGradientBlue {
+  background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+}
+.featureGradientPurple {
+  background: linear-gradient(90deg, #8b5cf6 0%, #ec4899 100%);
+}
+.featureGradientGreen {
+  background: linear-gradient(90deg, #22c55e 0%, #10b981 100%);
+}
+.featureGradientOrange {
+  background: linear-gradient(90deg, #f59e42 0%, #ef4444 100%);
+}
+
+.featureIcon {
+  width: 2rem;
+  height: 2rem;
+  color: #fff;
+}
+
+.featureTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1a202c;
+}
+
+.featureDescription {
+  color: #64748b;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Dark mode overrides for Docusaurus */
+[data-theme='dark'] .featuresSection {
+  background: #18181b;
+}
+
+[data-theme='dark'] .featureCard {
+  background: #23272f;
+  color: #f3f4f6;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.32);
+}
+
+[data-theme='dark'] .featureCard:hover {
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.48);
+}
+
+[data-theme='dark'] .featureTitle {
+  color: #f3f4f6;
+}
+
+[data-theme='dark'] .featureDescription {
+  color: #a1a1aa;
+}
+
+[data-theme='dark'] .title {
+  color: #f3f4f6;
+}
+
+[data-theme='dark'] .subtitle {
+  color: #a1a1aa;
+}
+
+[data-theme='dark'] .featureGradientBlue {
+  background: linear-gradient(90deg, #2563eb 0%, #0ea5e9 100%);
+}
+[data-theme='dark'] .featureGradientPurple {
+  background: linear-gradient(90deg, #7c3aed 0%, #db2777 100%);
+}
+[data-theme='dark'] .featureGradientGreen {
+  background: linear-gradient(90deg, #16a34a 0%, #059669 100%);
+}
+[data-theme='dark'] .featureGradientOrange {
+  background: linear-gradient(90deg, #ea580c 0%, #dc2626 100%);
+}
+@media (max-width: 768px) {
+  .featuresGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .featureCard {
+    width: 90%;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .featureIconWrapper {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+  }
+
+  .featureIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+}

@@ -1,7 +1,7 @@
 # LearnHub
 
-![Screen Recording 2025-07-22 145437](https://github.com/user-attachments/assets/55fc4eba-8956-4b65-8f62-7ec6a902c6c8)
-<!-- ![image](https://github.com/user-attachments/assets/9dbbdd58-e5e5-4e3a-bfc7-fc5809cb756c) -->
+<!-- ![Screen Recording 2025-07-22 145437](https://github.com/user-attachments/assets/55fc4eba-8956-4b65-8f62-7ec6a902c6c8) -->
+![image](https://github.com/user-attachments/assets/69be3efb-8bf1-4d96-9390-eec1f06ac264)
 
 ## Tech Stack
 
