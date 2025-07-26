@@ -1,8 +1,8 @@
 ---
 id: html-headings
 sidebar_position: 5
-title: HTML Headings
-sidebar_label: HTML Headings
+title: Html Headings
+sidebar_label: Html Headings
 ---
 
 # HTML Headings
