@@ -143,3 +143,39 @@
 [data-theme='dark'] .featureGradientOrange {
   background: linear-gradient(90deg, #ea580c 0%, #dc2626 100%);
 }
+@media (max-width: 768px) {
+  .featuresGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .featureCard {
+    width: 90%;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .featureIconWrapper {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+  }
+
+  .featureIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+}
