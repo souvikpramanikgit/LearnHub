@@ -1,6 +1,8 @@
 ---
-title: "DevOps Introduction"
-slug: devops/01-intro
+id: devops-introduction
+sidebar_position: 1
+title: DevOps Introduction
+sidebar_label: DevOps Introduction
 ---
 
 # Introduction to DevOps

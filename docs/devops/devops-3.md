@@ -1,6 +1,8 @@
 ---
-title: "Monitoring & Observability"
-slug: devops/04-monitoring
+id: monitoring-observability
+sidebar_position: 4
+title: Monitoring & Observability
+sidebar_label: Monitoring & Observability
 ---
 
 # Monitoring & Observability

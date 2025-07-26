@@ -1,6 +1,8 @@
 ---
-title: "CI/CD Concepts"
-slug: devops/02-ci-cd
+id: cicd-Concepts
+sidebar_position: 2
+title: CI/CD Concepts
+sidebar_label: CI/CD Concepts
 ---
 
 # Continuous Integration & Continuous Deployment (CI/CD)

@@ -1,6 +1,8 @@
 ---
-title: "Containers & Orchestration"
-slug: devops/03-containers
+id: containers-orchestration
+sidebar_position: 3
+title: Containers & Orchestration
+sidebar_label: Containers & Orchestration
 ---
 
 # Containers & Orchestration
