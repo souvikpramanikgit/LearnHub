@@ -1,6 +1,6 @@
 ---
 title: "DevOps Introduction"
-slug: learning-paths/devops/01-intro
+slug: devops/01-intro
 ---
 
 # Introduction to DevOps

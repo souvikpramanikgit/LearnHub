@@ -1,6 +1,6 @@
 ---
 title: "CI/CD Concepts"
-slug: learning-paths/devops/02-ci-cd
+slug: devops/02-ci-cd
 ---
 
 # Continuous Integration & Continuous Deployment (CI/CD)

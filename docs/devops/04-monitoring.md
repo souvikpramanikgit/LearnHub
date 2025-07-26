@@ -1,6 +1,6 @@
 ---
 title: "Monitoring & Observability"
-slug: learning-paths/devops/04-monitoring
+slug: devops/04-monitoring
 ---
 
 # Monitoring & Observability

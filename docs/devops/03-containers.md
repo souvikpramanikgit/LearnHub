@@ -1,6 +1,6 @@
 ---
 title: "Containers & Orchestration"
-slug: learning-paths/devops/03-containers
+slug: devops/03-containers
 ---
 
 # Containers & Orchestration
