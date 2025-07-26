@@ -43,7 +43,7 @@ export default function HomepageFeatures() {
         </div>
         <div className={styles.featuresGrid}>
           {features.map((feature, index) => {
-            const Icon = feature.icon;
+            const Icon = feature.icon || BookOpen; // BookOpen as fallback icon
             return (
               <div
                 key={index}
