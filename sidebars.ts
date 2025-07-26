@@ -28,6 +28,20 @@ const sidebars: SidebarsConfig = {
     },
   ],
    */
+   devopsSidebar: [
+    {
+      type: 'category',
+      label: 'DevOps Learning Path',
+      collapsed: false,
+      items: [
+        // These paths correspond to MDX files under docs/learning-paths/devops/
+        'devops/intro',
+        'devops/ci-cd',
+        'devops/containers',
+        'devops/monitoring',
+      ],
+    },
+   ],
 };
 
 export default sidebars;
