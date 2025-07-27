@@ -33,6 +33,7 @@
 @media (max-width: 996px) {
   footer.footer {
     text-align: center;
+    width: 420px;
   }
 
   .footer__links {
@@ -55,6 +56,7 @@
     text-align: center;
     margin-top: 1rem;
   }
+    
 }
 
 
