@@ -45,7 +45,7 @@
   .footer__link-item {
     display: block;
     text-align: center;
-    width: 100%; /* Stretch link container so it can center text */
+    width: 100%; 
   }
 
   .footer__col {
