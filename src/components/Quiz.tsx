@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useColorMode } from '@docusaurus/theme-common';
 
 type Question = {
   id: string;
@@ -11,6 +12,8 @@ type Question = {
 export const Quiz = ({ questions }: { questions: Question[] }) => {
   const [answers, setAnswers] = useState<{ [key: string]: string }>({});
   const [submitted, setSubmitted] = useState(false);
+  const { colorMode } = useColorMode(); // <== this works
+  const isDarkTheme = colorMode === 'dark';
 
   const handleChange = (id: string, selected: string) => {
     setAnswers((prev) => ({ ...prev, [id]: selected }));
@@ -35,20 +38,23 @@ export const Quiz = ({ questions }: { questions: Question[] }) => {
   return (
     <div
       style={{
-        background: '#ffffff',
+        background: isDarkTheme ? '#1e1e1e' : '#ffffff',
+        color: isDarkTheme ? '#f0f0f0' : '#111',
         padding: 24,
         borderRadius: 12,
         marginTop: 40,
-        boxShadow: '0 4px 20px rgba(0,0,0,0.08)'
+        boxShadow: isDarkTheme
+          ? '0 4px 20px rgba(0,0,0,0.4)'
+          : '0 4px 20px rgba(0,0,0,0.08)',
+        border: `1px solid ${isDarkTheme ? '#333' : '#e0e0e0'}`
       }}
     >
-
       {questions.map((q, index) => (
         <div
           key={q.id}
           style={{
             marginBottom: 24,
-            borderBottom: '1px solid #e0e0e0',
+            borderBottom: `1px solid ${isDarkTheme ? '#444' : '#e0e0e0'}`,
             paddingBottom: 12
           }}
         >
@@ -58,7 +64,8 @@ export const Quiz = ({ questions }: { questions: Question[] }) => {
           {q.options.map((option) => {
             const isSelected = answers[q.id] === option;
             const isCorrect = submitted && option === q.correctAnswer;
-            const isIncorrect = submitted && isSelected && option !== q.correctAnswer;
+            const isIncorrect =
+              submitted && isSelected && option !== q.correctAnswer;
 
             return (
               <label
@@ -70,14 +77,19 @@ export const Quiz = ({ questions }: { questions: Question[] }) => {
                   borderRadius: 6,
                   cursor: submitted ? 'default' : 'pointer',
                   backgroundColor: isCorrect
-                    ? '#d4edda'
+                    ? '#28a74533'
                     : isIncorrect
-                    ? '#f8d7da'
+                    ? '#dc354533'
                     : isSelected
-                    ? '#e2e3e5'
+                    ? isDarkTheme
+                      ? '#333'
+                      : '#e2e3e5'
                     : 'transparent',
-                  border: isSelected ? '1px solid #aaa' : '1px solid transparent',
-                  fontWeight: isSelected ? 'bold' : 'normal'
+                  border: isSelected
+                    ? `1px solid ${isDarkTheme ? '#aaa' : '#888'}`
+                    : '1px solid transparent',
+                  fontWeight: isSelected ? 'bold' : 'normal',
+                  color: isDarkTheme ? '#f5f5f5' : '#111'
                 }}
               >
                 <input
@@ -95,7 +107,7 @@ export const Quiz = ({ questions }: { questions: Question[] }) => {
           })}
 
           {submitted && q.explanation && (
-            <p style={{ marginTop: 6, fontStyle: 'italic', color: '#555' }}>
+            <p style={{ marginTop: 6, fontStyle: 'italic', color: isDarkTheme ? '#ccc' : '#555' }}>
               💡 {q.explanation}
             </p>
           )}
@@ -117,7 +129,6 @@ export const Quiz = ({ questions }: { questions: Question[] }) => {
         >
           Submit Quiz
         </button>
-        // 🎯 Score Highlighting [Green (100%), Orange (60–99%), Red (<60%)]
       ) : (
         <div style={{ marginTop: 20 }}>
           <p
@@ -134,7 +145,8 @@ export const Quiz = ({ questions }: { questions: Question[] }) => {
             style={{
               marginTop: 10,
               padding: '8px 16px',
-              background: '#e2e8f0',
+              background: isDarkTheme ? '#555' : '#e2e8f0',
+              color: isDarkTheme ? '#fff' : '#000',
               border: 'none',
               borderRadius: 8,
               cursor: 'pointer'
