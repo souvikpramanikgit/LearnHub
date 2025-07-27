@@ -34,21 +34,16 @@ export default function HomepageFeatures() {
     <section className={styles.featuresSection} id="features-section">
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>
-            Why Choose LearnHub?
-          </h2>
+          <h2 className={styles.title}>Why Choose LearnHub?</h2>
           <p className={styles.subtitle}>
             Experience a new way of learning with our innovative platform designed for modern developers
           </p>
         </div>
         <div className={styles.featuresGrid}>
           {features.map((feature, index) => {
-            const Icon = feature.icon;
+            const Icon = feature.icon || BookOpen; // ✅ Added fallback icon if feature.icon is missing
             return (
-              <div
-                key={index}
-                className={styles.featureCard}
-              >
+              <div key={index} className={styles.featureCard} tabIndex={0}> {/* ✅ Added tabIndex for keyboard accessibility */}
                 <div className={`${styles.featureIconWrapper} ${feature.gradientClass}`}>
                   <Icon className={styles.featureIcon} />
                 </div>
