@@ -196,10 +196,18 @@ Master text appearance and structure in HTML using these tags and best practices
 | `<time>`      | Date/time                | `<time>2024-01-15</time>`         | 2024-01-15 |
 | `<address>`   | Contact info             | `<address>Contact</address>`      | Contact info |
 
+## Let's Have a quick recap
+
+import { Quiz } from '@site/src/components/Quiz';
+import quiz from './quiz.json';
+
+<Quiz questions={quiz} />
+
 ## 🔗 Additional Resources
 
 - [MDN HTML Text Formatting](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 - [W3C HTML Specification](https://html.spec.whatwg.org/)
 - [WebAIM Accessibility Guidelines](https://webaim.org/articles/semanticstructure/)
 
-Happy Coding! 👨‍💻✨
+
+##                                Happy Coding! 👨‍💻✨

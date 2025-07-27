@@ -106,4 +106,10 @@ CSS allows developers to create **responsive** web designs using:
 
 CSS is the **backbone of web design**. It gives your HTML structure the styling it needs to become a visually engaging experience. From basic colors to complex layouts — CSS does it all. Master it, and you'll unlock a world of creative possibilities!
 
+## 9. Quiz Time
+
+import { Quiz } from '@site/src/components/Quiz';
+import quiz from './quiz.json';
+
+<Quiz questions={quiz} />
 ---
