@@ -28,3 +28,35 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+
+@media (max-width: 996px) {
+  footer.footer {
+    text-align: center;
+  }
+
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__link-item {
+    display: block;
+    text-align: center;
+    width: 100%; /* Stretch link container so it can center text */
+  }
+
+  .footer__col {
+    text-align: center;
+  }
+
+  .footer__bottom {
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+
+
+
