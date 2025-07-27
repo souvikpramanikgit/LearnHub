@@ -52,11 +52,18 @@
   box-shadow: 0 4px 24px 0 rgba(30, 41, 59, 0.08);
   padding: 2rem 1.5rem 1.5rem 1.5rem;
   text-align: center;
-  transition: box-shadow 0.3s, transform 0.3s;
+  transition: box-shadow 0.3s, transform 0.3s, background 0.3s, color 0.3s; /* ✅ Enhanced transition for dark mode & hover */
+  outline: none; /* ✅ Prepares for focus styles */
 }
+
 .featureCard:hover {
   box-shadow: 0 8px 32px 0 rgba(30, 41, 59, 0.16);
   transform: translateY(-6px);
+}
+
+.featureCard:focus {
+  outline: 2px solid #3b82f6; /* ✅ Focus ring for accessibility */
+  outline-offset: 4px;
 }
 
 .featureIconWrapper {
@@ -68,6 +75,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .featureGradientBlue {
   background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
 }
@@ -143,6 +151,7 @@
 [data-theme='dark'] .featureGradientOrange {
   background: linear-gradient(90deg, #ea580c 0%, #dc2626 100%);
 }
+
 @media (max-width: 768px) {
   .featuresGrid {
     display: flex;
