@@ -86,6 +86,7 @@ const config: Config = {
           label: 'Tutorial',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/news', label: 'Tech News', position: 'left'},
         {
           href: 'https://github.com/souvikpramanikgit/LearnHub',
           label: 'GitHub',
