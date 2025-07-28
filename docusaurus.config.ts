@@ -97,38 +97,30 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'About',
           items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
+            { label: 'Privacy Policy', to: '/privacy' },
+            { label: 'Terms & Conditions', to: '/terms' },
+            { label: 'About Us', to: '/about' },
           ],
         },
         {
           title: 'Community',
           items: [
-            {
-              label: 'Discord',
-              href: 'https://discord.gg/YmSKSDfH',
-            },
+            { label: 'Discord', href: 'https://discord.gg/YmSKSDfH' },
+            { label: 'GitHub', href: 'https://github.com/souvikpramanikgit/LearnHub' },
+            { label: 'LinkedIn', href: 'https://linkedin.com/in/YOUR-LINK' },
           ],
         },
         {
-          title: 'More',
+          title: 'Resources',
           items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/souvikpramanikgit/LearnHub',
-            },
+            { label: 'Blog', to: '/blog' },
+            { label: 'Docs', to: '/docs/intro' },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} LearnHub | Built with ❤️ and Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
