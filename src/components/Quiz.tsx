@@ -12,7 +12,7 @@ type Question = {
 export const Quiz = ({ questions }: { questions: Question[] }) => {
   const [answers, setAnswers] = useState<{ [key: string]: string }>({});
   const [submitted, setSubmitted] = useState(false);
-  const { colorMode } = useColorMode(); // <== this works
+  const { colorMode } = useColorMode();
   const isDarkTheme = colorMode === 'dark';
 
   const handleChange = (id: string, selected: string) => {
@@ -40,74 +40,108 @@ export const Quiz = ({ questions }: { questions: Question[] }) => {
       style={{
         background: isDarkTheme ? '#1e1e1e' : '#ffffff',
         color: isDarkTheme ? '#f0f0f0' : '#111',
-        padding: 24,
+        padding: '1.5rem',
         borderRadius: 12,
         marginTop: 40,
         boxShadow: isDarkTheme
           ? '0 4px 20px rgba(0,0,0,0.4)'
           : '0 4px 20px rgba(0,0,0,0.08)',
-        border: `1px solid ${isDarkTheme ? '#333' : '#e0e0e0'}`
+        border: `1px solid ${isDarkTheme ? '#333' : '#e0e0e0'}`,
+        maxWidth: 800,
+        marginLeft: 'auto',
+        marginRight: 'auto'
       }}
     >
       {questions.map((q, index) => (
         <div
           key={q.id}
           style={{
-            marginBottom: 24,
-            borderBottom: `1px solid ${isDarkTheme ? '#444' : '#e0e0e0'}`,
-            paddingBottom: 12
+            marginBottom: 32,
+            paddingBottom: 16,
+            borderBottom: `1px solid ${isDarkTheme ? '#444' : '#ddd'}`
           }}
         >
-          <p style={{ fontWeight: 'bold' }}>
+          <p
+            style={{
+              fontWeight: 'bold',
+              fontSize: '1rem',
+              marginBottom: '0.75rem'
+            }}
+          >
             {index + 1}. {q.question}
           </p>
-          {q.options.map((option) => {
-            const isSelected = answers[q.id] === option;
-            const isCorrect = submitted && option === q.correctAnswer;
-            const isIncorrect =
-              submitted && isSelected && option !== q.correctAnswer;
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '12px'
+            }}
+          >
+            {q.options.map((option) => {
+              const isSelected = answers[q.id] === option;
+              const isCorrect = submitted && option === q.correctAnswer;
+              const isIncorrect =
+                submitted && isSelected && option !== q.correctAnswer;
 
-            return (
-              <label
-                key={option}
-                style={{
-                  display: 'block',
-                  marginBottom: 6,
-                  padding: '6px 12px',
-                  borderRadius: 6,
-                  cursor: submitted ? 'default' : 'pointer',
-                  backgroundColor: isCorrect
-                    ? '#28a74533'
-                    : isIncorrect
-                    ? '#dc354533'
-                    : isSelected
-                    ? isDarkTheme
-                      ? '#333'
-                      : '#e2e3e5'
-                    : 'transparent',
-                  border: isSelected
-                    ? `1px solid ${isDarkTheme ? '#aaa' : '#888'}`
-                    : '1px solid transparent',
-                  fontWeight: isSelected ? 'bold' : 'normal',
-                  color: isDarkTheme ? '#f5f5f5' : '#111'
-                }}
-              >
-                <input
-                  type="radio"
-                  name={q.id}
-                  value={option}
-                  disabled={submitted}
-                  checked={isSelected}
-                  onChange={() => handleChange(q.id, option)}
-                  style={{ marginRight: 8 }}
-                />
-                {option}
-              </label>
-            );
-          })}
-
+              return (
+                <label
+                  key={option}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    backgroundColor: isCorrect
+                      ? '#28a74533'
+                      : isIncorrect
+                      ? '#dc354533'
+                      : isSelected
+                      ? isDarkTheme
+                        ? '#333'
+                        : '#f3f4f6'
+                      : isDarkTheme
+                      ? '#2a2a2a'
+                      : '#fafafa',
+                    border: `1px solid ${
+                      isSelected
+                        ? isDarkTheme
+                          ? '#aaa'
+                          : '#666'
+                        : isDarkTheme
+                        ? '#444'
+                        : '#ccc'
+                    }`,
+                    borderRadius: 8,
+                    padding: '10px 14px',
+                    cursor: submitted ? 'default' : 'pointer',
+                    fontWeight: isSelected ? 600 : 400,
+                    color: isDarkTheme ? '#f5f5f5' : '#111'
+                  }}
+                >
+                  <input
+                    type="radio"
+                    name={q.id}
+                    value={option}
+                    disabled={submitted}
+                    checked={isSelected}
+                    onChange={() => handleChange(q.id, option)}
+                    style={{
+                      marginRight: 10,
+                      accentColor: isDarkTheme ? '#90cdf4' : '#4f46e5'
+                    }}
+                  />
+                  {option}
+                </label>
+              );
+            })}
+          </div>
           {submitted && q.explanation && (
-            <p style={{ marginTop: 6, fontStyle: 'italic', color: isDarkTheme ? '#ccc' : '#555' }}>
+            <p
+              style={{
+                marginTop: 12,
+                fontStyle: 'italic',
+                fontSize: '0.95rem',
+                color: isDarkTheme ? '#bbb' : '#555'
+              }}
+            >
               💡 {q.explanation}
             </p>
           )}
@@ -118,13 +152,14 @@ export const Quiz = ({ questions }: { questions: Question[] }) => {
         <button
           onClick={() => setSubmitted(true)}
           style={{
-            padding: '10px 20px',
+            padding: '12px 24px',
             background: '#4f46e5',
             color: 'white',
             border: 'none',
             borderRadius: 8,
             cursor: 'pointer',
-            fontWeight: 500
+            fontWeight: 600,
+            fontSize: '1rem'
           }}
         >
           Submit Quiz
@@ -144,7 +179,7 @@ export const Quiz = ({ questions }: { questions: Question[] }) => {
             onClick={handleReset}
             style={{
               marginTop: 10,
-              padding: '8px 16px',
+              padding: '10px 18px',
               background: isDarkTheme ? '#555' : '#e2e8f0',
               color: isDarkTheme ? '#fff' : '#000',
               border: 'none',
