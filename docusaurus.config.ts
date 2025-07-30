@@ -85,6 +85,12 @@ const config: Config = {
           position: 'left',
           label: 'Tutorial',
         },
+         {
+    type: 'docSidebar',
+    sidebarId: 'notesSidebar',
+    position: 'left',
+    label: 'Notes',
+  },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/souvikpramanikgit/LearnHub',
