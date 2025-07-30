@@ -1,0 +1,111 @@
+.container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.searchWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 16px;
+  color: var(--ifm-color-emphasis-600);
+  width: 20px;
+  height: 20px;
+}
+
+.input {
+  width: 100%;
+  padding: 16px 48px 16px 48px;
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-radius: 25px;
+  font-size: 16px;
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-content);
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--ifm-color-primary-rgb), 0.1);
+}
+
+.clearIcon {
+  position: absolute;
+  right: 16px;
+  color: var(--ifm-color-emphasis-600);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.clearIcon:hover {
+  color: var(--ifm-color-emphasis-800);
+}
+
+.resultsDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin-top: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.resultItem {
+  display: block;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-100);
+  text-decoration: none;
+  color: var(--ifm-color-content);
+  transition: background-color 0.2s;
+}
+
+.resultItem:hover {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-content);
+  text-decoration: none;
+}
+
+.resultItem:last-child {
+  border-bottom: none;
+}
+
+.resultTitle {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 4px;
+  color: var(--ifm-color-primary);
+}
+
+.resultDescription {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+  line-height: 1.4;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .input {
+    font-size: 16px; /* Prevent zoom on iOS */
+    padding: 14px 44px 14px 44px;
+  }
+  
+  .searchIcon,
+  .clearIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
