@@ -1,9 +1,16 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import { Typewriter } from 'react-simple-typewriter';
 import HomepageFeatures from '../components/HomepageFeatures';
+import UserProfile from '../components/UserProfile';
+import Recommended from '../components/Recommended';
+import Achievements from '../components/Achievements';
+import AchievementNotification from '../components/AchievementNotification';
+import SearchBar from '../components/SearchBar';
+import { getUserPreferences } from '../utils/userPrefs';
+import { User, Trophy } from 'lucide-react';
 
 // Insert course data at the top of the file
 const courses = [
@@ -46,7 +53,42 @@ const courses = [
 ];
 
 export default function Home(): React.ReactElement {
-  
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [userPrefs, setUserPrefs] = useState(null);
+  const [filteredCourses, setFilteredCourses] = useState(courses);
+  const [showAchievements, setShowAchievements] = useState(false);
+
+  useEffect(() => {
+    // Load user preferences on component mount
+    const savedPrefs = getUserPreferences();
+    setUserPrefs(savedPrefs);
+  }, []);
+
+  useEffect(() => {
+    // Listen for user preferences updates
+    const handlePrefsUpdate = (event) => {
+      setUserPrefs(event.detail);
+    };
+    
+    window.addEventListener('userPrefsUpdated', handlePrefsUpdate);
+    return () => window.removeEventListener('userPrefsUpdated', handlePrefsUpdate);
+  }, []);
+
+  const handleSearch = (query) => {
+    if (query) {
+      const lowercasedQuery = query.toLowerCase();
+      const filtered = courses.filter(
+        course => 
+          course.title.toLowerCase().includes(lowercasedQuery) ||
+          course.description.toLowerCase().includes(lowercasedQuery) ||
+          course.level.toLowerCase().includes(lowercasedQuery)
+      );
+      setFilteredCourses(filtered);
+    } else {
+      setFilteredCourses(courses);
+    }
+  };
+
    useEffect(() => {
     const logoEl = document.querySelector(".navbar__title");
 
@@ -70,6 +112,32 @@ export default function Home(): React.ReactElement {
     <Layout
       title="Launch Your Tech Career in 30 Days"
       description="Master DSA and Full Stack Development in 30 Days">
+      {/* Floating Action Buttons */}
+      <div className={styles.floatingActions}>
+        <button 
+          className={styles.floatingButton}
+          onClick={() => setIsProfileOpen(true)}
+          title="User Profile"
+        >
+          <User size={20} />
+        </button>
+        <button 
+          className={styles.floatingButton}
+          onClick={() => setShowAchievements(!showAchievements)}
+          title="Achievements"
+        >
+          <Trophy size={20} />
+        </button>
+      </div>
+      
+      {/* Achievement Notification */}
+      <AchievementNotification />
+      
+      {/* User Profile Modal */}
+      <UserProfile 
+        isOpen={isProfileOpen} 
+        onClose={() => setIsProfileOpen(false)} 
+      />
       <header className={styles.heroBanner}>
         <div className={styles.heroContentWrapper}>
 
@@ -192,6 +260,25 @@ function binarySearch(arr, target) {
         </div>
       </header>
       <HomepageFeatures />
+      
+      {/* Search Bar Section */}
+      <section className={styles.searchSection}>
+        <div className={styles.container}>
+          <SearchBar courses={courses} onSearch={handleSearch} />
+        </div>
+      </section>
+      
+      {/* Personalized Recommendations */}
+      {userPrefs && userPrefs.preferredTopics && userPrefs.preferredTopics.length > 0 && (
+        <Recommended courses={courses} userPrefs={userPrefs} />
+      )}
+      
+      {/* Achievements Section */}
+      {showAchievements && (
+        <section className={styles.achievementsSection}>
+          <Achievements />
+        </section>
+      )}
       {/* Popular Courses Section */}
       <section className={styles.coursesSection} id="courses-section">
         <div className={styles.coursesContainer}>
