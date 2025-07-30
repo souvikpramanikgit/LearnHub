@@ -73,6 +73,7 @@ const config: Config = {
       },
     },
     navbar: {
+      hideOnScroll: true, 
       title: 'LearnHub',
       logo: {
         alt: 'My Site Logo',
