@@ -1,0 +1,35 @@
+.completion-button-container {
+  border-top: 1px solid var(--ifm-toc-border-color);
+  padding-top: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.completion-button {
+  display: inline-block;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 2px solid #3b82f6;
+  background-color: transparent;
+  color: #3b82f6;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 1rem;
+}
+
+.completion-button:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.completion-button.completed {
+  background-color: #16a34a;
+  border-color: #16a34a;
+  color: white;
+}
+
+.completion-button.completed:hover {
+  background-color: #15803d;
+  border-color: #15803d;
+}
