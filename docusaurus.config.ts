@@ -17,11 +17,9 @@ const config: Config = {
   // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
   organizationName: 'souvikpramanikgit', // Usually your GitHub org/user name.
   projectName: 'learnhub', // Usually your repo name.
 
@@ -31,9 +29,7 @@ const config: Config = {
     mermaid: true,
   },
   themes: ['@docusaurus/theme-mermaid'],
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -52,7 +48,6 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
@@ -65,7 +60,6 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     docs: {
       sidebar: {
@@ -86,6 +80,7 @@ const config: Config = {
           label: 'Tutorial',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/doubts', label: 'Doubts', position: 'left'}, // ✅ Added Doubts section here
         {
           href: 'https://github.com/souvikpramanikgit/LearnHub',
           label: 'GitHub',
