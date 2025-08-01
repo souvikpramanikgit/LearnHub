@@ -1,0 +1,56 @@
+[
+  {
+    "id": "ai1",
+    "question": "Who coined the term 'Artificial Intelligence'?",
+    "options": ["Alan Turing", "Andrew Ng", "Geoffrey Hinton", "John McCarthy"],
+    "correctAnswer": "John McCarthy",
+    "explanation": "John McCarthy coined the term 'Artificial Intelligence' in 1956 at the Dartmouth Conference."
+  },
+  {
+    "id": "ai2",
+    "question": "Which of the following is NOT a characteristic of AI?",
+    "options": ["Reasoning", "Learning", "Jumping", "Perception"],
+    "correctAnswer": "Jumping",
+    "explanation": "AI is characterized by capabilities like learning, reasoning, perception, etc. 'Jumping' is not relevant."
+  },
+  {
+    "id": "ai3",
+    "question": "In the AI workflow, what step follows 'Pattern Recognition & Learning'?",
+    "options": ["Data Collection", "Output & Action", "Decision Making & Prediction", "Feedback & Refinement"],
+    "correctAnswer": "Decision Making & Prediction",
+    "explanation": "After identifying patterns, AI uses them to make decisions and predictions."
+  },
+  {
+    "id": "ai4",
+    "question": "Which application is an example of AI in daily use?",
+    "options": ["Google Docs", "Spam Email Filter", "WordPad", "Bluetooth"],
+    "correctAnswer": "Spam Email Filter",
+    "explanation": "Spam filters use machine learning models to classify emails based on features — a common use of AI."
+  },
+  {
+    "id": "ai5",
+    "question": "Which of these industries uses AI for personalized treatment plans and diagnosis?",
+    "options": ["Finance", "Healthcare", "E-commerce", "Education"],
+    "correctAnswer": "Healthcare",
+    "explanation": "AI is widely used in healthcare for diagnosis, personalized treatments, and robotic surgery."
+  },
+  {
+    "id": "ai6",
+    "question": "What is the difference between Machine Learning and Deep Learning?",
+    "options": [
+      "ML uses neural networks while DL does not",
+      "DL uses simple algorithms and no data",
+      "DL is a subset of ML that uses multi-layered neural networks",
+      "ML is only used for games"
+    ],
+    "correctAnswer": "DL is a subset of ML that uses multi-layered neural networks",
+    "explanation": "Deep Learning is a specialized part of Machine Learning that uses deep neural networks to learn complex patterns."
+  },
+  {
+    "id": "ai7",
+    "question": "Which branch of AI enables machines to understand and generate human language?",
+    "options": ["Computer Vision", "Deep Learning", "NLP", "Robotics"],
+    "correctAnswer": "NLP",
+    "explanation": "Natural Language Processing (NLP) deals with machine interaction using human language (e.g., Siri, Alexa)."
+  }
+]

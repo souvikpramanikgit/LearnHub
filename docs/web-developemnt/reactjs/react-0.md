@@ -129,3 +129,11 @@ npm start
 React makes building modern web interfaces intuitive and efficient. Whether you're building a simple site or a complex web app, React's component-driven approach and powerful ecosystem make it a top choice. Stick around to learn about Hooks, State, Props, and more in upcoming guides!
 
 ---
+
+## 9. Quiz Time
+
+import { Quiz } from '@site/src/components/Quiz';
+import quiz from './quiz.json';
+
+<Quiz questions={quiz} />
+---

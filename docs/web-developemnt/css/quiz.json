@@ -1,0 +1,28 @@
+[
+  {
+    "id": "css1",
+    "question": "What does CSS stand for?",
+    "options": [
+      "Cascading Style Sheet",
+      "Creative Style Syntax",
+      "Computer Style System",
+      "Color Styling Syntax"
+    ],
+    "correctAnswer": "Cascading Style Sheet",
+    "explanation": "CSS is used to style and layout web pages."
+  },
+  {
+    "id": "css2",
+    "question": "Which property is used to change the text color of an element?",
+    "options": ["font-color", "text-color", "color", "foreground-color"],
+    "correctAnswer": "color",
+    "explanation": "The 'color' property sets the color of the text content."
+  },
+  {
+    "id": "css3",
+    "question": "Which CSS position value allows an element to stay fixed in place when scrolling?",
+    "options": ["static", "absolute", "relative", "fixed"],
+    "correctAnswer": "fixed",
+    "explanation": "'fixed' positioning keeps the element in the same place relative to the viewport."
+  }
+]

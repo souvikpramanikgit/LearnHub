@@ -1,0 +1,62 @@
+[
+  {
+    "id": "q1",
+    "question": "What is a blockchain?",
+    "options": [
+      "A type of cryptocurrency",
+      "A centralized database",
+      "A distributed ledger technology",
+      "An operating system"
+    ],
+    "correctAnswer": "A distributed ledger technology",
+    "explanation": "Blockchain is a decentralized and distributed digital ledger used to record transactions across many computers."
+  },
+  {
+    "id": "q2",
+    "question": "What is the main benefit of using blockchain?",
+    "options": [
+      "It’s fast to hack",
+      "Central control",
+      "Immutability and transparency",
+      "Low electricity usage"
+    ],
+    "correctAnswer": "Immutability and transparency",
+    "explanation": "Once data is added to a blockchain, it cannot be changed, ensuring trust and transparency."
+  },
+  {
+    "id": "q3",
+    "question": "What is a smart contract?",
+    "options": [
+      "A digital version of a legal agreement",
+      "Self-executing code on the blockchain",
+      "A contract signed by AI",
+      "A secure VPN protocol"
+    ],
+    "correctAnswer": "Self-executing code on the blockchain",
+    "explanation": "Smart contracts automatically execute code when predefined conditions are met, without human intervention."
+  },
+  {
+    "id": "q4",
+    "question": "Which blockchain is known for enabling smart contracts?",
+    "options": [
+      "Bitcoin",
+      "Ethereum",
+      "Litecoin",
+      "Ripple"
+    ],
+    "correctAnswer": "Ethereum",
+    "explanation": "Ethereum was the first blockchain to introduce programmable smart contracts."
+  },
+  {
+    "id": "q5",
+    "question": "What does ‘mining’ mean in blockchain?",
+    "options": [
+      "Creating NFTs",
+      "Extracting data from the chain",
+      "Adding new blocks by solving cryptographic puzzles",
+      "Deleting transactions"
+    ],
+    "correctAnswer": "Adding new blocks by solving cryptographic puzzles",
+    "explanation": "Mining is the process of validating transactions and securing the network by solving complex mathematical problems."
+  }
+]

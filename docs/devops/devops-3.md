@@ -35,6 +35,13 @@ Monitoring helps you track applications, infrastructure, and services for health
 
 A robust monitoring and observability setup helps teams respond quickly and deliver high-quality software!
 
+## Quick Recap
+
+import { Quiz } from '@site/src/components/Quiz';
+import quiz from './quiz.json';
+
+<Quiz questions={quiz} />
+
 ---
 
 Congratulations! You’ve completed the DevOps basics path. Explore more advanced topics as you continue your journey.

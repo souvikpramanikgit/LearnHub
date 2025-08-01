@@ -1,0 +1,98 @@
+[
+  {
+    "id": "devops1",
+    "question": "What is the primary goal of DevOps?",
+    "options": [
+      "To write more code",
+      "To reduce testing time",
+      "To align development and operations teams for faster and more reliable delivery",
+      "To eliminate the need for deployment tools"
+    ],
+    "correctAnswer": "To align development and operations teams for faster and more reliable delivery",
+    "explanation": "DevOps aims to bridge development and operations for better collaboration, automation, and delivery."
+  },
+  {
+    "id": "devops2",
+    "question": "Which of the following is NOT a key pillar of DevOps?",
+    "options": [
+      "Collaboration",
+      "Automation",
+      "Continuous Integration and Delivery",
+      "Manual Deployments"
+    ],
+    "correctAnswer": "Manual Deployments",
+    "explanation": "Manual deployments go against DevOps principles of automation and CI/CD."
+  },
+  {
+    "id": "devops3",
+    "question": "What does Continuous Integration (CI) primarily aim to solve?",
+    "options": [
+      "Speed up container orchestration",
+      "Reduce integration issues by merging code frequently and testing automatically",
+      "Manage logs and metrics",
+      "Enable real-time communication between teams"
+    ],
+    "correctAnswer": "Reduce integration issues by merging code frequently and testing automatically",
+    "explanation": "CI reduces integration problems by automatically building and testing code changes often."
+  },
+  {
+    "id": "devops4",
+    "question": "What distinguishes Continuous Deployment from Continuous Delivery?",
+    "options": [
+      "There is no difference",
+      "Deployment is manual in Continuous Deployment",
+      "Delivery deploys automatically, Deployment requires approval",
+      "Deployment pushes to production automatically without human intervention"
+    ],
+    "correctAnswer": "Deployment pushes to production automatically without human intervention",
+    "explanation": "Continuous Deployment pushes code directly to production without manual steps."
+  },
+  {
+    "id": "devops5",
+    "question": "Which of these tools is most closely associated with managing containerized applications at scale?",
+    "options": [
+      "Docker",
+      "GitHub Actions",
+      "Kubernetes",
+      "Grafana"
+    ],
+    "correctAnswer": "Kubernetes",
+    "explanation": "Kubernetes is a powerful orchestration tool for managing containerized workloads and services."
+  },
+  {
+    "id": "devops6",
+    "question": "Why are containers considered essential in modern DevOps workflows?",
+    "options": [
+      "They increase code readability",
+      "They provide consistent environments across development and production",
+      "They reduce code complexity",
+      "They replace the need for CI/CD pipelines"
+    ],
+    "correctAnswer": "They provide consistent environments across development and production",
+    "explanation": "Containers bundle apps with all dependencies, ensuring consistency across environments."
+  },
+  {
+    "id": "devops7",
+    "question": "What is the key difference between Monitoring and Observability?",
+    "options": [
+      "Monitoring only applies to hardware",
+      "Observability is about collecting logs, metrics, and traces to understand internal state",
+      "Monitoring requires no tools",
+      "There is no difference"
+    ],
+    "correctAnswer": "Observability is about collecting logs, metrics, and traces to understand internal state",
+    "explanation": "Observability provides deeper insight into system behavior using logs, metrics, and traces."
+  },
+  {
+    "id": "devops8",
+    "question": "Which stack is commonly used for log aggregation and visualization?",
+    "options": [
+      "CI/CD Stack",
+      "Docker Compose",
+      "ELK/EFK Stack",
+      "LAMP Stack"
+    ],
+    "correctAnswer": "ELK/EFK Stack",
+    "explanation": "The ELK/EFK Stack includes Elasticsearch, Logstash or Fluentd, and Kibana for log analytics."
+  }
+]

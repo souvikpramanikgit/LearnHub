@@ -1,0 +1,97 @@
+[
+  {
+    "id": "html1",
+    "question": "What does HTML stand for?",
+    "options": [
+      "Hyperlink and Text Markup Language",
+      "HyperText Markup Language",
+      "Home Tool Markup Language",
+      "HighText Machine Language"
+    ],
+    "correctAnswer": "HyperText Markup Language",
+    "explanation": "HTML stands for HyperText Markup Language, used to structure web pages."
+  },
+  {
+    "id": "html2",
+    "question": "Which tag is used to define the main visible content of an HTML document?",
+    "options": ["<html>", "<meta>", "<head>", "<body>"],
+    "correctAnswer": "<body>",
+    "explanation": "The <body> tag contains the visible content rendered in a web browser."
+  },
+  {
+    "id": "html3",
+    "question": "What does the `alt` attribute in the <img> tag do?",
+    "options": [
+      "Provides a link to the image",
+      "Specifies image size",
+      "Adds alternate text for the image",
+      "Applies a style"
+    ],
+    "correctAnswer": "Adds alternate text for the image",
+    "explanation": "The `alt` attribute describes the image for screen readers or when the image fails to load."
+  },
+  {
+    "id": "html4",
+    "question": "Which of the following elements is a block-level element?",
+    "options": ["<span>", "<strong>", "<div>", "<em>"],
+    "correctAnswer": "<div>",
+    "explanation": "<div> is a block element and starts on a new line."
+  },
+  {
+    "id": "html5",
+    "question": "Which of these tags is used to create a hyperlink in HTML?",
+    "options": ["<link>", "<a>", "<href>", "<nav>"],
+    "correctAnswer": "<a>",
+    "explanation": "<a> is the anchor tag used to create hyperlinks."
+  },
+  {
+    "id": "html6",
+    "question": "What will happen if you place a <div> tag inside a <strong> tag?",
+    "options": [
+      "It will work as expected",
+      "The browser will correct it automatically",
+      "It's invalid and will break rendering",
+      "It will apply bold formatting to the div"
+    ],
+    "correctAnswer": "It's invalid and will break rendering",
+    "explanation": "Placing block elements like <div> inside inline elements like <strong> is invalid HTML."
+  },
+  {
+    "id": "html7",
+    "question": "Which tag is used to insert a line break in HTML?",
+    "options": ["<break>", "<br>", "<lb>", "<line>"],
+    "correctAnswer": "<br>",
+    "explanation": "<br> creates a line break without starting a new block."
+  },
+  {
+    "id": "html8",
+    "question": "Which HTML attribute opens a link in a new browser tab?",
+    "options": ["href", "target=\"_blank\"", "src", "newtab"],
+    "correctAnswer": "target=\"_blank\"",
+    "explanation": "The target=\"_blank\" attribute causes the link to open in a new tab."
+  },
+  {
+    "id": "html9",
+    "question": "What is the purpose of semantic tags like <header>, <article>, and <footer>?",
+    "options": [
+      "To apply CSS styles",
+      "To make HTML documents load faster",
+      "To define structure and meaning of content",
+      "To insert multimedia"
+    ],
+    "correctAnswer": "To define structure and meaning of content",
+    "explanation": "Semantic tags improve the accessibility and SEO of web pages by clearly describing the role of the content."
+  },
+  {
+    "id": "html10",
+    "question": "Which display behavior is true for inline elements?",
+    "options": [
+      "They always start on a new line",
+      "They take full width of the parent",
+      "They flow with text and only take up as much width as needed",
+      "They can only contain block elements"
+    ],
+    "correctAnswer": "They flow with text and only take up as much width as needed",
+    "explanation": "Inline elements do not start on a new line and take only as much space as their content requires."
+  }
+]

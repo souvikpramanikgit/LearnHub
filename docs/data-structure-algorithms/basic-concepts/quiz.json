@@ -1,0 +1,37 @@
+[
+  {
+    "id": "q1",
+    "question": "What is the time complexity of binary search in a sorted array?",
+    "options": ["O(n)", "O(log n)", "O(n log n)", "O(1)"],
+    "correctAnswer": "O(log n)",
+    "explanation": "Binary search splits the array in half each time, reducing search space logarithmically."
+  },
+  {
+    "id": "q2",
+    "question": "Which data structure works on the LIFO principle?",
+    "options": ["Queue", "Stack", "Array", "Linked List"],
+    "correctAnswer": "Stack",
+    "explanation": "LIFO means 'Last In, First Out' — the last element inserted is the first one removed, which is how stacks work."
+  },
+  {
+    "id": "q3",
+    "question": "What is the best data structure for implementing a priority queue?",
+    "options": ["Stack", "Queue", "HashMap", "Heap"],
+    "correctAnswer": "Heap",
+    "explanation": "Heaps allow efficient access to the highest (or lowest) priority element, which is ideal for priority queues."
+  },
+  {
+    "id": "q4",
+    "question": "Which traversal method gives sorted order in a Binary Search Tree (BST)?",
+    "options": ["Preorder", "Inorder", "Postorder", "Level Order"],
+    "correctAnswer": "Inorder",
+    "explanation": "Inorder traversal of a BST visits nodes in ascending sorted order."
+  },
+  {
+    "id": "q5",
+    "question": "Which algorithm is based on divide and conquer?",
+    "options": ["Bubble Sort", "Selection Sort", "Quick Sort", "Insertion Sort"],
+    "correctAnswer": "Quick Sort",
+    "explanation": "Quick Sort divides the array into sub-arrays, sorts them recursively, and combines the result."
+  }
+]

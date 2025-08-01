@@ -103,4 +103,11 @@ Use the `defer` or `async` attributes to control when the script runs.
 
 JavaScript is the **engine of interactivity** on the web. It empowers developers to create responsive, engaging, and powerful web applications. Mastering JavaScript opens doors to frontend, backend, mobile, and even game development. Stay tuned for more JS tutorials and hands-on examples!
 
+## 7. Quiz Time
+
+import { Quiz } from '@site/src/components/Quiz';
+import quiz from './quiz.json';
+
+<Quiz questions={quiz} />
+
 ---

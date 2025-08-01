@@ -102,4 +102,9 @@ Robotics is the branch of engineering and computer science that deals with the d
 ## 6. Conclusion
 Artificial Intelligence is a transformative technology that is reshaping industries and our daily lives. By understanding its core concepts and applications, we can better appreciate its potential and prepare for its continued evolution. AI is a dynamic field with immense potential to solve some of the world's most challenging problems.
 
+## 7. Quiz Time
 
+import { Quiz } from '@site/src/components/Quiz';
+import quiz from './quiz.json';
+
+<Quiz questions={quiz} />
