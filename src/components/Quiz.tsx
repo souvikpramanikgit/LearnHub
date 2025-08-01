@@ -113,7 +113,8 @@ export const Quiz = ({ questions }: { questions: Question[] }) => {
                     padding: '10px 14px',
                     cursor: submitted ? 'default' : 'pointer',
                     fontWeight: isSelected ? 600 : 400,
-                    color: isDarkTheme ? '#f5f5f5' : '#111'
+                    color: isDarkTheme ? '#f5f5f5' : '#111',
+                    lineHeight: 'normal',
                   }}
                 >
                   <input
