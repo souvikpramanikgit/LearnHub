@@ -116,9 +116,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ## Next Steps
 
-- Explore the [HTML Basics](/docs/web-development/html-basics) tutorial
-- Learn about [CSS Styling](/docs/web-development/css-styling)
-- Master [JavaScript Fundamentals](/docs/web-development/javascript-basics)
+- Practice with the playground examples above
+- Experiment with different HTML elements
+- Try various CSS properties and values
+- Add JavaScript interactivity
 - Build real projects with the playground!
+
+## Related Resources
+
+- Explore our comprehensive learning resources
+- Practice with real-world examples
+- Join our community discussions
+- Share your projects and get feedback
 
 Happy coding! 🎉 
