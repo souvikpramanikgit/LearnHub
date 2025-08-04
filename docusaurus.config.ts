@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -80,18 +80,31 @@ const config: Config = {
       },
       items: [
         {
+          to: '/#courses-section',
+          label: 'Courses',
+          position: 'left',
+          className: 'navbar__link',
+          activeBaseRegex: '^$', // prevents it from being marked as active
+          target: '_self',
+        },
+
+        {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Tutorial',
         },
-         {
-    type: 'docSidebar',
-    sidebarId: 'notesSidebar',
-    position: 'left',
-    label: 'Notes',
-  },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {
+          type: 'docSidebar',
+          sidebarId: 'notesSidebar',
+          position: 'left',
+          label: 'Notes',
+        },
+        {
+          to: '/blog',
+          label: 'Blog',
+          position: 'left'
+        },
         {
           href: 'https://github.com/souvikpramanikgit/LearnHub',
           label: 'GitHub',
