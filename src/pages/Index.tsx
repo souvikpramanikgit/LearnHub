@@ -4,6 +4,7 @@ import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import { Typewriter } from 'react-simple-typewriter';
 import HomepageFeatures from '../components/HomepageFeatures';
+import ScrollToTopButton from '../components/ScrollToTopButton';
 
 
 
@@ -228,6 +229,7 @@ function binarySearch(arr, target) {
           </div>
         </div>
       </section>
+      <ScrollToTopButton />
     </Layout>
   );
 }
