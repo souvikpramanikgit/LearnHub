@@ -1,0 +1,38 @@
+[
+  {
+    "id": "react1",
+    "question": "What is the purpose of useState in React?",
+    "options": [
+      "To store routing info",
+      "To fetch data from an API",
+      "To manage component state",
+      "To define props"
+    ],
+    "correctAnswer": "To manage component state",
+    "explanation": "'useState' is a React Hook used to manage local state inside a component."
+  },
+  {
+    "id": "react2",
+    "question": "What does JSX stand for?",
+    "options": [
+      "JavaScript XML",
+      "Java Syntax Extension",
+      "JavaScript Extension",
+      "Java Xtreme Syntax"
+    ],
+    "correctAnswer": "JavaScript XML",
+    "explanation": "JSX allows you to write HTML-like syntax directly in JavaScript files."
+  },
+  {
+    "id": "react3",
+    "question": "What is the virtual DOM in React?",
+    "options": [
+      "A physical copy of the real DOM",
+      "A faster version of the browser DOM",
+      "A lightweight in-memory representation of the real DOM",
+      "A database for React elements"
+    ],
+    "correctAnswer": "A lightweight in-memory representation of the real DOM",
+    "explanation": "The virtual DOM improves performance by minimizing direct DOM manipulations."
+  }
+]

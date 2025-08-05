@@ -69,3 +69,10 @@ Blockchain has many practical uses beyond cryptocurrencies:
 ## 6. Conclusion
 
 Blockchain is not just a trend; it’s a foundational technology with the potential to transform multiple industries. Whether you’re a developer, entrepreneur, or tech enthusiast, understanding blockchain is a valuable asset for the future.
+
+## 7. Test Your Knowledge
+
+import { Quiz } from '@site/src/components/Quiz';
+import quiz from './quiz.json';
+
+<Quiz questions={quiz} />
