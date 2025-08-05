@@ -107,6 +107,11 @@ const config: Config = {
           position: 'left'
         },
         {
+          to: '/about',
+          label: 'About',
+          position: 'left'
+        },
+        {
           href: 'https://github.com/souvikpramanikgit/LearnHub',
           label: 'GitHub',
           position: 'right',

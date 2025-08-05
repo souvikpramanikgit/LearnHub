@@ -133,6 +133,12 @@
   align-items: stretch;
 }
 
+.cardsWrapper:hover{
+    transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+
 /* General Card */
 .card {
   background-color: var(--ifm-card-background);
@@ -328,3 +334,163 @@
   background: linear-gradient(90deg, #16a34a 0%, #2563eb 100%);
   color: #fff;
 }
+
+/* Cards Section Container */
+.cardsSection {
+  padding: 1rem 1rem;
+  background-color: var(--ifm-background-color);
+  max-width: 960px;
+  margin: 0 auto 4rem auto;
+  border-radius: 1rem;
+  /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); */
+  transition: background-color 0.3s ease;
+}
+
+/* Header for Cards Sections */
+.cardsHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cardsHeading {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--ifm-color-primary);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5rem;
+}
+
+.cardsSubheading {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ifm-color-primary-dark);
+  max-width: 650px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+/* Cards Wrapper Grid */
+.cardsWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.2rem;
+}
+
+/* General Card Enhancement */
+.card {
+  background: linear-gradient(135deg, #ffffff, #f0f9ff);
+  border-radius: 16px;
+  padding: 2rem 1.8rem;
+  box-shadow: 0 10px 25px rgba(34, 150, 243, 0.1);
+  color: var(--ifm-color-primary-darkest);
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 18px 40px rgba(34, 150, 243, 0.4);
+}
+
+/* Card Heading */
+.card h3 {
+  font-size: 1.5rem;
+  color: var(--ifm-color-primary);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+/* Card Paragraph */
+.card p {
+  flex-grow: 1;
+  font-size: 1rem;
+  color: var(--ifm-color-primary-dark);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+/* Buttons styling */
+.button {
+  padding: 0.65rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(34, 150, 243, 0.15);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button--primary {
+  background: linear-gradient(90deg, #3b82f6, #22c55e);
+  color: white;
+  border: none;
+}
+
+.button--primary:hover {
+  background: linear-gradient(90deg, #2563eb, #16a34a);
+  box-shadow: 0 10px 20px rgba(22, 99, 209, 0.6);
+}
+
+.button--secondary {
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  color: white;
+  border: none;
+}
+
+.button--secondary:hover {
+  background: linear-gradient(90deg, #7c3aed, #db2777);
+  box-shadow: 0 10px 20px rgba(115, 63, 203, 0.6);
+}
+
+/* Add subtle color overlays to card gradients for vibrancy */
+.card0 {
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(13, 71, 161, 0.4);
+}
+.card0:hover {
+  box-shadow: 0 18px 40px rgba(10, 60, 130, 0.7);
+}
+
+.card1 {
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(128, 54, 174, 0.4);
+}
+.card1:hover {
+  box-shadow: 0 18px 40px rgba(97, 36, 130, 0.7);
+}
+
+.card2 {
+  background: linear-gradient(135deg, #22c55e, #10b981);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(12, 91, 54, 0.4);
+}
+.card2:hover {
+  box-shadow: 0 18px 40px rgba(8, 64, 35, 0.7);
+}
+
+.card3 {
+  background: linear-gradient(135deg, #f59e42, #ef4444);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(166, 54, 43, 0.4);
+}
+.card3:hover {
+  box-shadow: 0 18px 40px rgba(132, 35, 25, 0.7);
+}
+
+/* Section final call-to-action styling */
+
+.coursesTitle {
+  font-weight: 800;
+  color: var(--ifm-color-primary);
+  letter-spacing: 0.05em;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
