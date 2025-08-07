@@ -1,11 +1,14 @@
 {
-  // This file is not used in compilation. It is here just for a nice editor experience.
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["jest"], // Add Jest types
+    "esModuleInterop": true, // Needed for Jest
+    "jsx": "react-jsx" // For React component testing
   },
-  "exclude": [".docusaurus", "build"]
+  "include": ["src/**/*", "__tests__/**/*"], // Include test files
+  "exclude": [".docusaurus", "build", "node_modules"]
 }
