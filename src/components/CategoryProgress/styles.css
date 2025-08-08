@@ -1,0 +1,14 @@
+.card-progress-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-color: #3f3f46;
+}
+
+.card-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #16a34a 0%, #4ade80 100%);
+  transition: width 0.5s ease-in-out;
+}

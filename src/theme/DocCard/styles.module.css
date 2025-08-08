@@ -1,0 +1,39 @@
+.cardContainer {
+  --ifm-card-background-color: transparent;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  color: inherit;
+  transition: border var(--ifm-transition-fast) ease;
+  position: relative; /* Needed for the progress bar */
+  display: block; /* Ensures proper link behavior */
+  text-decoration: none; /* Removes underline from text */
+}
+
+.cardContainer:hover {
+  --ifm-card-background-color: transparent;
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+.cardTitle {
+  font-size: var(--ifm-h5-font-size);
+  margin-bottom: var(--ifm-spacing-vertical);
+  display: flex;
+  align-items: center;
+  color: var(--ifm-font-color-base); /* Ensures title text is visible */
+}
+
+.cardTitle::before {
+  content: '📄';
+  margin-right: 0.5em;
+  font-size: 1.5em;
+  display: inline-block;
+}
+
+.cardDescription {
+  font-size: var(--ifm-font-size-sm);
+  margin-bottom: 0;
+  color: var(--ifm-font-color-secondary); /* This was the missing part */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
