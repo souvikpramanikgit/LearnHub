@@ -19,9 +19,7 @@
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2000&pause=500&color=6C63FF&center=true&vCenter=true&width=380&lines=Explore+Courses;Building+Real+World+Projects;Contribute+and+Learn" alt="Typing SVG" />
 </p>
 
-<p align="center">
-  <b>Welcome to LearnHub — a platform designed to help users master essential technology skills !</b>
-</p>
+<p align="center"> <b>Welcome to LearnHub — a platform designed to help users master essential technology skills !</b> </p>
 
 **📊 Project Insights**
 

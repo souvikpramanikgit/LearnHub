@@ -4,6 +4,9 @@ import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import { Typewriter } from 'react-simple-typewriter';
 import HomepageFeatures from '../components/HomepageFeatures';
+import ScrollToTopButton from '../components/ScrollToTopButton';
+
+
 
 // Insert course data at the top of the file
 const courses = [
@@ -46,6 +49,7 @@ const courses = [
 ];
 
 export default function Home(): React.ReactElement {
+
   
    useEffect(() => {
     const logoEl = document.querySelector(".navbar__title");
@@ -65,6 +69,8 @@ export default function Home(): React.ReactElement {
       logoEl.removeEventListener("click", handleClick);
     };
   }, []);
+
+  
 
   return (
     <Layout
@@ -223,6 +229,7 @@ function binarySearch(arr, target) {
           </div>
         </div>
       </section>
+      <ScrollToTopButton />
     </Layout>
   );
 }

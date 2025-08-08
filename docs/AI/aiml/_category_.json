@@ -1,0 +1,9 @@
+{
+    "label": "AI/ML",
+    "position": 5,
+    "link": {
+      "type": "generated-index",
+      "description": "Artificial Intelligence is about creating systems that can simulate human intelligence. Machine Learning is a subset of AI that focuses on the development of algorithms that allow computers to learn from and make predictions based on data."
+    }
+  }
+  
