@@ -1,0 +1,56 @@
+.container {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #333;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1100;
+  animation: slideIn 0.5s ease-out;
+  max-width: 350px;
+  border: 2px solid #e6c200;
+}
+
+.icon {
+  font-size: 2rem;
+}
+
+.textContainer {
+  flex: 1;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.description {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+}
