@@ -133,6 +133,7 @@
   align-items: stretch;
 }
 
+
 /* General Card */
 .card {
   background-color: var(--ifm-card-background);

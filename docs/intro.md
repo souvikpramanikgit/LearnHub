@@ -12,6 +12,8 @@ import TabItem from '@theme/TabItem';
 
 Web development is the process of creating and maintaining websites and web applications using technologies like HTML, CSS, and JavaScript. It involves frontend (user interface) and backend (server-side logic) development to build interactive, functional web experiences.
 
+**Try our [Interactive Code Playground](/docs/web-development/playground) to practice your web development skills in real-time!**
+
 <Tabs> 
     <TabItem value="frontend" label="Front-End Development" default> 
     ```mermaid 

@@ -1,0 +1,254 @@
+.code-playground {
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  margin: 20px 0;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.playground-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.playground-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.playground-controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.control-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.control-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.control-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.run-btn {
+  background: #28a745;
+}
+
+.run-btn:hover {
+  background: #218838;
+}
+
+.reset-btn {
+  background: #dc3545;
+}
+
+.reset-btn:hover {
+  background: #c82333;
+}
+
+.playground-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: 500px;
+}
+
+.editor-section {
+  border-right: 1px solid #e1e4e8;
+}
+
+.editor-tabs {
+  display: flex;
+  background: #f6f8fa;
+  border-bottom: 1px solid #e1e4e8;
+}
+
+.tab-btn {
+  padding: 12px 20px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #586069;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.tab-btn:hover {
+  background: #f1f3f4;
+  color: #24292e;
+}
+
+.tab-btn.active {
+  color: #0366d6;
+  border-bottom-color: #0366d6;
+  background: white;
+}
+
+.editor-container {
+  height: 400px;
+}
+
+.preview-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-header {
+  background: #f6f8fa;
+  padding: 12px 20px;
+  border-bottom: 1px solid #e1e4e8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.preview-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #24292e;
+}
+
+.preview-run-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid #d1d5da;
+  border-radius: 6px;
+  background: white;
+  color: #24292e;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.preview-run-btn:hover {
+  background: #f6f8fa;
+  border-color: #0366d6;
+}
+
+.preview-run-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.preview-container {
+  flex: 1;
+  background: white;
+  position: relative;
+}
+
+.preview-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .playground-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .editor-section {
+    border-right: none;
+    border-bottom: 1px solid #e1e4e8;
+  }
+  
+  .playground-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .playground-controls {
+    justify-content: center;
+  }
+  
+  .editor-container {
+    height: 300px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .code-playground {
+    background: #1a1a1a;
+    border-color: #404040;
+  }
+  
+  .editor-tabs {
+    background: #2d2d2d;
+    border-color: #404040;
+  }
+  
+  .tab-btn {
+    color: #c9d1d9;
+  }
+  
+  .tab-btn:hover {
+    background: #3c3c3c;
+    color: #ffffff;
+  }
+  
+  .tab-btn.active {
+    color: #58a6ff;
+    border-bottom-color: #58a6ff;
+    background: #1a1a1a;
+  }
+  
+  .preview-header {
+    background: #2d2d2d;
+    border-color: #404040;
+  }
+  
+  .preview-header h3 {
+    color: #c9d1d9;
+  }
+  
+  .preview-run-btn {
+    background: #2d2d2d;
+    color: #c9d1d9;
+    border-color: #404040;
+  }
+  
+  .preview-run-btn:hover {
+    background: #3c3c3c;
+    border-color: #58a6ff;
+  }
+  
+  .preview-container {
+    background: #1a1a1a;
+  }
+} 

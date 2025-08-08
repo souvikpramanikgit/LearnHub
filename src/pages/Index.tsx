@@ -11,6 +11,7 @@ import AchievementNotification from '../components/AchievementNotification';
 import SearchBar from '../components/SearchBar';
 import { getUserPreferences } from '../utils/userPrefs';
 import { User, Trophy } from 'lucide-react';
+import ScrollToTopButton from '../components/ScrollToTopButton';
 
 // Insert course data at the top of the file
 const courses = [
@@ -107,6 +108,8 @@ export default function Home(): React.ReactElement {
       logoEl.removeEventListener("click", handleClick);
     };
   }, []);
+
+  
 
   return (
     <Layout
@@ -310,6 +313,7 @@ function binarySearch(arr, target) {
           </div>
         </div>
       </section>
+      <ScrollToTopButton />
     </Layout>
   );
 }

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "node1",
+    "question": "What is Node.js primarily used for?",
+    "options": [
+      "Building Android Apps",
+      "Running JavaScript on the server",
+      "Designing UI components",
+      "Database management"
+    ],
+    "correctAnswer": "Running JavaScript on the server",
+    "explanation": "Node.js allows developers to run JavaScript outside the browser, mainly for backend/server-side development."
+  },
+  {
+    "id": "node2",
+    "question": "Which command checks your installed Node.js version?",
+    "options": [
+      "node --check",
+      "npm -v",
+      "node -v",
+      "version node"
+    ],
+    "correctAnswer": "node -v",
+    "explanation": "Running `node -v` in the terminal shows the installed Node.js version."
+  },
+  {
+    "id": "node3",
+    "question": "What file is essential for managing dependencies in a Node.js project?",
+    "options": [
+      "server.js",
+      "index.html",
+      "package.json",
+      "app.config"
+    ],
+    "correctAnswer": "package.json",
+    "explanation": "The package.json file stores metadata about the project and its dependencies."
+  },
+  {
+    "id": "node4",
+    "question": "Which built-in Node.js module lets you create a basic server?",
+    "options": [
+      "http",
+      "express",
+      "net",
+      "url"
+    ],
+    "correctAnswer": "http",
+    "explanation": "The built-in `http` module in Node.js is used to create a basic web server."
+  },
+  {
+    "id": "node5",
+    "question": "Which command initializes a new Node.js project with a package.json file?",
+    "options": [
+      "npm start",
+      "npm install",
+      "npm init",
+      "node init"
+    ],
+    "correctAnswer": "npm init",
+    "explanation": "`npm init` walks you through creating a new package.json file for your project."
+  }
+]

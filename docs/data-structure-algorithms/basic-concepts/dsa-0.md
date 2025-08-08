@@ -98,4 +98,11 @@ This algorithm efficiently searches a sorted array in O(log n) time.
 ## 7. Conclusion
 DSA is a core skill for every software developer. It teaches you how to think logically and solve problems efficiently. Start small, stay consistent, and you'll soon become confident with even the toughest problems!
 
+## 8. Quiz Time
+
+import { Quiz } from '@site/src/components/Quiz';
+import quiz from './quiz.json';
+
+<Quiz questions={quiz} />
+
 ---
