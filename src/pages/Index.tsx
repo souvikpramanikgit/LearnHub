@@ -5,6 +5,7 @@ import styles from './index.module.css';
 import { Typewriter } from 'react-simple-typewriter';
 import HomepageFeatures from '../components/HomepageFeatures';
 import ScrollToTopButton from '../components/ScrollToTopButton';
+import ScrollProgressBar from '../components/ScrollProgressBar';
 
 
 
