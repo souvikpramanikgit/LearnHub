@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 Web development is the process of creating and maintaining websites and web applications using technologies like HTML, CSS, and JavaScript. It involves frontend (user interface) and backend (server-side logic) development to build interactive, functional web experiences.
 
-**Try our [Interactive Code Playground](/docs/web-development/playground) to practice your web development skills in real-time!**
+**Try our [Interactive Code Playground](/docs/code-playground-demo) to practice your web development skills in real-time!**
 
 <Tabs> 
     <TabItem value="frontend" label="Front-End Development" default> 
@@ -45,6 +45,7 @@ Web development is the process of creating and maintaining websites and web appl
 
                 User -> System: Explore Further
     ```
+
 </TabItem> 
     
 <TabItem value="backend" label="Back-End Development"> 
@@ -76,6 +77,7 @@ Web development is the process of creating and maintaining websites and web appl
 
             User -> System: Explore Further
         ```
+
 </TabItem> 
 <TabItem value="practice" label="Practice and Applications"> 
 ```mermaid 
@@ -98,6 +100,7 @@ Web development is the process of creating and maintaining websites and web appl
 
             User -> System: Explore Further
         ```
+
 </TabItem> 
 </Tabs>
 
@@ -131,6 +134,7 @@ Generative AI refers to algorithms and models that create new content such as te
 
         User -> System: Explore Further
     ```
+
   </TabItem>
 
   <TabItem value="genai_models" label="Advanced Generative Models">
@@ -158,6 +162,7 @@ Generative AI refers to algorithms and models that create new content such as te
 
         User -> System: Explore Further
     ```
+
   </TabItem>
 
   <TabItem value="genai_practice" label="Practice and Projects">
@@ -185,6 +190,7 @@ Generative AI refers to algorithms and models that create new content such as te
 
         User -> System: Explore Further
     ```
+
   </TabItem>
 </Tabs>
 
@@ -224,6 +230,7 @@ Data structures organize and store data efficiently, while algorithms are step-b
 
       User -> System: Explore Further
     ```
+
   </TabItem>
 
   <TabItem value="algo" label="Algorithms">
@@ -260,6 +267,7 @@ Data structures organize and store data efficiently, while algorithms are step-b
 
       User -> System: Explore Further
     ```
+
   </TabItem>
 
   <TabItem value="Practice" label="Practice and Applications">
@@ -284,6 +292,7 @@ Data structures organize and store data efficiently, while algorithms are step-b
 
       User -> System: Explore Further
     ```
+
   </TabItem>
 </Tabs>
 
@@ -317,6 +326,7 @@ Blockchain development involves building decentralized applications and smart co
 
       User -> System: Explore Further
     ```
+
   </TabItem>
 
   <TabItem value="blockchain_dev" label="Blockchain Development">
@@ -344,6 +354,7 @@ Blockchain development involves building decentralized applications and smart co
 
       User -> System: Explore Further
     ```
+
   </TabItem>
 
   <TabItem value="blockchain_practice" label="Practice and Real-World Projects">
@@ -374,5 +385,6 @@ Blockchain development involves building decentralized applications and smart co
 
       User -> System: Explore Further
     ```
+
   </TabItem>
 </Tabs>
