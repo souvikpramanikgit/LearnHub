@@ -15,6 +15,7 @@
       </circle>
     </g>
   </svg>
+  
   <br>
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2000&pause=500&color=6C63FF&center=true&vCenter=true&width=380&lines=Explore+Courses;Building+Real+World+Projects;Contribute+and+Learn" alt="Typing SVG" />
 </p>
