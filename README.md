@@ -1,7 +1,6 @@
 # LearnHub 📚✨
 
 <p align="center">
-
   <img src="https://github.com/user-attachments/assets/e83d209e-2c8c-406c-a106-a4e3c2483c95" alt="LearnHub Logo" width="120"/>
   <br>
   <svg width="220" height="60" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
