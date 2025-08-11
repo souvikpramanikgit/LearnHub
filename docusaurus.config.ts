@@ -31,6 +31,31 @@ const config: Config = {
     mermaid: true,
   },
   themes: ['@docusaurus/theme-mermaid'],
+  
+  // Add plugins section
+  plugins: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        // Whether to enable index docs pages
+        docsRouteBasePath: ['docs'],
+        // Whether to enable index blog pages
+        blogRouteBasePath: ['blog'],
+        // `hashed` is recommended as long-term-cache of index file
+        hashed: true,
+        // For Docs using Chinese, The `language` is recommended to set to:
+        // ```
+        // language: ["en", "zh"],
+        // ```
+        language: ['en'],
+        // Highlight search terms on target page
+        highlightSearchTermsOnTargetPage: true,
+        // Explicit search result path for linking to pages
+        explicitSearchResultPath: true,
+      },
+    ],
+  ],
+  
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
@@ -65,6 +90,14 @@ const config: Config = {
   ],
 
   themeConfig: {
+    algolia: {
+      appId: '',
+      apiKey: '',
+      indexName: '',
+      contextualSearch: true,
+      searchParameters: {},
+      searchPagePath: 'algolia-search',
+    },
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     docs: {
@@ -105,6 +138,11 @@ const config: Config = {
           to: '/blog',
           label: 'Blog',
           position: 'left'
+        },
+        // Add search button to navbar
+        {
+          type: 'search',
+          position: 'right',
         },
         {
           href: 'https://github.com/souvikpramanikgit/LearnHub',
