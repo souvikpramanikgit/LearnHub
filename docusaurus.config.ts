@@ -81,15 +81,6 @@ const config: Config = {
       },
       items: [
         {
-          to: '/#courses-section',
-          label: 'Courses',
-          position: 'left',
-          className: 'navbar__link',
-          activeBaseRegex: '^$', // prevents it from being marked as active
-          target: '_self',
-        },
-
-        {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
