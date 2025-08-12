@@ -144,6 +144,11 @@ const config: Config = {
           type: 'search',
           position: 'right',
         },
+        {to: '/news', label: 'Tech News', position: 'left'},
+        {
+          type: 'search',
+          position: 'right',
+        },
         {
           href: 'https://github.com/souvikpramanikgit/LearnHub',
           label: 'GitHub',
