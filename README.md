@@ -1,7 +1,6 @@
 # LearnHub 📚✨
 
 <p align="center">
-
   <img src="https://github.com/user-attachments/assets/e83d209e-2c8c-406c-a106-a4e3c2483c95" alt="LearnHub Logo" width="120"/>
   <br>
   <svg width="220" height="60" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -15,13 +14,11 @@
       </circle>
     </g>
   </svg>
+  
   <br>
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=2000&pause=500&color=6C63FF&center=true&vCenter=true&width=380&lines=Explore+Courses;Building+Real+World+Projects;Contribute+and+Learn" alt="Typing SVG" />
 </p>
-
-<p align="center">
-  <b>Welcome to LearnHub — a platform designed to help users master essential technology skills !</b>
-</p>
+<p align="center"> <b>Welcome to LearnHub — a platform designed to help users master essential technology skills !</b> </p>
 
 **📊 Project Insights**
 
@@ -124,6 +121,7 @@ npm start
 ```
 
 The application will typically be available at http://localhost:3000.
+
 ---
 
 ## Project Structure
