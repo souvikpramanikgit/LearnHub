@@ -1,0 +1,62 @@
+[
+  {
+    "id": "db1",
+    "question": "Which type of database stores data in JSON-like documents?",
+    "options": [
+      "MySQL",
+      "MongoDB",
+      "PostgreSQL",
+      "Oracle"
+    ],
+    "correctAnswer": "MongoDB",
+    "explanation": "MongoDB is a NoSQL document-oriented database that stores data in JSON-like BSON format."
+  },
+  {
+    "id": "db2",
+    "question": "Which SQL command is used to retrieve data from a database?",
+    "options": [
+      "INSERT",
+      "SELECT",
+      "UPDATE",
+      "DELETE"
+    ],
+    "correctAnswer": "SELECT",
+    "explanation": "The SELECT statement is used to read or retrieve data from a database."
+  },
+  {
+    "id": "db3",
+    "question": "In SQL vs NoSQL, which one typically uses a fixed schema?",
+    "options": [
+      "SQL",
+      "NoSQL",
+      "Both",
+      "Neither"
+    ],
+    "correctAnswer": "SQL",
+    "explanation": "SQL databases require a fixed schema with defined tables, columns, and data types."
+  },
+  {
+    "id": "db4",
+    "question": "Which Node.js package is commonly used to connect to MongoDB?",
+    "options": [
+      "mysql2",
+      "mongoose",
+      "pg",
+      "sequelize"
+    ],
+    "correctAnswer": "mongoose",
+    "explanation": "Mongoose is a popular ODM library for MongoDB that makes it easier to model and interact with data."
+  },
+  {
+    "id": "db5",
+    "question": "Why do we store database credentials in a .env file?",
+    "options": [
+      "To make the website faster",
+      "To store frontend design settings",
+      "To hide sensitive information like passwords",
+      "To keep database backups"
+    ],
+    "correctAnswer": "To hide sensitive information like passwords",
+    "explanation": ".env files store sensitive information such as database URLs, usernames, and passwords securely."
+  }
+]
