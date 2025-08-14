@@ -81,15 +81,6 @@ const config: Config = {
       },
       items: [
         {
-          to: '/#courses-section',
-          label: 'Courses',
-          position: 'left',
-          className: 'navbar__link',
-          activeBaseRegex: '^$', // prevents it from being marked as active
-          target: '_self',
-        },
-
-        {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
@@ -106,11 +97,7 @@ const config: Config = {
           label: 'Blog',
           position: 'left'
         },
-        {
-          to: '/about',
-          label: 'About',
-          position: 'left'
-        },
+        {to: '/news', label: 'Tech News', position: 'left'},
         {
           href: 'https://github.com/souvikpramanikgit/LearnHub',
           label: 'GitHub',
