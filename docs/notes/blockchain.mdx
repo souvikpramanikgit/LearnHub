@@ -1,0 +1,78 @@
+---
+id: blockchain
+title: Blockchain
+sidebar_position: 5
+---
+
+import { useState, useEffect } from 'react';
+import { FaBookmark, FaRegBookmark } from 'react-icons/fa';
+
+export function BookmarkButton({ id }) {
+  const [bookmarked, setBookmarked] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem(`bookmark-${id}`);
+    if (saved === 'true') setBookmarked(true);
+  }, [id]);
+
+  const toggleBookmark = () => {
+    const newState = !bookmarked;
+    setBookmarked(newState);
+    localStorage.setItem(`bookmark-${id}`, newState);
+  };
+
+  return (
+    <span
+      onClick={toggleBookmark}
+      style={{
+        position: 'absolute',
+        top: 10,
+        right: 10,
+        cursor: 'pointer',
+        color: bookmarked ? '#f39c12' : '#999',
+      }}
+    >
+      {bookmarked ? <FaBookmark size={20} /> : <FaRegBookmark size={20} />}
+    </span>
+  );
+}
+
+export const notesMeta = [
+  { id: 'blockchain-m1', title: 'Module 1: Introduction to Blockchain', subject: 'Blockchain', pdf: '/pdfs/blockchain/Module1 Introduction to Blockchain.pdf' },
+  { id: 'blockchain-m2', title: 'Module 2: Blockchain Technologies', subject: 'Blockchain', pdf: '/pdfs/blockchain/Module2 Blockchain Technologies.pdf' },
+  { id: 'blockchain-m3', title: 'Module 3: Programming in Blockchain', subject: 'Blockchain', pdf: '/pdfs/blockchain/Module3 Programing in Blockchain.pdf' },
+  { id: 'blockchain-m4', title: 'Module 4: Public Blockchain', subject: 'Blockchain', pdf: '/pdfs/blockchain/Module4 Public Blockchain.pdf' },
+  { id: 'blockchain-m5', title: 'Module 5: Private Blockchain', subject: 'Blockchain', pdf: '/pdfs/blockchain/Module5 Private Blockchain.pdf' },
+  { id: 'blockchain-m6', title: 'Module 6: Applications of Blockchain', subject: 'Blockchain', pdf: '/pdfs/blockchain/Module6 Applications of Blockchain.pdf' },
+];
+
+export default function BlockchainPage() {
+  return (
+    <div>
+      <h2>⛓️ Chapter-wise Blockchain Notes</h2>
+
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+        {notesMeta.map(note => (
+          <div
+            key={note.id}
+            style={{
+              border: '1px solid #ccc',
+              borderRadius: 10,
+              padding: '1rem',
+              width: 250,
+              background: '#f9f9f9',
+              boxShadow: '2px 2px 8px rgba(0,0,0,0.1)',
+              position: 'relative',
+            }}
+          >
+            <BookmarkButton id={note.id} />
+            <h3>{note.title}</h3>
+            <a href={note.pdf} download>
+              📥 Download PDF
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

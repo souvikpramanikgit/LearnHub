@@ -1,0 +1,81 @@
+---
+id: generative-ai
+title: Generative AI
+sidebar_position: 4
+---
+
+import { useState, useEffect } from 'react';
+import { FaBookmark, FaRegBookmark } from 'react-icons/fa';
+
+export function BookmarkButton({ id }) {
+  const [bookmarked, setBookmarked] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem(`bookmark-${id}`);
+    if (saved === 'true') setBookmarked(true);
+  }, [id]);
+
+  const toggleBookmark = () => {
+    const newState = !bookmarked;
+    setBookmarked(newState);
+    localStorage.setItem(`bookmark-${id}`, newState);
+  };
+
+  return (
+    <span
+      onClick={toggleBookmark}
+      style={{
+        position: 'absolute',
+        top: 10,
+        right: 10,
+        cursor: 'pointer',
+        color: bookmarked ? '#f39c12' : '#999',
+      }}
+    >
+      {bookmarked ? <FaBookmark size={20} /> : <FaRegBookmark size={20} />}
+    </span>
+  );
+}
+
+export const notesMeta = [
+  { id: 'genai-c1', title: 'Chapter 1', subject: 'Generative AI', pdf: '/pdfs/genai/Deploying LLM-Powered Applications.pdf' },
+  { id: 'genai-c2', title: 'Chapter 2', subject: 'Generative AI', pdf: '/pdfs/genai/Instruction Fine-Tuning.pdf' },
+  { id: 'genai-c3', title: 'Chapter 3', subject: 'Generative AI', pdf: '/pdfs/genai/Introduction.pdf' },
+  { id: 'genai-c4', title: 'Chapter 4', subject: 'Generative AI', pdf: '/pdfs/genai/Model Evaluation - Metrics and Benchmarks.pdf' },
+  { id: 'genai-c5', title: 'Chapter 5', subject: 'Generative AI', pdf: '/pdfs/genai/Parameter Efficient Fine-Tuning (PEFT).pdf' },
+  { id: 'genai-c6', title: 'Chapter 6', subject: 'Generative AI', pdf: '/pdfs/genai/Pre-training Large Language Models.pdf' },
+  { id: 'genai-c7', title: 'Chapter 7', subject: 'Generative AI', pdf: '/pdfs/genai/Reinforcement Learning From Human Feedback (RLHF).pdf' },
+  { id: 'genai-c8', title: 'Chapter 8', subject: 'Generative AI', pdf: '/pdfs/genai/Transformers.pdf' },
+];
+
+export default function GenAIPage() {
+  return (
+    <div>
+      <h2>🤖 Chapter-wise Generative AI Notes</h2>
+
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+        {notesMeta.map(note => (
+          <div
+            key={note.id}
+            style={{
+              border: '1px solid #ccc',
+              borderRadius: 10,
+              padding: '1rem',
+              width: 250,
+              background: '#f9f9f9',
+              boxShadow: '2px 2px 8px rgba(0,0,0,0.1)',
+              position: 'relative',
+            }}
+          >
+            <BookmarkButton id={note.id} />
+            <h3>{note.title}</h3>
+            <p>{note.title}</p>
+            <a href={note.pdf} download>
+              📥 Download PDF
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
