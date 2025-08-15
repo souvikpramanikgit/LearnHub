@@ -344,3 +344,11 @@
   color: var(--ifm-font-color-base);
   cursor: pointer;
 }
+
+.videoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+

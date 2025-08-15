@@ -50,7 +50,8 @@ export default function LecturesPage() {
         {filteredVideos.length === 0 ? (
           <p>No videos available in this category.</p>
         ) : (
-          filteredVideos.map((video, idx) => (
+          <div className={styles.videoGrid}>
+            {filteredVideos.map((video, idx) => (
             <div key={idx} className="border p-4 rounded mb-4">
               <h3 className="font-semibold">{video.title}</h3>
               <p className="text-sm text-gray-600">{video.description}</p>
@@ -61,7 +62,9 @@ export default function LecturesPage() {
                 <source src={video.src} type="video/mp4" />
               </video>
             </div>
-          ))
+          ))}
+          </div>
+          
         )}
       </main>
     </Layout>
