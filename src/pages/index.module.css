@@ -329,3 +329,66 @@
   background: linear-gradient(90deg, #16a34a 0%, #2563eb 100%);
   color: #fff;
 }
+
+/* Floating Action Buttons */
+.floatingActions {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.floatingButton {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.floatingButton:hover {
+  background: var(--ifm-color-primary-dark);
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Search Section */
+.searchSection {
+  padding: 2rem 0;
+  background: var(--ifm-background-color);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Achievements Section */
+.achievementsSection {
+  padding: 3rem 0;
+  background: var(--ifm-color-emphasis-100);
+}
+
+/* Mobile responsiveness for floating buttons */
+@media (max-width: 768px) {
+  .floatingActions {
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .floatingButton {
+    width: 48px;
+    height: 48px;
+  }
+}
