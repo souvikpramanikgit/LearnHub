@@ -98,6 +98,7 @@ const config: Config = {
           position: 'left'
         },
         {to: '/news', label: 'Tech News', position: 'left'},
+        {to: '/lectures', label: 'Video Lectures', position: 'left'},
         {
           href: 'https://github.com/souvikpramanikgit/LearnHub',
           label: 'GitHub',
