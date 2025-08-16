@@ -1,0 +1,154 @@
+/* General Container */
+.about-container {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background-color: #f9fafb;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #6ff481, #27ae60);
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+  height: 1px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+
+.c:hover {
+  opacity: 0.85; /* hover effect */
+}
+
+
+.highlight {
+  font-weight: 600;
+  color: #0f9f1b;
+}
+.highlight2{
+  font-weight: 900;
+  color: #cced70;
+  font-size: larger;
+}
+/* Section */
+.section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2rem;
+  color: #27ae60;
+  margin-bottom: 2rem;
+}
+
+
+
+/* Cards Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); /* bigger cards */
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s, box-shadow 0.25s;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  color: #2ecc71;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+.card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Light Background Section */
+.bg-light {
+  background: #eafaf1;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+}
+
+/* Why Choose Us List */
+.list {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+}
+
+.list li {
+  margin-bottom: 0.8rem;
+  text-align: left;
+}
+
+/* Mission */
+.section p {
+  font-size: 1.1rem;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* Call to Action */
+.cta {
+background: linear-gradient(to right, #2ecc71, #27ae60);
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.cta-btn {
+  background: white;
+  color: #27ae60;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.cta-btn:hover {
+  background: #f1f1f1;
+  transform: scale(1.05);
+}
