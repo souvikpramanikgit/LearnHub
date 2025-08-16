@@ -8,8 +8,10 @@ import CodeBlock from '@theme/CodeBlock';
 
 Curated Collection of HTML Projects for Hands-On Mastery
 
+---
+
+##  🟢 Simple Projects
 <!-- PORTFOLIO PROJECT -->
- 
 
 ### PORTFOLIO PROJECT
 <details>
@@ -48,8 +50,6 @@ Curated Collection of HTML Projects for Hands-On Mastery
 </html>`}
   </CodeBlock>
 </details>
-
----
 
 <!-- LANDING PAGE -->
 
@@ -94,7 +94,7 @@ Curated Collection of HTML Projects for Hands-On Mastery
   </CodeBlock>
 </details>
 
----
+
 
 ### Blog Page
 
@@ -139,7 +139,7 @@ Curated Collection of HTML Projects for Hands-On Mastery
   </CodeBlock>
 </details>
 
----
+
 
 ### Form Project
 
@@ -182,7 +182,7 @@ Curated Collection of HTML Projects for Hands-On Mastery
   </CodeBlock>
 </details>
 
----
+
 
 ### Recipe Page
 <details>
@@ -223,7 +223,10 @@ Curated Collection of HTML Projects for Hands-On Mastery
   </CodeBlock>
 </details>
 
----
+
+
+## 🔴 Advanced Projects
+
 
 ### Music Playlist
 
@@ -264,7 +267,7 @@ Curated Collection of HTML Projects for Hands-On Mastery
   </CodeBlock>
 </details>
 
----
+
 
 ### Photo Gallery
 
@@ -296,7 +299,7 @@ Curated Collection of HTML Projects for Hands-On Mastery
   </CodeBlock>
 </details>
 
----
+
 
 ### Resume Page
 
@@ -341,7 +344,7 @@ Curated Collection of HTML Projects for Hands-On Mastery
   </CodeBlock>
 </details>
 
----
+
 
 ### Product Catalog
 
@@ -379,7 +382,7 @@ Curated Collection of HTML Projects for Hands-On Mastery
   </CodeBlock>
 </details>
 
----
+## 🧮  Mega Project 
 
 ### Travel Website
 

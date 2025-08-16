@@ -51,7 +51,7 @@ img {
   </CodeBlock>
 </details>
 
----
+
 ### Button Hover Effects
 
 <!-- PROJECT 2: Button Hover Effects -->
@@ -87,7 +87,7 @@ button:hover {
   </CodeBlock>
 </details>
 
----
+
 ### Navigation Bar
 
 <!-- PROJECT 3: Navigation Bar -->
@@ -132,7 +132,7 @@ nav a:hover {
   </CodeBlock>
 </details>
 
----
+
 
 ### Card Design
 <!-- PROJECT 4: Card Design -->
@@ -167,7 +167,7 @@ nav a:hover {
   </CodeBlock>
 </details>
 
----
+
 
 ### Resposive Grid
 <!-- PROJECT 5: Responsive Grid -->
@@ -204,7 +204,7 @@ nav a:hover {
   </CodeBlock>
 </details>
 
----
+
 
 ### Animated Loader
 <!-- PROJECT 6: Animated Loader -->
@@ -240,7 +240,7 @@ nav a:hover {
   </CodeBlock>
 </details>
 
----
+
 
 ### Tooltip
 <!-- PROJECT 7: Tooltip -->
@@ -284,7 +284,7 @@ nav a:hover {
   </CodeBlock>
 </details>
 
----
+
 
 ## 🔴 Advanced Projects  
 
@@ -330,7 +330,7 @@ nav a:hover {
   </CodeBlock>
 </details>
 
----
+
 
 ### Dark Mode Toggle
 <!-- PROJECT 9: Dark Mode Toggle -->
@@ -364,7 +364,7 @@ body.dark-mode {
   </CodeBlock>
 </details>
 
----
+
 
 ### Animated Progress Bar
 <!-- PROJECT 10: Animated Progress Bar -->
@@ -406,7 +406,7 @@ body.dark-mode {
   </CodeBlock>
 </details>
 
----
+
 
 ##  🧮 MEGA PROJECT
 

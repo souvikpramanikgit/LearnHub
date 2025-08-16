@@ -68,7 +68,6 @@ document.getElementById("reset").onclick = () => {
   </CodeBlock>
 </details>
 
----
 ### To-DO List
 
 <details>
@@ -126,7 +125,7 @@ document.getElementById("add").onclick = () => {
   </CodeBlock>
 </details>
 
----
+
 ### Digital Clock
 
 <details>
@@ -164,7 +163,7 @@ updateClock();`}
   </CodeBlock>
 </details>
 
----
+
 ### Background Color Changer
 
 <details>
@@ -203,7 +202,7 @@ updateClock();`}
   </CodeBlock>
 </details>
 
----
+
 ### Image Slider
 
 <details>
@@ -256,7 +255,7 @@ document.getElementById("prev").onclick = () => {
   </CodeBlock>
 </details>
 
----
+
 
 ## 🔴 Advanced Projects  
 
@@ -299,7 +298,7 @@ input, button { padding: 8px; margin: 5px; }`}
   </CodeBlock>
 </details>
 
----
+
 ### Expense Tracker
 
 <details>
@@ -344,7 +343,7 @@ document.getElementById("add").onclick = () => {
   </CodeBlock>
 </details>
 
----
+
 ### Quiz App
 
 <details>
@@ -395,7 +394,7 @@ loadQuestion();`}
   </CodeBlock>
 </details>
 
----
+
 
 ## 🧮  Mega Project  
 

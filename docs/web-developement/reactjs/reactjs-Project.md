@@ -41,7 +41,7 @@ export default function Counter() {
   </CodeBlock>
 </details>
 
----
+
 
 ### React Todo List
 <details>
@@ -85,7 +85,7 @@ export default function TodoList() {
   </CodeBlock>
 </details>
 
----
+
 
 ### React Digital Clock
 <details>
@@ -114,7 +114,7 @@ export default function Clock() {
   </CodeBlock>
 </details>
 
----
+
 
 ## 🔴 Advanced Projects  
 
@@ -153,7 +153,7 @@ export default function Weather() {
   </CodeBlock>
 </details>
 
----
+
 
 ### React Expense Tracker
 <details>
@@ -202,9 +202,9 @@ export default function ExpenseTracker() {
   </CodeBlock>
 </details>
 
----
 
-## 🍿 Mega Project  
+
+## 🧮 Mega Project  
 
 ### Netflix Clone
 <details>
