@@ -1,7 +1,7 @@
 ---
 title: Interactive Code Playground
 sidebar_position: 2
-slug: /web-development/playground
+slug: /code-playground-demo
 ---
 
 # Interactive Code Playground
