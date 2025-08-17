@@ -87,10 +87,15 @@ const config: Config = {
           label: 'Blog',
           position: 'left'
         },
-        { to: '/news', label: 'Tech News', position: 'left' },
 
+        { to: '/news', label: 'Tech News', position: 'left' },
+    {to: '/lectures', label: 'Video Lectures', position: 'left'},
         // ✅ Added About Us option
         { to: '/aboutus', label: 'About Us', position: 'left' },
+
+
+     
+    
 
         {
           href: 'https://github.com/souvikpramanikgit/LearnHub',
