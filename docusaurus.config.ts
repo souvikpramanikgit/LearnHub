@@ -85,6 +85,7 @@ const config: Config = {
           label: 'Blog',
           position: 'left'
         },
+        { to: '/aboutus', label: 'About Us', position: 'left' },
       {to: '/doubts', label: 'Doubts', position: 'left'},
         {
           type: 'dropdown',
@@ -152,7 +153,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} LearnHub. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
