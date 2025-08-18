@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -67,6 +67,7 @@ const config: Config = {
       },
     },
     navbar: {
+      hideOnScroll: true,
       title: 'LearnHub',
       logo: {
         alt: 'My Site Logo',
@@ -79,8 +80,36 @@ const config: Config = {
           position: 'left',
           label: 'Tutorial',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {to: '/doubts', label: 'Doubts', position: 'left'}, // ✅ Added Doubts section here
+        {
+          to: '/blog',
+          label: 'Blog',
+          position: 'left'
+        },
+      {to: '/doubts', label: 'Doubts', position: 'left'},
+        {
+          type: 'dropdown',
+          label: 'More',
+          position: 'right',
+          items: [
+            {
+              type: 'docSidebar',
+              sidebarId: 'notesSidebar',
+              label: 'Notes',
+            },
+            { 
+              to: '/news', 
+              label: 'Tech News'
+            },
+            { 
+              to: '/lectures', 
+              label: 'Video Lectures'
+            },
+            {
+              label: 'Code Playground',
+              to: '/docs/code-playground-demo',
+            },
+          ],
+        },
         {
           href: 'https://github.com/souvikpramanikgit/LearnHub',
           label: 'GitHub',

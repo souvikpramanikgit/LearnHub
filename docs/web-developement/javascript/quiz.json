@@ -1,0 +1,45 @@
+[
+  {
+    "id": "js1",
+    "question": "Which of the following is a JavaScript data type?",
+    "options": ["float", "char", "boolean", "double"],
+    "correctAnswer": "boolean",
+    "explanation": "JavaScript includes 'boolean' to represent true/false values."
+  },
+  {
+    "id": "js2",
+    "question": "What is the output of 'typeof null' in JavaScript?",
+    "options": ["'null'", "'object'", "'undefined'", "'string'"],
+    "correctAnswer": "'object'",
+    "explanation": "Due to a historical bug, 'typeof null' returns 'object'."
+  },
+  {
+    "id": "js3",
+    "question": "How do you define an arrow function in JavaScript?",
+    "options": [
+      "function => myFunc() {}",
+      "const myFunc = => () {}",
+      "const myFunc = () => {}",
+      "() => const myFunc = {}"
+    ],
+    "correctAnswer": "const myFunc = () => {}",
+    "explanation": "Arrow functions use the syntax: const myFunc = () => { ... }"
+  },
+  
+  {
+    "id": "js4",
+    "question": "What will `typeof null` return in JavaScript?",
+    "options": ["null", "object", "undefined", "number"],
+    "correctAnswer": "object",
+    "explanation": "`typeof null` returns 'object' due to a legacy bug in JavaScript that has been preserved for compatibility."
+  },
+  {
+    "id": "js5",
+    "question": "Which of the following methods is used to convert a JSON string into a JavaScript object?",
+    "options": ["JSON.stringify()", "JSON.parse()", "JSON.toObject()", "JSON.decode()"],
+    "correctAnswer": "JSON.parse()",
+    "explanation": "`JSON.parse()` parses a JSON-formatted string and returns the corresponding JavaScript object."
+  }
+
+
+]

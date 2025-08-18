@@ -133,6 +133,7 @@
   align-items: stretch;
 }
 
+
 /* General Card */
 .card {
   background-color: var(--ifm-card-background);
@@ -328,3 +329,26 @@
   background: linear-gradient(90deg, #16a34a 0%, #2563eb 100%);
   color: #fff;
 }
+
+/* /src/css/custom.css */
+.filterlect {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+.filterlect option {
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+}
+
+.videoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+

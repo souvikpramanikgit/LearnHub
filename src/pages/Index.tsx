@@ -4,6 +4,11 @@ import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import { Typewriter } from 'react-simple-typewriter';
 import HomepageFeatures from '../components/HomepageFeatures';
+import ScrollToTopButton from '../components/ScrollToTopButton';
+import ScrollProgressBar from '../components/ScrollProgressBar';
+import { Analytics } from '@vercel/analytics/react';
+
+
 
 // Insert course data at the top of the file
 const courses = [
@@ -46,6 +51,7 @@ const courses = [
 ];
 
 export default function Home(): React.ReactElement {
+
   
    useEffect(() => {
     const logoEl = document.querySelector(".navbar__title");
@@ -65,6 +71,8 @@ export default function Home(): React.ReactElement {
       logoEl.removeEventListener("click", handleClick);
     };
   }, []);
+
+  
 
   return (
     <Layout
@@ -117,7 +125,6 @@ export default function Home(): React.ReactElement {
 
           {/* Right Hero Image */}
           <div className={styles.heroRight}>
-            {/* VS Code style code card (from LearnHub) */}
             <div
               className={styles.codeCard + 'tilt-on-hover'}
               style={{
@@ -132,7 +139,6 @@ export default function Home(): React.ReactElement {
                 overflow: 'hidden',
               }}
             >
-              {/* VS Code style top bar */}
               <div style={{
                 display: 'flex',
                 alignItems: 'center',
@@ -150,7 +156,6 @@ export default function Home(): React.ReactElement {
                   VS Code + LeetCode
                 </span>
               </div>
-              {/* Code content */}
               <div style={{ padding: '1rem 1rem 0.5rem 1rem' }}>
                 <pre style={{
                   fontFamily: 'monospace',
@@ -191,6 +196,7 @@ function binarySearch(arr, target) {
           </div>
         </div>
       </header>
+      <Analytics />
       <HomepageFeatures />
       {/* Popular Courses Section */}
       <section className={styles.coursesSection} id="courses-section">
@@ -223,6 +229,7 @@ function binarySearch(arr, target) {
           </div>
         </div>
       </section>
+      <ScrollToTopButton />
     </Layout>
   );
 }
