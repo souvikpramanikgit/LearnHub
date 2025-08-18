@@ -267,12 +267,11 @@ function binarySearch(arr, target) {
           <div className={styles.coursesHeader}>
             <h2 className={styles.coursesTitle}>Popular Courses</h2>
             <p className={styles.coursesSubtitle}>
-              Choose from our comprehensive selection of technology courses
-              designed by industry experts
+              Choose from our comprehensive selection of technology courses designed by industry experts
             </p>
           </div>
           <div className={styles.coursesGrid}>
-            {courses.map((course) => {
+            {courses.map((course,idx) => {
               const Icon = course.icon;
               return (
                 <div key={course.id} className={styles.courseCard}>
