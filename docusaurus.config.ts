@@ -91,6 +91,7 @@ const config: Config = {
           label: 'Blog',
           position: 'left'
         },
+
         {
           type: 'dropdown',
           label: 'More',
@@ -113,8 +114,10 @@ const config: Config = {
               label: 'Code Playground',
               to: '/docs/code-playground-demo',
             },
+            { to: '/bookmarks', label: 'Bookmarks'},
           ],
         },
+
         {
           href: 'https://github.com/souvikpramanikgit/LearnHub',
           label: 'GitHub',

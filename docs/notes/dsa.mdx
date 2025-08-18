@@ -1,0 +1,85 @@
+---
+id: dsa
+title: Data Structures & Algorithms
+sidebar_position: 3
+---
+
+import { useState, useEffect } from 'react';
+import { FaBookmark, FaRegBookmark } from 'react-icons/fa';
+
+export function BookmarkButton({ id }) {
+  const [bookmarked, setBookmarked] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem(`bookmark-${id}`);
+    if (saved === 'true') setBookmarked(true);
+  }, [id]);
+
+  const toggleBookmark = () => {
+    const newState = !bookmarked;
+    setBookmarked(newState);
+    localStorage.setItem(`bookmark-${id}`, newState);
+  };
+
+  return (
+    <span
+      onClick={toggleBookmark}
+      style={{
+        position: 'absolute',
+        top: 10,
+        right: 10,
+        cursor: 'pointer',
+        color: bookmarked ? '#f39c12' : '#999',
+      }}
+    >
+      {bookmarked ? <FaBookmark size={20} /> : <FaRegBookmark size={20} />}
+    </span>
+  );
+}
+
+export const notesMeta = [
+  { id: 'dsa-ch1', title: 'Chapter 1: Introduction & Recursion', subject: 'DSA', pdf: '/pdfs/dsa/1.Intro +Recursion.pdf' },
+  { id: 'dsa-ch2', title: 'Chapter 2: Arrays & Searching', subject: 'DSA', pdf: '/pdfs/dsa/2. Array+Searching.pdf' },
+  { id: 'dsa-ch3', title: 'Chapter 3: Sorting', subject: 'DSA', pdf: '/pdfs/dsa/3. Sorting.pdf' },
+  { id: 'dsa-ch4', title: 'Chapter 4: Hashing', subject: 'DSA', pdf: '/pdfs/dsa/4. Hashing.pdf' },
+  { id: 'dsa-ch5', title: 'Chapter 5: Strings', subject: 'DSA', pdf: '/pdfs/dsa/5. Strings.pdf' },
+  { id: 'dsa-ch6', title: 'Chapter 6: Linked List', subject: 'DSA', pdf: '/pdfs/dsa/6. LinkedList.pdf' },
+  { id: 'dsa-ch7', title: 'Chapter 7: Stacks', subject: 'DSA', pdf: '/pdfs/dsa/7. Stacks (1).pdf' },
+  { id: 'dsa-ch8', title: 'Chapter 8: Queues', subject: 'DSA', pdf: '/pdfs/dsa/8. Queues.pdf' },
+  { id: 'dsa-ch9', title: 'Chapter 9: Trees', subject: 'DSA', pdf: '/pdfs/dsa/9. Trees.pdf' },
+  { id: 'dsa-ch10', title: 'Chapter 10: Binary Search Trees', subject: 'DSA', pdf: '/pdfs/dsa/10. binarySearchTrees.pdf' },
+  { id: 'dsa-ch11', title: 'Chapter 11: Greedy + Backtracking', subject: 'DSA', pdf: '/pdfs/dsa/11. Greedy+Backtracking.pdf' },
+  { id: 'dsa-ch12', title: 'Chapter 12: Dynamic Programming', subject: 'DSA', pdf: '/pdfs/dsa/12. DynamicProgramming.pdf' },
+];
+
+export default function DsaPage() {
+  return (
+    <div>
+      <h2>📘 Chapter-wise DSA Notes</h2>
+
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
+        {notesMeta.map(note => (
+          <div
+            key={note.id}
+            style={{
+              border: '1px solid #ccc',
+              borderRadius: 10,
+              padding: '1rem',
+              width: 250,
+              background: '#f9f9f9',
+              boxShadow: '2px 2px 8px rgba(0,0,0,0.1)',
+              position: 'relative',
+            }}
+          >
+            <BookmarkButton id={note.id} />
+            <h3>{note.title}</h3>
+            <p>{note.title}</p>
+            <a href={note.pdf} download>
+              📥 Download PDF
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
