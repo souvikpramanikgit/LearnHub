@@ -6,6 +6,7 @@ import { Typewriter } from 'react-simple-typewriter';
 import HomepageFeatures from '../components/HomepageFeatures';
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import ScrollProgressBar from '../components/ScrollProgressBar';
+import { Analytics } from '@vercel/analytics/react';
 
 // Insert course data at the top of the file
 const courses = [
@@ -147,6 +148,7 @@ export default function Home(): React.ReactElement {
                 overflow: "hidden",
               }}
             >
+
               {/* VS Code style top bar */}
               <div
                 style={{
@@ -211,6 +213,7 @@ export default function Home(): React.ReactElement {
                     wordBreak: "break-word",
                   }}
                 >{`// Day 1: Binary Search + React Setup
+
 function binarySearch(arr, target) {
   return recursiveSearch(arr, 0, arr.length-1, target);
 }`}</pre>
@@ -255,6 +258,7 @@ function binarySearch(arr, target) {
           </div>
         </div>
       </header>
+      <Analytics />
       <HomepageFeatures />
 
       {/* Popular Courses Section */}
