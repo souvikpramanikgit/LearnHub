@@ -73,7 +73,7 @@ const config: Config = {
       },
     },
     navbar: {
-      hideOnScroll: true, 
+      hideOnScroll: true,
       title: 'LearnHub',
       logo: {
         alt: 'My Site Logo',
@@ -87,20 +87,36 @@ const config: Config = {
           label: 'Tutorial',
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'notesSidebar',
-          position: 'left',
-          label: 'Notes',
-        },
-        {
           to: '/blog',
           label: 'Blog',
           position: 'left'
         },
-        {to: '/news', label: 'Tech News', position: 'left'},
 
-        {to: '/lectures', label: 'Video Lectures', position: 'left'},
-        { to: '/bookmarks', label: 'Bookmarks', position: 'right' },
+        {
+          type: 'dropdown',
+          label: 'More',
+          position: 'right',
+          items: [
+            {
+              type: 'docSidebar',
+              sidebarId: 'notesSidebar',
+              label: 'Notes',
+            },
+            { 
+              to: '/news', 
+              label: 'Tech News'
+            },
+            { 
+              to: '/lectures', 
+              label: 'Video Lectures'
+            },
+            {
+              label: 'Code Playground',
+              to: '/docs/code-playground-demo',
+            },
+            { to: '/bookmarks', label: 'Bookmarks'},
+          ],
+        },
 
         {
           href: 'https://github.com/souvikpramanikgit/LearnHub',
