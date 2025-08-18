@@ -9,15 +9,19 @@ const config: Config = {
   tagline: 'LearnHub is a platform for learning web development and AI',
   favicon: 'img/learnhub.png',
 
+  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
+  // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
+  // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/',
 
-  organizationName: 'souvikpramanikgit',
-  projectName: 'learnhub',
+  // GitHub pages deployment config.
+  organizationName: 'souvikpramanikgit', // Usually your GitHub org/user name.
+  projectName: 'learnhub', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -81,18 +85,32 @@ const config: Config = {
           label: 'Blog',
           position: 'left'
         },
-
-
-        { to: '/news', label: 'Tech News', position: 'left' },
-    {to: '/lectures', label: 'Video Lectures', position: 'left'},
-        // ✅ Added About Us option
         { to: '/aboutus', label: 'About Us', position: 'left' },
-
-
-     
-    
-
-
+      {to: '/doubts', label: 'Doubts', position: 'left'},
+        {
+          type: 'dropdown',
+          label: 'More',
+          position: 'right',
+          items: [
+            {
+              type: 'docSidebar',
+              sidebarId: 'notesSidebar',
+              label: 'Notes',
+            },
+            { 
+              to: '/news', 
+              label: 'Tech News'
+            },
+            { 
+              to: '/lectures', 
+              label: 'Video Lectures'
+            },
+            {
+              label: 'Code Playground',
+              to: '/docs/code-playground-demo',
+            },
+          ],
+        },
         {
           href: 'https://github.com/souvikpramanikgit/LearnHub',
           label: 'GitHub',
