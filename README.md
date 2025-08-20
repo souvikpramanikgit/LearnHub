@@ -7,6 +7,7 @@
     <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="28" font-family="Verdana" fill="#6C63FF">
       LearnHub
     </text>
+    
     <g>
       <animateTransform attributeName="transform" type="translate" from="0 0" to="0 10" begin="0s" dur="0.8s" repeatCount="indefinite"/>
       <circle cx="200" cy="20" r="8" fill="#FFD700">
