@@ -49,13 +49,13 @@
 .featureCard {
   background: #fff;
   border-radius: 1rem;
-  box-shadow: 0 4px 24px 0 rgba(30, 41, 59, 0.08);
   padding: 2rem 1.5rem 1.5rem 1.5rem;
   text-align: center;
-  transition: box-shadow 0.3s, transform 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 .featureCard:hover {
-  box-shadow: 0 8px 32px 0 rgba(30, 41, 59, 0.16);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transform: translateY(-6px);
 }
 
@@ -108,11 +108,11 @@
 [data-theme='dark'] .featureCard {
   background: #23272f;
   color: #f3f4f6;
-  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.32);
+   box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
 }
 
 [data-theme='dark'] .featureCard:hover {
-  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.48);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
 }
 
 [data-theme='dark'] .featureTitle {
