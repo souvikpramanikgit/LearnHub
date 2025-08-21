@@ -125,10 +125,6 @@ export default function Home(): React.ReactElement {
               >
                 &lt;/&gt; See Roadmap
               </a>
-              {/* ✅ New About Us Button */}
-              <a className="button button--outline button--lg" href="/Aboutus">
-                 About Us
-              </a>
             </div>
           </div>
 
