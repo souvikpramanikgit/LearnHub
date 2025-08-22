@@ -1,30 +1,28 @@
-import React, {type ReactNode} from 'react';
+import React, { type ReactNode } from 'react';
 import clsx from 'clsx';
 import {
   useThemeConfig,
   ErrorCauseBoundary,
   ThemeClassNames,
+  useColorMode,
 } from '@docusaurus/theme-common';
 import {
   splitNavbarItems,
   useNavbarMobileSidebar,
 } from '@docusaurus/theme-common/internal';
-import NavbarItem, {type Props as NavbarItemConfig} from '@theme/NavbarItem';
+import NavbarItem, { type Props as NavbarItemConfig } from '@theme/NavbarItem';
 import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
 import SearchBar from '@theme/SearchBar';
 import NavbarMobileSidebarToggle from '@theme/Navbar/MobileSidebar/Toggle';
-import NavbarLogo from '@theme/Navbar/Logo';
 import NavbarSearch from '@theme/Navbar/Search';
 
 import styles from './styles.module.css';
 
-
 function useNavbarItems() {
-  // TODO temporary casting until ThemeConfig type is improved
   return useThemeConfig().navbar.items as NavbarItemConfig[];
 }
 
-function NavbarItems({items}: {items: NavbarItemConfig[]}): ReactNode {
+function NavbarItems({ items }: { items: NavbarItemConfig[] }): ReactNode {
   return (
     <>
       {items.map((item, i) => (
@@ -32,12 +30,15 @@ function NavbarItems({items}: {items: NavbarItemConfig[]}): ReactNode {
           key={i}
           onError={(error) =>
             new Error(
-              `A theme navbar item failed to render.
-Please double-check the following navbar item (themeConfig.navbar.items) of your Docusaurus config:
-${JSON.stringify(item, null, 2)}`,
-              {cause: error},
+              `A theme navbar item failed to render. Check your config:\n${JSON.stringify(
+                item,
+                null,
+                2
+              )}`,
+              { cause: error }
             )
-          }>
+          }
+        >
           <NavbarItem {...item} />
         </ErrorCauseBoundary>
       ))}
@@ -57,16 +58,17 @@ function NavbarContentLayout({
       <div
         className={clsx(
           ThemeClassNames.layout.navbar.containerLeft,
-          'navbar__items',
-        )}>
+          'navbar__items'
+        )}
+      >
         {left}
-     
       </div>
       <div
         className={clsx(
           ThemeClassNames.layout.navbar.containerRight,
-          'navbar__items navbar__items--right',
-        )}>
+          'navbar__items navbar__items--right'
+        )}
+      >
         {right}
       </div>
     </div>
@@ -75,28 +77,31 @@ function NavbarContentLayout({
 
 export default function NavbarContent(): ReactNode {
   const mobileSidebar = useNavbarMobileSidebar();
-
   const items = useNavbarItems();
   const [leftItems, rightItems] = splitNavbarItems(items);
-
   const searchBarItem = items.find((item) => item.type === 'search');
+
+  // ✅ Hooks and variables must be at top-level
+  const { navbar } = useThemeConfig();
+  const { colorMode } = useColorMode();
+
+  const logoSrc =
+    colorMode === 'dark' && navbar.logo.srcDark ? navbar.logo.srcDark : navbar.logo.src;
 
   return (
     <NavbarContentLayout
       left={
-        // TODO stop hardcoding items?
         <>
           {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
-          <div  className={styles.navBarWrap}>
-            <NavbarLogo />
+
+          <div className={styles.navBarWrap}>
+            <img src={logoSrc} alt={navbar.logo.alt} style={{ height: '32px' }} />
           </div>
 
           <NavbarItems items={leftItems} />
         </>
       }
       right={
-        // TODO stop hardcoding items?
-        // Ask the user to add the respective navbar items => more flexible
         <>
           <NavbarItems items={rightItems} />
           <NavbarColorModeToggle className={styles.colorModeToggle} />
