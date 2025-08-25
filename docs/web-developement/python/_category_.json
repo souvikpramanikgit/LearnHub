@@ -1,0 +1,16 @@
+{
+  "label": "Python",
+  "position": 3,
+  "collapsible": true,
+  "collapsed": false,
+  "className": "python-category",
+  "link": {
+    "type": "generated-index",
+    "title": "Python Tutorial",
+    "slug": "/python",
+    "description": "Start here to learn Python from basics to commonly used libraries. Each page has examples and small exercises.",
+    "keywords": ["python", "tutorial", "beginner", "numpy", "pandas"]
+  }
+}
+
+  
