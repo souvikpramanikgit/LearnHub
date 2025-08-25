@@ -32,3 +32,38 @@
 html {
   scroll-behavior: smooth;
 }
+
+.footer {
+  padding: 3rem 2rem;
+  background: #121212; 
+  color: #eaeaea;
+}
+
+.footer__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+}
+
+.footer__items a {
+  color: #bbb;
+  transition: color 0.3s ease;
+}
+.footer__items a:hover {
+  color: #2e8555; 
+}
+
+.footer__bottom {
+  margin-top: 2rem;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+.footer__logo {
+  max-width: 50px;  
+  height: auto;      
+  margin-bottom: 0.2rem;
+}
