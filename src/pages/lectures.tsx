@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import Head from "@docusaurus/Head";
 import Layout from "@theme/Layout";
+import { useEffect, useState } from "react";
 import Videos from "../../lectures/Videolectures"; // make sure path and case match exactly
+import CourseProgress from "../components/CourseProgress";
 import styles from './index.module.css';
 
 export default function LecturesPage() {
@@ -24,12 +26,17 @@ export default function LecturesPage() {
           (video) =>
             video.category.toLowerCase() === selectedCategory.toLowerCase()
         );
+    const lessons = filteredVideos.map((video, idx) => ({
+      id: `${selectedCategory}-${idx}`, // unique ID
+      title: video.title,
+  }));
 
   return (
-    <Layout
-      title="Video Lectures"
-      description="Watch our latest educational videos"
-    >
+    <Layout>
+      <Head>
+      <title>"Video Lectures"</title>
+      <meta name="description" content= "Watch our latest educational videos" />
+    </Head>
       <main className="container margin-vert--lg">
         <h2 className="text-2xl font-bold">Video Lectures</h2>
         <div className="margin-bottom--md">
@@ -46,6 +53,14 @@ export default function LecturesPage() {
             <option value="ai">AI</option>
           </select>
         </div>
+
+         {lessons.length > 0 && (
+          <div className="margin-bottom--lg">
+            <CourseProgress courseId={selectedCategory} lessons={lessons} />
+          </div>
+        )}
+
+      
 
         {filteredVideos.length === 0 ? (
           <p>No videos available in this category.</p>
