@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useColorMode } from "@docusaurus/theme-common";
-import parse from "html-react-parser";
-import { Highlight, themes } from "prism-react-renderer";
 
 type Question = {
   id: string;
@@ -9,79 +7,7 @@ type Question = {
   options: string[];
   correctAnswer: string;
   explanation?: string;
-  codeSnippet?: {
-    code: string;
-    language?: string;
-  };
 };
-
-const CodeBlock = ({
-  code,
-  language = "javascript",
-  isDarkTheme,
-}: {
-  code: string;
-  language?: string;
-  isDarkTheme: boolean;
-}) => (
-  <Highlight
-    theme={isDarkTheme ? themes.vsDark : themes.github}
-    code={code.trim()}
-    language={language as any}
-  >
-    {({ className, style, tokens, getLineProps, getTokenProps }) => (
-      <div
-        style={{
-          position: "relative",
-          margin: "12px 0",
-          borderRadius: "8px",
-          overflow: "hidden",
-          border: `1px solid ${isDarkTheme ? "#444" : "#e1e4e8"}`,
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: "8px",
-            right: "12px",
-            backgroundColor: isDarkTheme
-              ? "rgba(0,0,0,0.5)"
-              : "rgba(255,255,255,0.8)",
-            color: isDarkTheme ? "#ccc" : "#666",
-            padding: "2px 8px",
-            borderRadius: "4px",
-            fontSize: "12px",
-            fontWeight: "500",
-            textTransform: "uppercase",
-            zIndex: 1,
-          }}
-        >
-          {language}
-        </div>
-
-        <pre
-          className={className}
-          style={{
-            ...style,
-            margin: 0,
-            padding: "16px",
-            fontSize: "14px",
-            lineHeight: "1.5",
-            overflow: "auto",
-          }}
-        >
-          {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line })}>
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token })} />
-              ))}
-            </div>
-          ))}
-        </pre>
-      </div>
-    )}
-  </Highlight>
-);
 
 export const Quiz = ({ questions }: { questions: Question[] }) => {
   const [answers, setAnswers] = useState<{ [key: string]: string }>({});
@@ -142,17 +68,8 @@ export const Quiz = ({ questions }: { questions: Question[] }) => {
               marginBottom: "0.75rem",
             }}
           >
-            {index + 1}. {parse(q.question)}
+            {index + 1}. {q.question}
           </p>
-
-          {q.codeSnippet && (
-            <CodeBlock
-              code={q.codeSnippet.code}
-              language={q.codeSnippet.language}
-              isDarkTheme={isDarkTheme}
-            />
-          )}
-
           <div
             style={{
               display: "flex",
@@ -212,45 +129,22 @@ export const Quiz = ({ questions }: { questions: Question[] }) => {
                       accentColor: isDarkTheme ? "#90cdf4" : "#4f46e5",
                     }}
                   />
-                  <span
-                    style={{
-                      fontFamily:
-                        option.includes("`") ||
-                        option.includes("function") ||
-                        option.includes("var") ||
-                        option.includes("let") ||
-                        option.includes("const")
-                          ? "Consolas, Monaco, 'Courier New', monospace"
-                          : "inherit",
-                    }}
-                  >
-                    {parse(option)}
-                  </span>
+                  {option}
                 </label>
               );
             })}
           </div>
           {submitted && q.explanation && (
-            <div
+            <p
               style={{
                 marginTop: 12,
-                padding: "12px",
-                backgroundColor: isDarkTheme ? "#2a2a2a" : "#f8f9fa",
-                borderRadius: "8px",
-                border: `1px solid ${isDarkTheme ? "#444" : "#e1e4e8"}`,
+                fontStyle: 'italic',
+                fontSize: '0.95rem',
+                color: isDarkTheme ? '#bbb' : '#555'
               }}
             >
-              <p
-                style={{
-                  margin: 0,
-                  fontStyle: "italic",
-                  fontSize: "0.95rem",
-                  color: isDarkTheme ? "#bbb" : "#555",
-                }}
-              >
-                💡 {parse(q.explanation)}
-              </p>
-            </div>
+              {q.explanation}
+            </p>
           )}
         </div>
       ))}

@@ -15,7 +15,6 @@ Hey, everyone! In this guide, we’re going to explore some of basic concepts of
 4. [Component Lifecycle](#component-lifecycle)
 5. [Virtual DOM](#virtual-dom)
 6. [Class Components (Legacy)](#class-components-legacy)
-7. [Best Practices](#best-practices)
 
 ---
 

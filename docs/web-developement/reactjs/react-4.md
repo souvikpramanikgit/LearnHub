@@ -16,7 +16,6 @@ A Higher-Order Component is a function that takes a component and returns a new 
 - [Basic HOC Pattern](#basic-hoc-pattern)
 - [HOC Examples](#hoc-examples)
 - [Best Practices](#best-practices)
-- [Common Pitfalls](#common-pitfalls)
 - [HOCs vs Hooks](#hocs-vs-hooks)
 - [Conclusion](#conclusion)
 
