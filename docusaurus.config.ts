@@ -72,7 +72,7 @@ const config: Config = {
       },
     },
     navbar: {
-      hideOnScroll: false,
+      hideOnScroll: true,
       title: 'LearnHub',
       logo: {
         alt: 'My Site Logo',
@@ -123,11 +123,6 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      logo: {
-    alt: 'LearnHub Logo',
-    src: 'img/learnhub.png', 
-    href: '/',
-  },
       links: [
         {
           title: 'Docs',
@@ -136,15 +131,15 @@ const config: Config = {
               label: 'Tutorial',
               to: '/docs/intro',
             },
-            { label: 'API Reference', to: '/docs/api' },
           ],
         },
         {
           title: 'Community',
           items: [
-            { label: 'Discord', href: 'https://discord.gg/YmSKSDfH' },
-            { label: 'Twitter', href: 'https://twitter.com/learnhub' },
-            { label: 'LinkedIn', href: 'https://linkedin.com/company/learnhub' },
+            { 
+              label: 'Discord', 
+              href: 'https://discord.gg/YmSKSDfH' 
+            },
           ],
         },
         {
@@ -158,7 +153,6 @@ const config: Config = {
               label: 'GitHub',
               href: 'https://github.com/souvikpramanikgit/LearnHub',
             },
-            { label: 'Contact Us', to: '/contact' },
           ],
         },
       ],
