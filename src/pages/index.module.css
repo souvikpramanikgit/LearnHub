@@ -372,4 +372,33 @@
   gap: 1.5rem;
 }
 
+.videoCard {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.videoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.videoCard h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.videoCard p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.videoCard video {
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+
 
