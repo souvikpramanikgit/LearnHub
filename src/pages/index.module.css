@@ -1,20 +1,3 @@
-/*fixed code of text visibility for theme */
-
-:root {
-  /* Light mode defaults */
-  --hero-text-color: #111827; /* Dark gray for good readability */
-  --hero-badge-gradient: linear-gradient(to right, #14b8a6, #0284c7); /* Teal/blue */
-  --hero-highlight-gradient: linear-gradient(to right, #16a34a, #15803d); /* Green */
-}
-
-[data-theme='dark'] {
-  /* Override for dark mode */
-  --hero-text-color: #f9fafb; /* Near white */
-  --hero-badge-gradient: linear-gradient(to right, #2dd4bf, #0ea5e9); /* Brighter teal/blue */
-  --hero-highlight-gradient: linear-gradient(to right, #4ade80, #22c55e); /* Brighter green */
-}
-
-
 .heroBanner {
   padding: 2rem 2rem;
   display: flex;
@@ -23,8 +6,6 @@
   min-height: 80vh;
   position: relative;
   z-index: 0;
-  background-color: var(--ifm-background-color);
-  color: var(--hero-text-color);
 }
 
 .heroContentWrapper {
@@ -48,8 +29,8 @@
 }
 
 .heroBadge {
-  background: var(--hero-badge-gradient);
-  color: #fff;
+  background: linear-gradient(to right, #2dd4bf, #0ea5e9);
+  color: white;
   padding: 0.8rem 0.6rem;
   border-radius: 9999px;
   font-weight: bold;
@@ -64,11 +45,10 @@
   font-size: 3.5rem;
   font-weight: 700;
   line-height: 1.2;
-  color: var(--hero-text-color);
 }
 
 .highlightGreen {
-  background: var(--hero-highlight-gradient);
+  background: linear-gradient(to right, #4ade80, #22c55e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
