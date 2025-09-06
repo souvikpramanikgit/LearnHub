@@ -144,14 +144,14 @@ HTML is used to create **visually rich, styled emails** that go beyond plain tex
 Newsletters, order confirmations, password reset emails, product promotions, etc.
 
 ---
-### 4.4. 📄 Documentation & Help Guides
+### 4.4. Documentation & Help Guides
 
 Many technical documentation sites and help centers are powered by HTML.
 
 - Platforms like **Docusaurus**, **GitBook**, and **Read the Docs** generate HTML from Markdown or custom formats.
 - HTML ensures structured, searchable, and user-friendly documentation.
 
-✅ **Example:**  
+**Example:**  
 Developer docs, API references, onboarding guides, FAQs, changelogs, etc.
 
 ---
