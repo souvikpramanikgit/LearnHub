@@ -116,6 +116,10 @@ HTML is the **fundamental building block** of all websites — from personal blo
 - Tags like `<header>`, `<footer>`, `<main>`, and `<article>` organize the page content.
 - Even visually complex designs or animations ultimately rest on HTML structure.
 
+✅ **Example:**  
+Landing pages, portfolios, blog articles, homepages, etc.
+
+---
 ### 4.2. Web Applications
 Combined with CSS and JavaScript, HTML powers modern web apps.
 
