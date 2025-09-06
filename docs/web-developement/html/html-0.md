@@ -73,6 +73,7 @@ graph LR
   C --> D[Browser Builds DOM]
   D --> E[Page Rendered Visually]
 ```
+
 ---
 
 ## 3. HTML in Action: Example
@@ -102,8 +103,11 @@ Let’s look at a basic HTML document that displays a heading and a paragraph.
 
 ## 4. Where is HTML Used?
 
-HTML is everywhere on the web. Every website you visit uses HTML in some form.
+HTML is **everywhere** on the web. No matter how advanced a website or app looks, its foundation is almost always built with HTML. It’s the **core language** that browsers use to structure and display content.
 
+Below are some of the most common real-world use cases:
+
+---
 ### 4.1. Web Pages
 HTML forms the backbone of any static or dynamic webpage.
 
