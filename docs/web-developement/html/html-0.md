@@ -128,6 +128,10 @@ Modern web applications — like Gmail, Google Docs, or Facebook — use HTML in
 - Components like buttons, input fields, and menus are rendered using HTML elements.
 - Frameworks like **React**, **Vue**, and **Angular** use HTML (or HTML-like syntax) under the hood.
 
+✅ **Example:**  
+Online banking portals, project management tools (like Trello), e-commerce dashboards, etc.
+
+---
 ### 4.3. Emails
 Most email templates use HTML to provide formatted, styled messages.
 
