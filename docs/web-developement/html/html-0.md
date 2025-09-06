@@ -15,9 +15,25 @@ Hey, everyone!  In this guide, we’re going to explore **HTML (HyperText Markup
 
 ### Key Features of HTML:
 
-- **Structural Language**: It organizes content on a webpage using elements like headings, paragraphs, lists, and more.
-- **Semantics**: HTML5 introduced semantic elements like `<header>`, `<section>`, and `<footer>` that define the meaning of content.
-- **Media Integration**: Easily embeds images, videos, audio, and more.
+
+- **Structural Language**:  
+  HTML uses **tags** to organize content into sections like headers, footers, paragraphs, and lists. Without HTML, web browsers would not know how to display text and images meaningfully.
+
+- **Semantics**:  
+  Modern HTML (HTML5) introduces **semantic elements** like:
+  - `<article>` for blog posts or news stories
+  - `<section>` for dividing pages into parts
+  - `<nav>` for navigation menus  
+  These tags add **meaning** to the content, improving SEO and accessibility.
+
+- **Media Integration**:  
+  HTML can embed multimedia directly into pages:
+  
+  ```html
+  <img src="photo.jpg" alt="A beautiful sunset" />
+  <video controls>
+    <source src="video.mp4" type="video/mp4" />
+  </video>
 - **Linking Content**: Connects multiple web pages using hyperlinks.
 
 :::tip Fun Fact
@@ -25,10 +41,28 @@ HTML was created by **Tim Berners-Lee** in 1991, and it laid the foundation for 
 :::
 
 ---
-
 ## 2. How Does HTML Work?
 
-When a user accesses a web page, the browser fetches the HTML file and renders it as a visual page. The HTML provides a **blueprint** for the content structure.
+When a user accesses a web page — whether by typing a URL, clicking a link, or submitting a form — a complex yet seamless process begins behind the scenes. At the heart of this process is **HTML**, which acts as the **blueprint** for building the page in the browser.
+
+### What Happens Behind the Scenes?
+
+1. **User Requests a Web Page**  
+   This could be from typing a URL like `www.example.com` or clicking on a link.
+
+2. **Browser Sends a Request to the Server**  
+   The browser makes an HTTP(S) request to the web server hosting the website.
+
+3. **Server Responds with HTML (and other files)**  
+   The server returns the requested HTML document, along with assets like CSS, JavaScript, and images.
+
+4. **Browser Parses the HTML**  
+   The browser reads the HTML file line-by-line and builds a **DOM (Document Object Model)** tree that represents the structure of the content.
+
+5. **Page is Rendered**  
+   The browser displays the content on your screen according to the instructions in the HTML, styled by CSS, and made interactive by JavaScript.
+
+---
 
 ### HTML Workflow
 
@@ -36,9 +70,9 @@ When a user accesses a web page, the browser fetches the HTML file and renders i
 graph LR
   A[User Requests Web Page] --> B[Server Sends HTML]
   B --> C[Browser Parses HTML]
-  C --> D[Web Page Rendered]
+  C --> D[Browser Builds DOM]
+  D --> E[Page Rendered Visually]
 ```
-
 ---
 
 ## 3. HTML in Action: Example
