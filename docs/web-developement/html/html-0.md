@@ -132,9 +132,18 @@ Modern web applications — like Gmail, Google Docs, or Facebook — use HTML in
 Online banking portals, project management tools (like Trello), e-commerce dashboards, etc.
 
 ---
-### 4.3. Emails
-Most email templates use HTML to provide formatted, styled messages.
+### 4.3. ✉️ HTML Emails
 
+HTML is used to create **visually rich, styled emails** that go beyond plain text.
+
+- Companies use HTML emails for marketing newsletters, product updates, onboarding emails, and more.
+- HTML allows formatting with fonts, colors, images, tables, and buttons.
+- Email clients like Gmail and Outlook render these emails based on their HTML code.
+
+✅ **Example:**  
+Newsletters, order confirmations, password reset emails, product promotions, etc.
+
+---
 ### 4.4. Documentation
 HTML is used to create online documentation and user manuals.
 
