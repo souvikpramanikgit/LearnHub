@@ -120,8 +120,13 @@ HTML is the **fundamental building block** of all websites — from personal blo
 Landing pages, portfolios, blog articles, homepages, etc.
 
 ---
-### 4.2. Web Applications
-Combined with CSS and JavaScript, HTML powers modern web apps.
+### 4.2. ⚙️ Web Applications
+
+Modern web applications — like Gmail, Google Docs, or Facebook — use HTML in combination with **CSS** (for styling) and **JavaScript** (for interactivity and logic).
+
+- HTML defines the UI layout and containers.
+- Components like buttons, input fields, and menus are rendered using HTML elements.
+- Frameworks like **React**, **Vue**, and **Angular** use HTML (or HTML-like syntax) under the hood.
 
 ### 4.3. Emails
 Most email templates use HTML to provide formatted, styled messages.
