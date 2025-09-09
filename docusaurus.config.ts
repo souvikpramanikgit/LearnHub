@@ -121,44 +121,44 @@ const config: Config = {
         },
       ],
     },
-    footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            { 
-              label: 'Discord', 
-              href: 'https://discord.gg/YmSKSDfH' 
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/souvikpramanikgit/LearnHub',
-            },
-          ],
-        },
-      ],
+    // footer: {
+    //   style: 'dark',
+    //   links: [
+    //     {
+    //       title: 'Docs',
+    //       items: [
+    //         {
+    //           label: 'Tutorial',
+    //           to: '/docs/intro',
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       title: 'Community',
+    //       items: [
+    //         { 
+    //           label: 'Discord', 
+    //           href: 'https://discord.gg/YmSKSDfH' 
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       title: 'More',
+    //       items: [
+    //         {
+    //           label: 'Blog',
+    //           to: '/blog',
+    //         },
+    //         {
+    //           label: 'GitHub',
+    //           href: 'https://github.com/souvikpramanikgit/LearnHub',
+    //         },
+    //       ],
+    //     },
+    //   ],
 
-      copyright: `Copyright © ${new Date().getFullYear()} LearnHub. Built with Docusaurus.`,
-    },
+    //   copyright: `Copyright © ${new Date().getFullYear()} LearnHub. Built with Docusaurus.`,
+    // },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
