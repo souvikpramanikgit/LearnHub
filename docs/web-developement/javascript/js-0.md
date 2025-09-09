@@ -68,8 +68,9 @@ Here’s a simple example of JavaScript in action:
 ```
 
 ### Explanation:
-- **HTML** creates the structure.
-- **JavaScript** handles the button click and updates the text dynamically.
+- **HTML** sets up the page structure and defines the elements (like the heading and button).
+- **JavaScript** adds interactivity by handling the button click event and dynamically updating the text inside the heading.
+- This interaction shows how JavaScript can manipulate the content of a webpage without needing to reload it.
 
 ---
 
