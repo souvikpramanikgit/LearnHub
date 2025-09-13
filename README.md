@@ -8,12 +8,7 @@
       LearnHub
     </text>
     
-    <g>
-      <animateTransform attributeName="transform" type="translate" from="0 0" to="0 10" begin="0s" dur="0.8s" repeatCount="indefinite"/>
-      <circle cx="200" cy="20" r="8" fill="#FFD700">
-        <animate attributeName="cy" values="20;40;20" dur="1.2s" repeatCount="indefinite"/>
-      </circle>
-    </g>
+    
   </svg>
   
   <br>
