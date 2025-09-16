@@ -117,7 +117,8 @@ Running the App
 npm start
 ```
 
-### The application will typically be available at http://localhost:3000.
+The application will typically be available at http://localhost:3000.
+<!--The application will typically be available at http://localhost:3000.-->
 ---
 
 ## Project Structure
