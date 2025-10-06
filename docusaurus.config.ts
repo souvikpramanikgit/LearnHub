@@ -91,6 +91,11 @@ const config: Config = {
           position: 'left'
         },
         {
+          to: '/roadmaps',
+          label: 'Roadmaps',
+          position: 'left'
+        },
+        {
           type: 'dropdown',
           label: 'More',
           position: 'right',

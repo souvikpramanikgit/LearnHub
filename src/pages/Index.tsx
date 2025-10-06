@@ -133,7 +133,7 @@ export default function Home(): React.ReactElement {
                   <path d="M5 12h14m-7-7 7 7-7 7" />
                 </svg>
               </a>
-              <a href="#courses-section" className={styles.btnSecondary}>
+              <a href="/roadmaps" className={styles.btnSecondary}>
                 <svg
                   width="20"
                   height="20"
@@ -145,6 +145,21 @@ export default function Home(): React.ReactElement {
                   <ArrowBigRightIcon points="5,3 19,12 5,21" />
                 </svg>
                 See RoadMap
+              </a>
+              <a href="https://roadmap.sh" target="_blank" rel="noopener noreferrer" className={styles.btnTertiary}>
+                🗺️ Roadmap.sh
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  <polyline points="15,3 21,3 21,9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
               </a>
             </div>
           </div>
