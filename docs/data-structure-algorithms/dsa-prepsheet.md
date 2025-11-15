@@ -66,4 +66,4 @@ To quickly find questions by difficulty, use these links:
 
 ---
 
-Happy practicing — you've got this.  
+Happy practicing — you've got this.
